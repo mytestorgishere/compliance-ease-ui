@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "getStarted": "Rozpocznij",
+    "bookDemo": "Zarezerwuj Demo",
+    "freeTrial": "Bezpłatny okres próbny",
+    "upload": "Prześlij",
+    "download": "Pobierz",
+    "submit": "Wyślij",
+    "cancel": "Anuluj",
+    "email": "E-mail",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź Hasło",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "company": "Firma",
+    "phone": "Telefon",
+    "message": "Wiadomość"
+  },
+  "navigation": {
+    "features": "Funkcje",
+    "pricing": "Cennik",
+    "dashboard": "Panel",
+    "language": "Język"
+  },
+  "hero": {
+    "title": "Automatyzacja Zgodności UE Napędzana AI",
+    "subtitle": "Automatyzuj raportowanie zgodności RODO, CSRD i ESG z inteligentną AI. Zachowaj zgodność, zmniejsz koszty i skup się na wzroście.",
+    "cta": "Rozpocznij Bezpłatny Okres Próbny",
+    "bookDemo": "Zarezerwuj Demo"
+  },
+  "login": {
+    "title": "Witamy z powrotem",
+    "subtitle": "Zaloguj się do swojego konta ComplianceAI",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "signUpLink": "Zarejestruj się tutaj"
+  },
+  "signup": {
+    "title": "Utwórz Konto",
+    "subtitle": "Rozpocznij swoją podróż automatyzacji zgodności",
+    "hasAccount": "Masz już konto?",
+    "signInLink": "Zaloguj się tutaj",
+    "terms": "Tworząc konto, akceptujesz nasze Warunki Usługi i Politykę Prywatności"
+  },
+  "freeTrial": {
+    "title": "Rozpocznij Swój Bezpłatny Okres Próbny",
+    "subtitle": "Prześlij dokument i zobacz ComplianceAI w akcji",
+    "uploadTitle": "Prześlij Swój Dokument",
+    "uploadDescription": "Prześlij dowolny dokument zgodności (ocena RODO, raport zrównoważonego rozwoju, itp.)",
+    "supportedFormats": "Obsługiwane formaty: PDF, DOC, DOCX, TXT",
+    "generateReport": "Generuj Raport AI",
+    "downloadReport": "Pobierz Wygenerowany Raport",
+    "sampleReport": "Przyklad_Raport_Zgodnosci.pdf",
+    "processing": "Przetwarzanie dokumentu...",
+    "success": "Raport wygenerowany pomyślnie!"
+  },
+  "demo": {
+    "title": "Zarezerwuj Demo",
+    "subtitle": "Zobacz, jak ComplianceAI może przekształcić Twój przepływ pracy zgodności",
+    "preferredDate": "Preferowana Data",
+    "preferredTime": "Preferowany Czas",
+    "requirements": "Specyficzne Wymagania",
+    "requirementsPlaceholder": "Opowiedz nam o swoich wyzwaniach zgodności...",
+    "schedule": "Zaplanuj Demo",
+    "success": "Demo zaplanowane pomyślnie! Skontaktujemy się w ciągu 24 godzin.",
+    "timeSlots": {
+      "morning": "Rano (9:00-12:00)",
+      "afternoon": "Popołudnie (13:00-17:00)",
+      "evening": "Wieczór (18:00-20:00)"
+    }
+  }
+}

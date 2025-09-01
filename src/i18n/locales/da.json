@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Log Ind",
+    "signUp": "Tilmeld",
+    "getStarted": "Kom I Gang",
+    "bookDemo": "Book Demo",
+    "freeTrial": "Gratis Prøveperiode",
+    "upload": "Upload",
+    "download": "Download",
+    "submit": "Send",
+    "cancel": "Annuller",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "confirmPassword": "Bekræft Adgangskode",
+    "firstName": "Fornavn",
+    "lastName": "Efternavn",
+    "company": "Virksomhed",
+    "phone": "Telefon",
+    "message": "Besked"
+  },
+  "navigation": {
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "dashboard": "Dashboard",
+    "language": "Sprog"
+  },
+  "hero": {
+    "title": "AI-Drevet EU Compliance Automatisering",
+    "subtitle": "Automatiser GDPR, CSRD og ESG compliance rapportering med intelligent AI. Forbliv compliant, reducer omkostninger og fokuser på vækst.",
+    "cta": "Start Gratis Prøveperiode",
+    "bookDemo": "Book Demo"
+  },
+  "login": {
+    "title": "Velkommen Tilbage",
+    "subtitle": "Log ind på din ComplianceAI konto",
+    "forgotPassword": "Glemt adgangskode?",
+    "noAccount": "Ingen konto?",
+    "signUpLink": "Tilmeld her"
+  },
+  "signup": {
+    "title": "Opret Konto",
+    "subtitle": "Start din compliance automatisering rejse",
+    "hasAccount": "Har allerede en konto?",
+    "signInLink": "Log ind her",
+    "terms": "Ved at oprette en konto accepterer du vores Servicevilkår og Privatlivspolitik"
+  },
+  "freeTrial": {
+    "title": "Start Din Gratis Prøveperiode",
+    "subtitle": "Upload et dokument og se ComplianceAI i aktion",
+    "uploadTitle": "Upload Dit Dokument",
+    "uploadDescription": "Upload ethvert compliance dokument (GDPR vurdering, bæredygtighedsrapport, etc.)",
+    "supportedFormats": "Understøttede formater: PDF, DOC, DOCX, TXT",
+    "generateReport": "Generer AI Rapport",
+    "downloadReport": "Download Genereret Rapport",
+    "sampleReport": "Eksempel_Compliance_Rapport.pdf",
+    "processing": "Behandler dit dokument...",
+    "success": "Rapport genereret med succes!"
+  },
+  "demo": {
+    "title": "Book en Demo",
+    "subtitle": "Se hvordan ComplianceAI kan transformere dit compliance workflow",
+    "preferredDate": "Foretrukken Dato",
+    "preferredTime": "Foretrukken Tid",
+    "requirements": "Specifikke Krav",
+    "requirementsPlaceholder": "Fortæl os om dine compliance udfordringer...",
+    "schedule": "Planlæg Demo",
+    "success": "Demo planlagt med succes! Vi kontakter dig inden for 24 timer.",
+    "timeSlots": {
+      "morning": "Morgen (9:00-12:00)",
+      "afternoon": "Eftermiddag (13:00-17:00)",
+      "evening": "Aften (18:00-20:00)"
+    }
+  }
+}

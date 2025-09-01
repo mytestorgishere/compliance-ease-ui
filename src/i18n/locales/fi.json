@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Kirjaudu Sisään",
+    "signUp": "Rekisteröidy",
+    "getStarted": "Aloita",
+    "bookDemo": "Varaa Demo",
+    "freeTrial": "Ilmainen Kokeilu",
+    "upload": "Lataa",
+    "download": "Lataa",
+    "submit": "Lähetä",
+    "cancel": "Peruuta",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "confirmPassword": "Vahvista Salasana",
+    "firstName": "Etunimi",
+    "lastName": "Sukunimi",
+    "company": "Yritys",
+    "phone": "Puhelin",
+    "message": "Viesti"
+  },
+  "navigation": {
+    "features": "Ominaisuudet",
+    "pricing": "Hinnoittelu",
+    "dashboard": "Hallintapaneeli",
+    "language": "Kieli"
+  },
+  "hero": {
+    "title": "AI-Ohjattu EU Compliance Automaatio",
+    "subtitle": "Automatisoi GDPR, CSRD ja ESG compliance raportointi älykkäällä AI:lla. Pysy sääntöjenmukaisena, vähennä kustannuksia ja keskity kasvuun.",
+    "cta": "Aloita Ilmainen Kokeilu",
+    "bookDemo": "Varaa Demo"
+  },
+  "login": {
+    "title": "Tervetuloa Takaisin",
+    "subtitle": "Kirjaudu ComplianceAI tilillesi",
+    "forgotPassword": "Unohditko salasanan?",
+    "noAccount": "Ei tiliä?",
+    "signUpLink": "Rekisteröidy tässä"
+  },
+  "signup": {
+    "title": "Luo Tili",
+    "subtitle": "Aloita compliance automaatio matkasi",
+    "hasAccount": "Onko sinulla jo tili?",
+    "signInLink": "Kirjaudu tässä",
+    "terms": "Luomalla tilin hyväksyt Käyttöehtomme ja Tietosuojakäytäntömme"
+  },
+  "freeTrial": {
+    "title": "Aloita Ilmainen Kokeilu",
+    "subtitle": "Lataa asiakirja ja katso ComplianceAI toiminnassa",
+    "uploadTitle": "Lataa Asiakirjasi",
+    "uploadDescription": "Lataa mikä tahansa compliance asiakirja (GDPR arviointi, kestävyysraportti, jne.)",
+    "supportedFormats": "Tuetut tiedostomuodot: PDF, DOC, DOCX, TXT",
+    "generateReport": "Luo AI Raportti",
+    "downloadReport": "Lataa Luotu Raportti",
+    "sampleReport": "Esimerkki_Compliance_Raportti.pdf",
+    "processing": "Käsitellään asiakirjaasi...",
+    "success": "Raportti luotu onnistuneesti!"
+  },
+  "demo": {
+    "title": "Varaa Demo",
+    "subtitle": "Katso kuinka ComplianceAI voi muuttaa compliance työnkulkusi",
+    "preferredDate": "Haluttu Päivämäärä",
+    "preferredTime": "Haluttu Aika",
+    "requirements": "Erityisvaatimukset",
+    "requirementsPlaceholder": "Kerro meille compliance haasteistasi...",
+    "schedule": "Ajoita Demo",
+    "success": "Demo ajoitettu onnistuneesti! Otamme yhteyttä 24 tunnin sisällä.",
+    "timeSlots": {
+      "morning": "Aamu (9:00-12:00)",
+      "afternoon": "Iltapäivä (13:00-17:00)",
+      "evening": "Ilta (18:00-20:00)"
+    }
+  }
+}

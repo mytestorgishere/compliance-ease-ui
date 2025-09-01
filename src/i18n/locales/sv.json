@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Logga In",
+    "signUp": "Registrera",
+    "getStarted": "Kom Igång",
+    "bookDemo": "Boka Demo",
+    "freeTrial": "Gratis Testversion",
+    "upload": "Ladda Upp",
+    "download": "Ladda Ner",
+    "submit": "Skicka",
+    "cancel": "Avbryt",
+    "email": "E-post",
+    "password": "Lösenord",
+    "confirmPassword": "Bekräfta Lösenord",
+    "firstName": "Förnamn",
+    "lastName": "Efternamn",
+    "company": "Företag",
+    "phone": "Telefon",
+    "message": "Meddelande"
+  },
+  "navigation": {
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "dashboard": "Dashboard",
+    "language": "Språk"
+  },
+  "hero": {
+    "title": "AI-Driven EU Regelefterlevnad Automation",
+    "subtitle": "Automatisera GDPR, CSRD och ESG-rapportering med intelligent AI. Håll dig regelefterlevande, minska kostnader och fokusera på tillväxt.",
+    "cta": "Starta Gratis Testversion",
+    "bookDemo": "Boka Demo"
+  },
+  "login": {
+    "title": "Välkommen Tillbaka",
+    "subtitle": "Logga in på ditt ComplianceAI-konto",
+    "forgotPassword": "Glömt lösenordet?",
+    "noAccount": "Har inget konto?",
+    "signUpLink": "Registrera här"
+  },
+  "signup": {
+    "title": "Skapa Konto",
+    "subtitle": "Starta din resa med automatiserad regelefterlevnad",
+    "hasAccount": "Har redan ett konto?",
+    "signInLink": "Logga in här",
+    "terms": "Genom att skapa ett konto godkänner du våra användarvillkor och integritetspolicy"
+  },
+  "freeTrial": {
+    "title": "Starta Din Gratis Testversion",
+    "subtitle": "Ladda upp ett dokument och se ComplianceAI i aktion",
+    "uploadTitle": "Ladda Upp Ditt Dokument",
+    "uploadDescription": "Ladda upp vilket dokument som helst (GDPR-bedömning, hållbarhetsrapport, etc.)",
+    "supportedFormats": "Format som stöds: PDF, DOC, DOCX, TXT",
+    "generateReport": "Generera AI-Rapport",
+    "downloadReport": "Ladda Ner Genererad Rapport",
+    "sampleReport": "Exempel_Regelefterlevnad_Rapport.pdf",
+    "processing": "Bearbetar ditt dokument...",
+    "success": "Rapport genererad framgångsrikt!"
+  },
+  "demo": {
+    "title": "Boka en Demo",
+    "subtitle": "Se hur ComplianceAI kan förändra ditt arbetsflöde för regelefterlevnad",
+    "preferredDate": "Föredragen Datum",
+    "preferredTime": "Föredragen Tid",
+    "requirements": "Specifika Krav",
+    "requirementsPlaceholder": "Berätta om dina utmaningar med regelefterlevnad...",
+    "schedule": "Boka Demo",
+    "success": "Demo bokad framgångsrikt! Vi kontaktar dig inom 24 timmar.",
+    "timeSlots": {
+      "morning": "Morgon (9:00-12:00)",
+      "afternoon": "Eftermiddag (13:00-17:00)",
+      "evening": "Kväll (18:00-20:00)"
+    }
+  }
+}

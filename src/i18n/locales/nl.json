@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Inloggen",
+    "signUp": "Registreren",
+    "getStarted": "Beginnen",
+    "bookDemo": "Demo Boeken",
+    "freeTrial": "Gratis Proefperiode",
+    "upload": "Uploaden",
+    "download": "Downloaden",
+    "submit": "Verzenden",
+    "cancel": "Annuleren",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "confirmPassword": "Wachtwoord Bevestigen",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "company": "Bedrijf",
+    "phone": "Telefoon",
+    "message": "Bericht"
+  },
+  "navigation": {
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "dashboard": "Dashboard",
+    "language": "Taal"
+  },
+  "hero": {
+    "title": "AI-Aangedreven EU Compliance Automatisering",
+    "subtitle": "Automatiseer AVG, CSRD en ESG compliance rapportage met intelligente AI. Blijf compliant, verlaag kosten en focus op groei.",
+    "cta": "Start Gratis Proefperiode",
+    "bookDemo": "Demo Boeken"
+  },
+  "login": {
+    "title": "Welkom Terug",
+    "subtitle": "Log in op uw ComplianceAI account",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "noAccount": "Geen account?",
+    "signUpLink": "Hier registreren"
+  },
+  "signup": {
+    "title": "Account Aanmaken",
+    "subtitle": "Begin uw compliance automatisering reis",
+    "hasAccount": "Al een account?",
+    "signInLink": "Hier inloggen",
+    "terms": "Door een account aan te maken, gaat u akkoord met onze Servicevoorwaarden en Privacybeleid"
+  },
+  "freeTrial": {
+    "title": "Start Uw Gratis Proefperiode",
+    "subtitle": "Upload een document en zie ComplianceAI in actie",
+    "uploadTitle": "Upload Uw Document",
+    "uploadDescription": "Upload elk compliance document (AVG beoordeling, duurzaamheidsrapport, etc.)",
+    "supportedFormats": "Ondersteunde formaten: PDF, DOC, DOCX, TXT",
+    "generateReport": "Genereer AI Rapport",
+    "downloadReport": "Download Gegenereerd Rapport",
+    "sampleReport": "Voorbeeld_Compliance_Rapport.pdf",
+    "processing": "Uw document wordt verwerkt...",
+    "success": "Rapport succesvol gegenereerd!"
+  },
+  "demo": {
+    "title": "Boek een Demo",
+    "subtitle": "Zie hoe ComplianceAI uw compliance workflow kan transformeren",
+    "preferredDate": "Voorkeursdatum",
+    "preferredTime": "Voorkeurstijd",
+    "requirements": "Specifieke Vereisten",
+    "requirementsPlaceholder": "Vertel ons over uw compliance uitdagingen...",
+    "schedule": "Demo Plannen",
+    "success": "Demo succesvol gepland! We nemen binnen 24 uur contact op.",
+    "timeSlots": {
+      "morning": "Ochtend (9:00-12:00)",
+      "afternoon": "Middag (13:00-17:00)",
+      "evening": "Avond (18:00-20:00)"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "getStarted": "Comenzar",
+    "bookDemo": "Reservar Demo",
+    "freeTrial": "Prueba Gratuita",
+    "upload": "Subir",
+    "download": "Descargar",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "email": "Correo",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "company": "Empresa",
+    "phone": "Teléfono",
+    "message": "Mensaje"
+  },
+  "navigation": {
+    "features": "Características",
+    "pricing": "Precios",
+    "dashboard": "Panel",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Automatización de Cumplimiento UE Impulsada por IA",
+    "subtitle": "Automatice los informes de cumplimiento GDPR, CSRD y ESG con IA inteligente. Manténgase conforme, reduzca costos y enfóquese en el crecimiento.",
+    "cta": "Iniciar Prueba Gratuita",
+    "bookDemo": "Reservar Demo"
+  },
+  "login": {
+    "title": "Bienvenido de Vuelta",
+    "subtitle": "Inicie sesión en su cuenta ComplianceAI",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "noAccount": "¿No tiene cuenta?",
+    "signUpLink": "Regístrese aquí"
+  },
+  "signup": {
+    "title": "Crear Cuenta",
+    "subtitle": "Comience su viaje de automatización de cumplimiento",
+    "hasAccount": "¿Ya tiene cuenta?",
+    "signInLink": "Inicie sesión aquí",
+    "terms": "Al crear una cuenta, acepta nuestros Términos de Servicio y Política de Privacidad"
+  },
+  "freeTrial": {
+    "title": "Comience Su Prueba Gratuita",
+    "subtitle": "Suba un documento y vea ComplianceAI en acción",
+    "uploadTitle": "Suba Su Documento",
+    "uploadDescription": "Suba cualquier documento de cumplimiento (evaluación GDPR, informe de sostenibilidad, etc.)",
+    "supportedFormats": "Formatos soportados: PDF, DOC, DOCX, TXT",
+    "generateReport": "Generar Informe IA",
+    "downloadReport": "Descargar Informe Generado",
+    "sampleReport": "Ejemplo_Informe_Cumplimiento.pdf",
+    "processing": "Procesando su documento...",
+    "success": "¡Informe generado exitosamente!"
+  },
+  "demo": {
+    "title": "Reservar una Demo",
+    "subtitle": "Vea cómo ComplianceAI puede transformar su flujo de trabajo de cumplimiento",
+    "preferredDate": "Fecha Preferida",
+    "preferredTime": "Hora Preferida",
+    "requirements": "Requisitos Específicos",
+    "requirementsPlaceholder": "Háblenos de sus desafíos de cumplimiento...",
+    "schedule": "Programar Demo",
+    "success": "¡Demo programada exitosamente! Lo contactaremos en 24 horas.",
+    "timeSlots": {
+      "morning": "Mañana (9:00-12:00)",
+      "afternoon": "Tarde (13:00-17:00)",
+      "evening": "Noche (18:00-20:00)"
+    }
+  }
+}

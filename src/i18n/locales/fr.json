@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Se Connecter",
+    "signUp": "S'inscrire",
+    "getStarted": "Commencer",
+    "bookDemo": "Réserver Démo",
+    "freeTrial": "Essai Gratuit",
+    "upload": "Télécharger",
+    "download": "Télécharger",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "email": "E-mail",
+    "password": "Mot de Passe",
+    "confirmPassword": "Confirmer Mot de Passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "company": "Entreprise",
+    "phone": "Téléphone",
+    "message": "Message"
+  },
+  "navigation": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "dashboard": "Tableau de Bord",
+    "language": "Langue"
+  },
+  "hero": {
+    "title": "Automatisation de Conformité UE Alimentée par l'IA",
+    "subtitle": "Automatisez les rapports de conformité RGPD, CSRD et ESG avec l'IA intelligente. Restez conforme, réduisez les coûts et concentrez-vous sur la croissance.",
+    "cta": "Commencer l'Essai Gratuit",
+    "bookDemo": "Réserver Démo"
+  },
+  "login": {
+    "title": "Bon Retour",
+    "subtitle": "Connectez-vous à votre compte ComplianceAI",
+    "forgotPassword": "Mot de passe oublié?",
+    "noAccount": "Pas de compte?",
+    "signUpLink": "S'inscrire ici"
+  },
+  "signup": {
+    "title": "Créer un Compte",
+    "subtitle": "Commencez votre parcours d'automatisation de conformité",
+    "hasAccount": "Déjà un compte?",
+    "signInLink": "Se connecter ici",
+    "terms": "En créant un compte, vous acceptez nos Conditions d'Utilisation et Politique de Confidentialité"
+  },
+  "freeTrial": {
+    "title": "Commencez Votre Essai Gratuit",
+    "subtitle": "Téléchargez un document et voyez ComplianceAI en action",
+    "uploadTitle": "Téléchargez Votre Document",
+    "uploadDescription": "Téléchargez n'importe quel document de conformité (évaluation RGPD, rapport de durabilité, etc.)",
+    "supportedFormats": "Formats supportés: PDF, DOC, DOCX, TXT",
+    "generateReport": "Générer Rapport IA",
+    "downloadReport": "Télécharger Rapport Généré",
+    "sampleReport": "Exemple_Rapport_Conformité.pdf",
+    "processing": "Traitement de votre document...",
+    "success": "Rapport généré avec succès!"
+  },
+  "demo": {
+    "title": "Réserver une Démo",
+    "subtitle": "Voyez comment ComplianceAI peut transformer votre flux de travail de conformité",
+    "preferredDate": "Date Préférée",
+    "preferredTime": "Heure Préférée",
+    "requirements": "Exigences Spécifiques",
+    "requirementsPlaceholder": "Parlez-nous de vos défis de conformité...",
+    "schedule": "Planifier Démo",
+    "success": "Démo planifiée avec succès! Nous vous contacterons dans les 24 heures.",
+    "timeSlots": {
+      "morning": "Matin (9:00-12:00)",
+      "afternoon": "Après-midi (13:00-17:00)",
+      "evening": "Soir (18:00-20:00)"
+    }
+  }
+}

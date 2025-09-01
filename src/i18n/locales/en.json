@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "getStarted": "Get Started",
+    "bookDemo": "Book Demo",
+    "freeTrial": "Free Trial",
+    "upload": "Upload",
+    "download": "Download",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "company": "Company",
+    "phone": "Phone",
+    "message": "Message"
+  },
+  "navigation": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "AI-Powered EU Compliance Automation",
+    "subtitle": "Automate GDPR, CSRD, and ESG compliance reporting with intelligent AI. Stay compliant, reduce costs, and focus on growth.",
+    "cta": "Start Free Trial",
+    "bookDemo": "Book Demo"
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to your ComplianceAI account",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "signUpLink": "Sign up here"
+  },
+  "signup": {
+    "title": "Create Account",
+    "subtitle": "Start your compliance automation journey",
+    "hasAccount": "Already have an account?",
+    "signInLink": "Sign in here",
+    "terms": "By creating an account, you agree to our Terms of Service and Privacy Policy"
+  },
+  "freeTrial": {
+    "title": "Start Your Free Trial",
+    "subtitle": "Upload a document and see ComplianceAI in action",
+    "uploadTitle": "Upload Your Document",
+    "uploadDescription": "Upload any compliance document (GDPR assessment, sustainability report, etc.)",
+    "supportedFormats": "Supported formats: PDF, DOC, DOCX, TXT",
+    "generateReport": "Generate AI Report",
+    "downloadReport": "Download Generated Report",
+    "sampleReport": "Sample_Compliance_Report.pdf",
+    "processing": "Processing your document...",
+    "success": "Report generated successfully!"
+  },
+  "demo": {
+    "title": "Book a Demo",
+    "subtitle": "See how ComplianceAI can transform your compliance workflow",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "requirements": "Specific Requirements",
+    "requirementsPlaceholder": "Tell us about your compliance challenges...",
+    "schedule": "Schedule Demo",
+    "success": "Demo scheduled successfully! We'll contact you within 24 hours.",
+    "timeSlots": {
+      "morning": "Morning (9:00-12:00)",
+      "afternoon": "Afternoon (13:00-17:00)",
+      "evening": "Evening (18:00-20:00)"
+    }
+  }
+}

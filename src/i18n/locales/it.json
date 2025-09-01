@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Accedi",
+    "signUp": "Registrati",
+    "getStarted": "Inizia",
+    "bookDemo": "Prenota Demo",
+    "freeTrial": "Prova Gratuita",
+    "upload": "Carica",
+    "download": "Scarica",
+    "submit": "Invia",
+    "cancel": "Annulla",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Conferma Password",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "company": "Azienda",
+    "phone": "Telefono",
+    "message": "Messaggio"
+  },
+  "navigation": {
+    "features": "Caratteristiche",
+    "pricing": "Prezzi",
+    "dashboard": "Dashboard",
+    "language": "Lingua"
+  },
+  "hero": {
+    "title": "Automazione Conformità UE Alimentata da AI",
+    "subtitle": "Automatizza i report di conformità GDPR, CSRD e ESG con AI intelligente. Rimani conforme, riduci i costi e concentrati sulla crescita.",
+    "cta": "Inizia Prova Gratuita",
+    "bookDemo": "Prenota Demo"
+  },
+  "login": {
+    "title": "Bentornato",
+    "subtitle": "Accedi al tuo account ComplianceAI",
+    "forgotPassword": "Password dimenticata?",
+    "noAccount": "Non hai un account?",
+    "signUpLink": "Registrati qui"
+  },
+  "signup": {
+    "title": "Crea Account",
+    "subtitle": "Inizia il tuo percorso di automazione della conformità",
+    "hasAccount": "Hai già un account?",
+    "signInLink": "Accedi qui",
+    "terms": "Creando un account, accetti i nostri Termini di Servizio e Politica sulla Privacy"
+  },
+  "freeTrial": {
+    "title": "Inizia la Tua Prova Gratuita",
+    "subtitle": "Carica un documento e vedi ComplianceAI in azione",
+    "uploadTitle": "Carica il Tuo Documento",
+    "uploadDescription": "Carica qualsiasi documento di conformità (valutazione GDPR, report sostenibilità, ecc.)",
+    "supportedFormats": "Formati supportati: PDF, DOC, DOCX, TXT",
+    "generateReport": "Genera Report AI",
+    "downloadReport": "Scarica Report Generato",
+    "sampleReport": "Esempio_Report_Conformità.pdf",
+    "processing": "Elaborazione del tuo documento...",
+    "success": "Report generato con successo!"
+  },
+  "demo": {
+    "title": "Prenota una Demo",
+    "subtitle": "Vedi come ComplianceAI può trasformare il tuo flusso di lavoro di conformità",
+    "preferredDate": "Data Preferita",
+    "preferredTime": "Ora Preferita",
+    "requirements": "Requisiti Specifici",
+    "requirementsPlaceholder": "Raccontaci delle tue sfide di conformità...",
+    "schedule": "Pianifica Demo",
+    "success": "Demo pianificata con successo! Ti contatteremo entro 24 ore.",
+    "timeSlots": {
+      "morning": "Mattino (9:00-12:00)",
+      "afternoon": "Pomeriggio (13:00-17:00)",
+      "evening": "Sera (18:00-20:00)"
+    }
+  }
+}

@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Zap, Globe } from "lucide-react";
 
 export function HeroSection() {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background gradient */}

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "getStarted": "Loslegen",
+    "bookDemo": "Demo Buchen",
+    "freeTrial": "Kostenlose Testversion",
+    "upload": "Hochladen",
+    "download": "Herunterladen",
+    "submit": "Senden",
+    "cancel": "Abbrechen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort Bestätigen",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "company": "Unternehmen",
+    "phone": "Telefon",
+    "message": "Nachricht"
+  },
+  "navigation": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "dashboard": "Dashboard",
+    "language": "Sprache"
+  },
+  "hero": {
+    "title": "KI-gestützte EU-Compliance-Automatisierung",
+    "subtitle": "Automatisieren Sie DSGVO, CSRD und ESG-Compliance-Berichte mit intelligenter KI. Bleiben Sie compliant, reduzieren Sie Kosten und konzentrieren Sie sich auf Wachstum.",
+    "cta": "Kostenlose Testversion Starten",
+    "bookDemo": "Demo Buchen"
+  },
+  "login": {
+    "title": "Willkommen Zurück",
+    "subtitle": "Melden Sie sich in Ihrem ComplianceAI-Konto an",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "signUpLink": "Hier registrieren"
+  },
+  "signup": {
+    "title": "Konto Erstellen",
+    "subtitle": "Starten Sie Ihre Compliance-Automatisierung",
+    "hasAccount": "Bereits ein Konto?",
+    "signInLink": "Hier anmelden",
+    "terms": "Mit der Erstellung eines Kontos stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu"
+  },
+  "freeTrial": {
+    "title": "Starten Sie Ihre Kostenlose Testversion",
+    "subtitle": "Laden Sie ein Dokument hoch und sehen Sie ComplianceAI in Aktion",
+    "uploadTitle": "Laden Sie Ihr Dokument Hoch",
+    "uploadDescription": "Laden Sie beliebige Compliance-Dokumente hoch (DSGVO-Bewertung, Nachhaltigkeitsbericht, etc.)",
+    "supportedFormats": "Unterstützte Formate: PDF, DOC, DOCX, TXT",
+    "generateReport": "KI-Bericht Generieren",
+    "downloadReport": "Generierten Bericht Herunterladen",
+    "sampleReport": "Beispiel_Compliance_Bericht.pdf",
+    "processing": "Ihr Dokument wird verarbeitet...",
+    "success": "Bericht erfolgreich generiert!"
+  },
+  "demo": {
+    "title": "Demo Buchen",
+    "subtitle": "Sehen Sie, wie ComplianceAI Ihren Compliance-Workflow transformieren kann",
+    "preferredDate": "Bevorzugtes Datum",
+    "preferredTime": "Bevorzugte Zeit",
+    "requirements": "Spezifische Anforderungen",
+    "requirementsPlaceholder": "Erzählen Sie uns von Ihren Compliance-Herausforderungen...",
+    "schedule": "Demo Planen",
+    "success": "Demo erfolgreich geplant! Wir kontaktieren Sie innerhalb von 24 Stunden.",
+    "timeSlots": {
+      "morning": "Morgen (9:00-12:00)",
+      "afternoon": "Nachmittag (13:00-17:00)",
+      "evening": "Abend (18:00-20:00)"
+    }
+  }
+}

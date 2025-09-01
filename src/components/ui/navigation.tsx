@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 export function Navigation() {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -10,27 +14,28 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <Shield className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold text-foreground">ComplianceAI</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-              Features
+              {t('navigation.features')}
             </a>
             <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-              Pricing
+              {t('navigation.pricing')}
             </a>
             <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              Dashboard
+              {t('navigation.dashboard')}
             </a>
-            <Button variant="outline" size="sm">
-              Sign In
+            <LanguageSelector />
+            <Button asChild variant="outline" size="sm">
+              <Link to="/login">{t('common.signIn')}</Link>
             </Button>
-            <Button size="sm" className="bg-gradient-primary hover:opacity-90">
-              Get Started
+            <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
+              <Link to="/free-trial">{t('common.getStarted')}</Link>
             </Button>
           </div>
 
@@ -51,19 +56,22 @@ export function Navigation() {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-2">
               <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                Features
+                {t('navigation.features')}
               </a>
               <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                Pricing
+                {t('navigation.pricing')}
               </a>
               <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                Dashboard
+                {t('navigation.dashboard')}
               </a>
-              <Button variant="outline" size="sm" className="mt-2">
-                Sign In
+              <div className="py-2">
+                <LanguageSelector />
+              </div>
+              <Button asChild variant="outline" size="sm" className="mt-2">
+                <Link to="/login">{t('common.signIn')}</Link>
               </Button>
-              <Button size="sm" className="bg-gradient-primary hover:opacity-90">
-                Get Started
+              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
+                <Link to="/free-trial">{t('common.getStarted')}</Link>
               </Button>
             </div>
           </div>
