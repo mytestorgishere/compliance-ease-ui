@@ -105,7 +105,7 @@ export default function Demo() {
           <CardHeader>
             <CardTitle className="text-2xl text-center">Schedule Your Demo</CardTitle>
             <CardDescription className="text-center">
-              Our experts will show you how ComplianceAI works for your specific use case.
+              See how ComplianceAI transforms your regulatory documents into actionable compliance reports with risk assessments and automated recommendations.
             </CardDescription>
           </CardHeader>
           <CardContent>

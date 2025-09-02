@@ -56,6 +56,55 @@
     "processing": "Behandler dit dokument...",
     "success": "Rapport genereret med succes!"
   },
+  "features": {
+    "title": "Alt hvad du behøver til EU-compliance",
+    "subtitle": "Vores omfattende platform dækker alle større EU-reguleringer med intelligent automatisering og ekspertdesignede arbejdsgange.",
+    "gdpr": {
+      "title": "GDPR-compliance",
+      "description": "Automatiserede databeskyttelseskonsekvensanalyser, samtykkeadministration og privatlivrapportering."
+    },
+    "csrd": {
+      "title": "CSRD-rapportering", 
+      "description": "Strømlinet Corporate Sustainability Reporting Directive-compliance med automatiseret dataindsamling."
+    },
+    "esg": {
+      "title": "ESG-metrikker",
+      "description": "Omfattende miljømæssig, social og ledelsesmæssig rapportering med realtids dashboards."
+    },
+    "ai": {
+      "title": "AI-drevet automatisering",
+      "description": "Maskinlæringsalgoritmer der tilpasser sig regulatoriske ændringer og optimerer rapporteringsprocesser."
+    },
+    "risk": {
+      "title": "Risikovurdering", 
+      "description": "Proaktiv identifikation af compliance-risici med automatiserede alarmer og afhjælpningsforslag."
+    },
+    "multi": {
+      "title": "Multi-jurisdiktionsstøtte",
+      "description": "Naviger gennem komplekse EU-reguleringer på tværs af forskellige medlemsstater med lokaliserede compliance-regler."
+    }
+  },
+  "pricing": {
+    "title": "Enkel, gennemsigtig prissætning",
+    "subtitle": "Vælg planen der passer til dit forretningsbehov. Alle planer inkluderer grundlæggende compliance-funktioner med 30 dages gratis prøveperiode.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfekt for små virksomheder der starter med compliance"
+    },
+    "professional": {
+      "name": "Professionel", 
+      "price": "€399",
+      "description": "Omfattende compliance for voksende virksomheder"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€799", 
+      "description": "Avancerede funktioner for store organisationer"
+    },
+    "contactSales": "Kontakt Salg",
+    "customSolution": "Har du brug for en tilpasset løsning? Vi tilbyder skræddersyede pakker til store virksomheder."
+  },
   "demo": {
     "title": "Book en Demo",
     "subtitle": "Se hvordan ComplianceAI kan transformere dit compliance workflow",

@@ -1,56 +1,59 @@
+import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Shield, FileText, BarChart3, Zap, CheckCircle, Globe } from "lucide-react";
 
-const features = [
-  {
-    icon: Shield,
-    title: "GDPR Compliance",
-    description: "Automated data protection impact assessments, consent management, and privacy reporting.",
-    color: "text-primary"
-  },
-  {
-    icon: FileText,
-    title: "CSRD Reporting",
-    description: "Streamlined Corporate Sustainability Reporting Directive compliance with automated data collection.",
-    color: "text-success"
-  },
-  {
-    icon: BarChart3,
-    title: "ESG Metrics",
-    description: "Comprehensive Environmental, Social, and Governance reporting with real-time dashboards.",
-    color: "text-warning"
-  },
-  {
-    icon: Zap,
-    title: "AI-Powered Automation",
-    description: "Machine learning algorithms that adapt to regulatory changes and optimize reporting processes.",
-    color: "text-primary"
-  },
-  {
-    icon: CheckCircle,
-    title: "Risk Assessment",
-    description: "Proactive compliance risk identification with automated alerts and remediation suggestions.",
-    color: "text-success"
-  },
-  {
-    icon: Globe,
-    title: "Multi-jurisdiction Support",
-    description: "Navigate complex EU regulations across different member states with localized compliance rules.",
-    color: "text-warning"
-  }
-];
 
 export function FeaturesSection() {
+  const { t } = useTranslation();
+  
+  const features = [
+    {
+      icon: Shield,
+      title: t('features.gdpr.title'),
+      description: t('features.gdpr.description'),
+      color: "text-primary"
+    },
+    {
+      icon: FileText,
+      title: t('features.csrd.title'),
+      description: t('features.csrd.description'),
+      color: "text-success"
+    },
+    {
+      icon: BarChart3,
+      title: t('features.esg.title'),
+      description: t('features.esg.description'),
+      color: "text-warning"
+    },
+    {
+      icon: Zap,
+      title: t('features.ai.title'),
+      description: t('features.ai.description'),
+      color: "text-primary"
+    },
+    {
+      icon: CheckCircle,
+      title: t('features.risk.title'),
+      description: t('features.risk.description'),
+      color: "text-success"
+    },
+    {
+      icon: Globe,
+      title: t('features.multi.title'),
+      description: t('features.multi.description'),
+      color: "text-warning"
+    }
+  ];
+  
   return (
     <section id="features" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything You Need for EU Compliance
+            {t('features.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our comprehensive platform covers all major EU regulations with intelligent automation 
-            and expert-designed workflows.
+            {t('features.subtitle')}
           </p>
         </div>
 

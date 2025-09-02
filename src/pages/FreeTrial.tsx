@@ -92,8 +92,12 @@ export default function FreeTrial() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t('freeTrial.title')}
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-4">
             {t('freeTrial.subtitle')}
+          </p>
+          <p className="text-white/70 max-w-3xl mx-auto">
+            Upload company data, operational logs, or regulatory documents to see how our AI automates 
+            compliance reporting for GDPR, CSRD, and ESG requirements.
           </p>
         </div>
 

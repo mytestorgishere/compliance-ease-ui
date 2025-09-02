@@ -56,6 +56,55 @@
     "processing": "Processing your document...",
     "success": "Report generated successfully!"
   },
+  "features": {
+    "title": "Everything You Need for EU Compliance",
+    "subtitle": "Our comprehensive platform covers all major EU regulations with intelligent automation and expert-designed workflows.",
+    "gdpr": {
+      "title": "GDPR Compliance",
+      "description": "Automated data protection impact assessments, consent management, and privacy reporting."
+    },
+    "csrd": {
+      "title": "CSRD Reporting", 
+      "description": "Streamlined Corporate Sustainability Reporting Directive compliance with automated data collection."
+    },
+    "esg": {
+      "title": "ESG Metrics",
+      "description": "Comprehensive Environmental, Social, and Governance reporting with real-time dashboards."
+    },
+    "ai": {
+      "title": "AI-Powered Automation",
+      "description": "Machine learning algorithms that adapt to regulatory changes and optimize reporting processes."
+    },
+    "risk": {
+      "title": "Risk Assessment", 
+      "description": "Proactive compliance risk identification with automated alerts and remediation suggestions."
+    },
+    "multi": {
+      "title": "Multi-jurisdiction Support",
+      "description": "Navigate complex EU regulations across different member states with localized compliance rules."
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that fits your business needs. All plans include core compliance features with 30-day free trial.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfect for small businesses getting started with compliance"
+    },
+    "professional": {
+      "name": "Professional", 
+      "price": "€399",
+      "description": "Comprehensive compliance for growing companies"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€799", 
+      "description": "Advanced features for large organizations"
+    },
+    "contactSales": "Contact Sales",
+    "customSolution": "Need a custom solution? We offer tailored packages for large enterprises."
+  },
   "demo": {
     "title": "Book a Demo",
     "subtitle": "See how ComplianceAI can transform your compliance workflow",

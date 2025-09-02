@@ -56,6 +56,55 @@
     "processing": "Przetwarzanie dokumentu...",
     "success": "Raport wygenerowany pomyślnie!"
   },
+  "features": {
+    "title": "Wszystko czego potrzebujesz do zgodności z UE",
+    "subtitle": "Nasza kompleksowa platforma obejmuje wszystkie główne przepisy UE z inteligentną automatyzacją i przepływami pracy zaprojektowanymi przez ekspertów.",
+    "gdpr": {
+      "title": "Zgodność RODO",
+      "description": "Automatyczne oceny wpływu na ochronę danych, zarządzanie zgodą i raportowanie prywatności."
+    },
+    "csrd": {
+      "title": "Raportowanie CSRD", 
+      "description": "Usprawniona zgodność z Dyrektywą o Raportowaniu Zrównoważoności Korporacyjnej z automatycznym zbieraniem danych."
+    },
+    "esg": {
+      "title": "Metryki ESG",
+      "description": "Kompleksowe raportowanie środowiskowe, społeczne i zarządcze z pulpitami w czasie rzeczywistym."
+    },
+    "ai": {
+      "title": "Automatyzacja napędzana AI",
+      "description": "Algorytmy uczenia maszynowego, które dostosowują się do zmian regulacyjnych i optymalizują procesy raportowania."
+    },
+    "risk": {
+      "title": "Ocena ryzyka", 
+      "description": "Proaktywna identyfikacja ryzyka zgodności z automatycznymi alertami i sugestiami naprawczymi."
+    },
+    "multi": {
+      "title": "Wsparcie wielojurysdykcyjne",
+      "description": "Nawiguj przez złożone przepisy UE w różnych państwach członkowskich z zlokalizowanymi zasadami zgodności."
+    }
+  },
+  "pricing": {
+    "title": "Proste, przejrzyste cennik",
+    "subtitle": "Wybierz plan, który odpowiada potrzebom Twojej firmy. Wszystkie plany zawierają podstawowe funkcje zgodności z 30-dniowym bezpłatnym okresem próbnym.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Idealny dla małych firm rozpoczynających z zgodnością"
+    },
+    "professional": {
+      "name": "Professional", 
+      "price": "€399",
+      "description": "Kompleksowa zgodność dla rozwijających się firm"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€799", 
+      "description": "Zaawansowane funkcje dla dużych organizacji"
+    },
+    "contactSales": "Skontaktuj się ze Sprzedażą",
+    "customSolution": "Potrzebujesz niestandardowego rozwiązania? Oferujemy dostosowane pakiety dla dużych przedsiębiorstw."
+  },
   "demo": {
     "title": "Zarezerwuj Demo",
     "subtitle": "Zobacz, jak ComplianceAI może przekształcić Twój przepływ pracy zgodności",

@@ -1,72 +1,75 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Zap, Building, Briefcase } from "lucide-react";
 
-const plans = [
-  {
-    name: "Starter",
-    price: "€199",
-    period: "per month",
-    description: "Perfect for small businesses getting started with compliance",
-    icon: Zap,
-    features: [
-      "Basic GDPR compliance monitoring",
-      "Monthly compliance reports",
-      "Email support",
-      "Up to 100 data subjects",
-      "Standard templates"
-    ],
-    popular: false
-  },
-  {
-    name: "Professional", 
-    price: "€399",
-    period: "per month",
-    description: "Comprehensive compliance for growing companies",
-    icon: Building,
-    features: [
-      "Full GDPR, CSRD & ESG compliance",
-      "Real-time monitoring & alerts",
-      "Custom report generation",
-      "Priority support",
-      "Up to 10,000 data subjects",
-      "Advanced analytics",
-      "API access"
-    ],
-    popular: true
-  },
-  {
-    name: "Enterprise",
-    price: "€799",
-    period: "per month",
-    description: "Advanced features for large organizations",
-    icon: Briefcase,
-    features: [
-      "Everything in Professional",
-      "Multi-jurisdiction support",
-      "Dedicated compliance manager",
-      "Custom integrations",
-      "Unlimited data subjects", 
-      "White-label options",
-      "24/7 phone support",
-      "Compliance consulting"
-    ],
-    popular: false
-  }
-];
 
 export function PricingSection() {
+  const { t } = useTranslation();
+  
+  const plans = [
+    {
+      name: t('pricing.starter.name'),
+      price: t('pricing.starter.price'),
+      period: "per month",
+      description: t('pricing.starter.description'),
+      icon: Zap,
+      features: [
+        "Basic GDPR compliance monitoring",
+        "Monthly compliance reports",
+        "Email support",
+        "Up to 100 data subjects",
+        "Standard templates"
+      ],
+      popular: false
+    },
+    {
+      name: t('pricing.professional.name'), 
+      price: t('pricing.professional.price'),
+      period: "per month",
+      description: t('pricing.professional.description'),
+      icon: Building,
+      features: [
+        "Full GDPR, CSRD & ESG compliance",
+        "Real-time monitoring & alerts",
+        "Custom report generation",
+        "Priority support",
+        "Up to 10,000 data subjects",
+        "Advanced analytics",
+        "API access"
+      ],
+      popular: true
+    },
+    {
+      name: t('pricing.enterprise.name'),
+      price: t('pricing.enterprise.price'),
+      period: "per month",
+      description: t('pricing.enterprise.description'),
+      icon: Briefcase,
+      features: [
+        "Everything in Professional",
+        "Multi-jurisdiction support",
+        "Dedicated compliance manager",
+        "Custom integrations",
+        "Unlimited data subjects", 
+        "White-label options",
+        "24/7 phone support",
+        "Compliance consulting"
+      ],
+      popular: false
+    }
+  ];
+  
   return (
     <section id="pricing" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Simple, Transparent Pricing
+            {t('pricing.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose the plan that fits your business needs. All plans include core compliance features 
-            with 30-day free trial.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -124,10 +127,10 @@ export function PricingSection() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            Need a custom solution? We offer tailored packages for large enterprises.
+            {t('pricing.customSolution')}
           </p>
           <Button variant="outline">
-            Contact Sales
+            {t('pricing.contactSales')}
           </Button>
         </div>
       </div>

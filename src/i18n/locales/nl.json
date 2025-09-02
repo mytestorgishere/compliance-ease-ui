@@ -56,6 +56,55 @@
     "processing": "Uw document wordt verwerkt...",
     "success": "Rapport succesvol gegenereerd!"
   },
+  "features": {
+    "title": "Alles wat je nodig hebt voor EU-naleving",
+    "subtitle": "Ons uitgebreide platform dekt alle belangrijke EU-regelgeving met intelligente automatisering en door experts ontworpen workflows.",
+    "gdpr": {
+      "title": "AVG-naleving",
+      "description": "Geautomatiseerde gegevensbeschermingseffectbeoordelingen, toestemmingsbeheer en privacyrapportage."
+    },
+    "csrd": {
+      "title": "CSRD-rapportage", 
+      "description": "Gestroomlijnde Corporate Sustainability Reporting Directive-naleving met geautomatiseerde gegevensverzameling."
+    },
+    "esg": {
+      "title": "ESG-metrieken",
+      "description": "Uitgebreide milieu-, sociale en governance-rapportage met realtime dashboards."
+    },
+    "ai": {
+      "title": "AI-aangedreven automatisering",
+      "description": "Machine learning-algoritmen die zich aanpassen aan regelgevingswijzigingen en rapportageprocessen optimaliseren."
+    },
+    "risk": {
+      "title": "Risicobeoordeling", 
+      "description": "Proactieve identificatie van nalevingsrisico's met geautomatiseerde waarschuwingen en herstelvoorstellen."
+    },
+    "multi": {
+      "title": "Multi-jurisdictie ondersteuning",
+      "description": "Navigeer door complexe EU-regelgeving in verschillende lidstaten met gelokaliseerde nalevingsregels."
+    }
+  },
+  "pricing": {
+    "title": "Eenvoudige, transparante prijzen",
+    "subtitle": "Kies het plan dat past bij de behoeften van uw bedrijf. Alle plannen bevatten basis nalevingsfunctionaliteiten met 30 dagen gratis proefperiode.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfect voor kleine bedrijven die beginnen met naleving"
+    },
+    "professional": {
+      "name": "Professioneel", 
+      "price": "€399",
+      "description": "Uitgebreide naleving voor groeiende bedrijven"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€799", 
+      "description": "Geavanceerde functies voor grote organisaties"
+    },
+    "contactSales": "Contact Verkoop",
+    "customSolution": "Heeft u een aangepaste oplossing nodig? Wij bieden op maat gemaakte pakketten voor grote bedrijven."
+  },
   "demo": {
     "title": "Boek een Demo",
     "subtitle": "Zie hoe ComplianceAI uw compliance workflow kan transformeren",

@@ -22,24 +22,24 @@ export function HeroSection() {
 
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
-            EU Compliance
-            <span className="bg-gradient-hero bg-clip-text text-transparent"> Made Simple</span>
+            {t('hero.title')}
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            Automate GDPR, CSRD, and ESG reporting with our AI-powered platform. 
-            Stay compliant with EU regulations while saving time and reducing costs.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4">
+              <Link to="/free-trial">
+                {t('hero.cta')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              Book a Demo
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
+              <Link to="/demo">{t('hero.bookDemo')}</Link>
             </Button>
           </div>
 

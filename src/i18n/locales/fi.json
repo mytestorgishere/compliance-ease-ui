@@ -56,6 +56,55 @@
     "processing": "Käsitellään asiakirjaasi...",
     "success": "Raportti luotu onnistuneesti!"
   },
+  "features": {
+    "title": "Kaikki mitä tarvitset EU-säännöstenmukaisuuteen",
+    "subtitle": "Kattava alustamme kattaa kaikki tärkeimmät EU-säädökset älykkäällä automaatiolla ja asiantuntijoiden suunnittelemilla työkuluilla.",
+    "gdpr": {
+      "title": "GDPR-säännöstenmukaisuus",
+      "description": "Automatisoidut tietosuojavaikutusten arvioinnit, suostumuksen hallinta ja yksityisyysraportointi."
+    },
+    "csrd": {
+      "title": "CSRD-raportointi", 
+      "description": "Virtaviivainen Corporate Sustainability Reporting Directive -säännöstenmukaisuus automatisoidulla tiedonkeruulla."
+    },
+    "esg": {
+      "title": "ESG-mittarit",
+      "description": "Kattava ympäristö-, sosiaali- ja hallintoraportointi reaaliaikaisilla kojetauluilla."
+    },
+    "ai": {
+      "title": "AI-käyttöinen automaatio",
+      "description": "Koneoppimisalgoritmit jotka mukautuvat sääntelymuutoksiin ja optimoivat raportointiprosesseja."
+    },
+    "risk": {
+      "title": "Riskiarviointi", 
+      "description": "Ennakoiva säännöstenmukaisuusriskien tunnistaminen automatisoiduilla hälytyksillä ja korjausehdotuksilla."
+    },
+    "multi": {
+      "title": "Monioikeusaluetuki",
+      "description": "Navigoi monimutkaisten EU-säädösten läpi eri jäsenvaltioissa paikallisesti mukautetuilla säännöstenmukaisuussäännöillä."
+    }
+  },
+  "pricing": {
+    "title": "Yksinkertainen, läpinäkyvä hinnoittelu",
+    "subtitle": "Valitse yrityksesi tarpeisiin sopiva suunnitelma. Kaikki suunnitelmat sisältävät perussäännöstenmukaisuusominaisuudet 30 päivän ilmaisella kokeilujaksolla.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Täydellinen pienille yrityksille jotka aloittavat säännöstenmukaisuuden"
+    },
+    "professional": {
+      "name": "Ammattilainen", 
+      "price": "€399",
+      "description": "Kattava säännöstenmukaisuus kasvavalle yritykselle"
+    },
+    "enterprise": {
+      "name": "Yritys",
+      "price": "€799", 
+      "description": "Edistyneet ominaisuudet suurille organisaatioille"
+    },
+    "contactSales": "Ota yhteyttä myyntiin",
+    "customSolution": "Tarvitsetko räätälöityä ratkaisua? Tarjoamme mittatilaustyönä tehtyjä paketteja suurille yrityksille."
+  },
   "demo": {
     "title": "Varaa Demo",
     "subtitle": "Katso kuinka ComplianceAI voi muuttaa compliance työnkulkusi",

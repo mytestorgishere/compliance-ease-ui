@@ -56,6 +56,55 @@
     "processing": "Bearbetar ditt dokument...",
     "success": "Rapport genererad framgångsrikt!"
   },
+  "features": {
+    "title": "Allt Du Behöver för EU-efterlevnad",
+    "subtitle": "Vår omfattande plattform täcker alla större EU-regleringar med intelligent automatisering och expertdesignade arbetsflöden.",
+    "gdpr": {
+      "title": "GDPR-efterlevnad",
+      "description": "Automatiserade dataskyddskonsekvensanalyser, samtyckehantering och integritetrapportering."
+    },
+    "csrd": {
+      "title": "CSRD-rapportering", 
+      "description": "Strömlinjeformad Corporate Sustainability Reporting Directive-efterlevnad med automatiserad datainsamling."
+    },
+    "esg": {
+      "title": "ESG-mätvärden",
+      "description": "Omfattande miljö-, social- och styrningsrapportering med realtidsdashboards."
+    },
+    "ai": {
+      "title": "AI-driven Automatisering",
+      "description": "Maskininlärningsalgoritmer som anpassar sig till regeländringar och optimerar rapporteringsprocesser."
+    },
+    "risk": {
+      "title": "Riskbedömning", 
+      "description": "Proaktiv identifiering av efterlevnadsrisker med automatiserade varningar och åtgärdsförslag."
+    },
+    "multi": {
+      "title": "Flerjurisdiktionsstöd",
+      "description": "Navigera komplexa EU-regleringar över olika medlemsstater med lokaliserade efterlevnadsregler."
+    }
+  },
+  "pricing": {
+    "title": "Enkel, Transparent Prissättning",
+    "subtitle": "Välj planen som passar ditt företags behov. Alla planer inkluderar grundläggande efterlevnadsfunktioner med 30 dagars gratis provperiod.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfekt för små företag som börjar med efterlevnad"
+    },
+    "professional": {
+      "name": "Professionell", 
+      "price": "€399",
+      "description": "Omfattande efterlevnad för växande företag"
+    },
+    "enterprise": {
+      "name": "Företag",
+      "price": "€799", 
+      "description": "Avancerade funktioner för stora organisationer"
+    },
+    "contactSales": "Kontakta Försäljning",
+    "customSolution": "Behöver en anpassad lösning? Vi erbjuder skräddarsydda paket för stora företag."
+  },
   "demo": {
     "title": "Boka en Demo",
     "subtitle": "Se hur ComplianceAI kan förändra ditt arbetsflöde för regelefterlevnad",

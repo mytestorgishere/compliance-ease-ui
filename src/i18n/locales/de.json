@@ -56,6 +56,55 @@
     "processing": "Ihr Dokument wird verarbeitet...",
     "success": "Bericht erfolgreich generiert!"
   },
+  "features": {
+    "title": "Alles was Sie für EU-Compliance brauchen",
+    "subtitle": "Unsere umfassende Plattform deckt alle wichtigen EU-Vorschriften mit intelligenter Automatisierung und expertengestalteten Arbeitsabläufen ab.",
+    "gdpr": {
+      "title": "DSGVO-Compliance",
+      "description": "Automatisierte Datenschutz-Folgenabschätzungen, Einverständnisverwaltung und Datenschutzberichterstattung."
+    },
+    "csrd": {
+      "title": "CSRD-Berichterstattung", 
+      "description": "Optimierte Corporate Sustainability Reporting Directive-Compliance mit automatisierter Datenerfassung."
+    },
+    "esg": {
+      "title": "ESG-Kennzahlen",
+      "description": "Umfassende Umwelt-, Sozial- und Governance-Berichterstattung mit Echtzeit-Dashboards."
+    },
+    "ai": {
+      "title": "KI-gestützte Automatisierung",
+      "description": "Machine-Learning-Algorithmen, die sich an regulatorische Änderungen anpassen und Berichtsprozesse optimieren."
+    },
+    "risk": {
+      "title": "Risikobewertung", 
+      "description": "Proaktive Compliance-Risikoidentifikation mit automatisierten Warnungen und Lösungsvorschlägen."
+    },
+    "multi": {
+      "title": "Multi-Jurisdiktions-Unterstützung",
+      "description": "Navigieren Sie durch komplexe EU-Vorschriften verschiedener Mitgliedstaaten mit lokalisierten Compliance-Regeln."
+    }
+  },
+  "pricing": {
+    "title": "Einfache, Transparente Preise",
+    "subtitle": "Wählen Sie den Plan, der zu Ihren Geschäftsanforderungen passt. Alle Pläne beinhalten grundlegende Compliance-Funktionen mit 30-tägiger kostenloser Testversion.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfekt für kleine Unternehmen, die mit Compliance beginnen"
+    },
+    "professional": {
+      "name": "Professional", 
+      "price": "€399",
+      "description": "Umfassende Compliance für wachsende Unternehmen"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "€799", 
+      "description": "Erweiterte Funktionen für große Organisationen"
+    },
+    "contactSales": "Vertrieb Kontaktieren",
+    "customSolution": "Benötigen Sie eine maßgeschneiderte Lösung? Wir bieten individuelle Pakete für große Unternehmen."
+  },
   "demo": {
     "title": "Demo Buchen",
     "subtitle": "Sehen Sie, wie ComplianceAI Ihren Compliance-Workflow transformieren kann",

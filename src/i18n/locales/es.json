@@ -56,6 +56,55 @@
     "processing": "Procesando su documento...",
     "success": "¡Informe generado exitosamente!"
   },
+  "features": {
+    "title": "Todo lo que necesitas para el cumplimiento de la UE",
+    "subtitle": "Nuestra plataforma integral cubre todas las principales regulaciones de la UE con automatización inteligente y flujos de trabajo diseñados por expertos.",
+    "gdpr": {
+      "title": "Cumplimiento RGPD",
+      "description": "Evaluaciones automáticas del impacto en la protección de datos, gestión del consentimiento e informes de privacidad."
+    },
+    "csrd": {
+      "title": "Informes CSRD", 
+      "description": "Cumplimiento optimizado de la Directiva de Informes de Sostenibilidad Corporativa con recopilación automática de datos."
+    },
+    "esg": {
+      "title": "Métricas ESG",
+      "description": "Informes integrales ambientales, sociales y de gobernanza con paneles de control en tiempo real."
+    },
+    "ai": {
+      "title": "Automatización impulsada por IA",
+      "description": "Algoritmos de aprendizaje automático que se adaptan a los cambios regulatorios y optimizan los procesos de informes."
+    },
+    "risk": {
+      "title": "Evaluación de riesgos", 
+      "description": "Identificación proactiva de riesgos de cumplimiento con alertas automatizadas y sugerencias de remediación."
+    },
+    "multi": {
+      "title": "Soporte multijurisdiccional",
+      "description": "Navega por las complejas regulaciones de la UE en diferentes estados miembros con reglas de cumplimiento localizadas."
+    }
+  },
+  "pricing": {
+    "title": "Precios simples y transparentes",
+    "subtitle": "Elige el plan que se adapte a las necesidades de tu negocio. Todos los planes incluyen funciones básicas de cumplimiento con prueba gratuita de 30 días.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Perfecto para pequeñas empresas que comienzan con el cumplimiento"
+    },
+    "professional": {
+      "name": "Profesional", 
+      "price": "€399",
+      "description": "Cumplimiento integral para empresas en crecimiento"
+    },
+    "enterprise": {
+      "name": "Empresa",
+      "price": "€799", 
+      "description": "Características avanzadas para grandes organizaciones"
+    },
+    "contactSales": "Contactar Ventas",
+    "customSolution": "¿Necesitas una solución personalizada? Ofrecemos paquetes a medida para grandes empresas."
+  },
   "demo": {
     "title": "Reservar una Demo",
     "subtitle": "Vea cómo ComplianceAI puede transformar su flujo de trabajo de cumplimiento",

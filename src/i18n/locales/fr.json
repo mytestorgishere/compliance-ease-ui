@@ -56,6 +56,55 @@
     "processing": "Traitement de votre document...",
     "success": "Rapport généré avec succès!"
   },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour la conformité UE",
+    "subtitle": "Notre plateforme complète couvre toutes les principales réglementations européennes avec une automatisation intelligente et des flux de travail conçus par des experts.",
+    "gdpr": {
+      "title": "Conformité RGPD",
+      "description": "Analyses d'impact sur la protection des données automatisées, gestion du consentement et rapports de confidentialité."
+    },
+    "csrd": {
+      "title": "Rapports CSRD", 
+      "description": "Conformité rationalisée à la directive sur les rapports de durabilité d'entreprise avec collecte de données automatisée."
+    },
+    "esg": {
+      "title": "Métriques ESG",
+      "description": "Rapports environnementaux, sociaux et de gouvernance complets avec tableaux de bord en temps réel."
+    },
+    "ai": {
+      "title": "Automatisation alimentée par l'IA",
+      "description": "Algorithmes d'apprentissage automatique qui s'adaptent aux changements réglementaires et optimisent les processus de rapport."
+    },
+    "risk": {
+      "title": "Évaluation des risques", 
+      "description": "Identification proactive des risques de conformité avec alertes automatisées et suggestions de remédiation."
+    },
+    "multi": {
+      "title": "Support multi-juridictionnel",
+      "description": "Naviguez dans les réglementations UE complexes entre différents États membres avec des règles de conformité localisées."
+    }
+  },
+  "pricing": {
+    "title": "Tarifs simples et transparents",
+    "subtitle": "Choisissez le plan qui convient aux besoins de votre entreprise. Tous les plans incluent les fonctionnalités de conformité de base avec un essai gratuit de 30 jours.",
+    "starter": {
+      "name": "Starter",
+      "price": "€199",
+      "description": "Parfait pour les petites entreprises qui commencent avec la conformité"
+    },
+    "professional": {
+      "name": "Professionnel", 
+      "price": "€399",
+      "description": "Conformité complète pour les entreprises en croissance"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "price": "€799", 
+      "description": "Fonctionnalités avancées pour les grandes organisations"
+    },
+    "contactSales": "Contacter les Ventes",
+    "customSolution": "Besoin d'une solution personnalisée ? Nous proposons des forfaits sur mesure pour les grandes entreprises."
+  },
   "demo": {
     "title": "Réserver une Démo",
     "subtitle": "Voyez comment ComplianceAI peut transformer votre flux de travail de conformité",
