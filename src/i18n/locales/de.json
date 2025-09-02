@@ -2,8 +2,9 @@
   "common": {
     "signIn": "Anmelden",
     "signUp": "Registrieren",
+    "signOut": "Abmelden",
     "getStarted": "Loslegen",
-    "bookDemo": "Demo Buchen",
+    "bookDemo": "Demo buchen",
     "freeTrial": "Kostenlose Testversion",
     "upload": "Hochladen",
     "download": "Herunterladen",
@@ -11,50 +12,88 @@
     "cancel": "Abbrechen",
     "email": "E-Mail",
     "password": "Passwort",
-    "confirmPassword": "Passwort Bestätigen",
+    "confirmPassword": "Passwort bestätigen",
     "firstName": "Vorname",
-    "lastName": "Nachname",
+    "lastName": "Nachname", 
     "company": "Unternehmen",
     "phone": "Telefon",
-    "message": "Nachricht"
+    "message": "Nachricht",
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "continue": "Fortfahren",
+    "finish": "Fertigstellen",
+    "retry": "Wiederholen",
+    "refresh": "Aktualisieren"
+  },
+  "currency": {
+    "symbol": "€",
+    "code": "EUR",
+    "name": "Euro"
   },
   "navigation": {
     "features": "Funktionen",
     "pricing": "Preise",
     "dashboard": "Dashboard",
-    "language": "Sprache"
+    "language": "Sprache",
+    "home": "Startseite",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "support": "Support",
+    "account": "Konto",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "menu": "Menü"
   },
   "hero": {
     "title": "KI-gestützte EU-Compliance-Automatisierung",
     "subtitle": "Automatisieren Sie DSGVO, CSRD und ESG-Compliance-Berichte mit intelligenter KI. Bleiben Sie compliant, reduzieren Sie Kosten und konzentrieren Sie sich auf Wachstum.",
-    "cta": "Kostenlose Testversion Starten",
-    "bookDemo": "Demo Buchen"
+    "cta": "Kostenlose Testversion starten",
+    "bookDemo": "Demo buchen",
+    "learnMore": "Mehr erfahren"
   },
   "login": {
-    "title": "Willkommen Zurück",
+    "title": "Willkommen zurück",
     "subtitle": "Melden Sie sich in Ihrem Compliance Ease-Konto an",
     "forgotPassword": "Passwort vergessen?",
     "noAccount": "Noch kein Konto?",
-    "signUpLink": "Hier registrieren"
+    "signUpLink": "Hier registrieren",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "loginError": "Anmeldung fehlgeschlagen"
   },
   "signup": {
-    "title": "Konto Erstellen",
+    "title": "Konto erstellen",
     "subtitle": "Starten Sie Ihre Compliance-Automatisierung",
     "hasAccount": "Bereits ein Konto?",
     "signInLink": "Hier anmelden",
-    "terms": "Mit der Erstellung eines Kontos stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu"
+    "terms": "Mit der Erstellung eines Kontos stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu",
+    "signupSuccess": "Konto erfolgreich erstellt",
+    "signupError": "Kontoerstellung fehlgeschlagen",
+    "passwordMismatch": "Passwörter stimmen nicht überein"
   },
   "freeTrial": {
-    "title": "Starten Sie Ihre Kostenlose Testversion",
+    "title": "Starten Sie Ihre kostenlose Testversion",
     "subtitle": "Laden Sie ein Dokument hoch und sehen Sie Compliance Ease in Aktion",
-    "uploadTitle": "Laden Sie Ihr Dokument Hoch",
+    "description": "Laden Sie Unternehmensdaten, Betriebsprotokolle oder regulatorische Dokumente hoch, um zu sehen, wie unsere KI die Compliance-Berichterstattung für DSGVO, CSRD und ESG automatisiert.",
+    "uploadTitle": "Laden Sie Ihr Dokument hoch",
     "uploadDescription": "Laden Sie beliebige Compliance-Dokumente hoch (DSGVO-Bewertung, Nachhaltigkeitsbericht, etc.)",
     "supportedFormats": "Unterstützte Formate: PDF, DOC, DOCX, TXT",
-    "generateReport": "KI-Bericht Generieren",
-    "downloadReport": "Generierten Bericht Herunterladen",
+    "generateReport": "KI-Bericht generieren",
+    "downloadReport": "Generierten Bericht herunterladen",
     "sampleReport": "Beispiel_Compliance_Bericht.pdf",
     "processing": "Ihr Dokument wird verarbeitet...",
-    "success": "Bericht erfolgreich generiert!"
+    "success": "Bericht erfolgreich generiert!",
+    "trialUsed": "Testversion bereits verwendet",
+    "trialUsedDescription": "Sie haben bereits Ihre kostenlose Testversion verwendet. Bitte upgraden Sie zu einem bezahlten Abonnement, um fortzufahren.",
+    "upgradeNow": "Jetzt upgraden"
   },
   "features": {
     "title": "Alles was Sie für EU-Compliance brauchen",
@@ -85,39 +124,110 @@
     }
   },
   "pricing": {
-    "title": "Einfache, Transparente Preise",
-    "subtitle": "Wählen Sie den Plan, der zu Ihren Geschäftsanforderungen passt. Alle Pläne beinhalten grundlegende Compliance-Funktionen mit 30-tägiger kostenloser Testversion.",
+    "title": "Wählen Sie Ihren Plan",
+    "subtitle": "Einfache, transparente Preise für Unternehmen jeder Größe",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "save": "10% sparen",
+    "saveAmount": "{{amount}}/Jahr sparen",
     "starter": {
       "name": "Starter",
-      "price": "€199",
-      "description": "Perfekt für kleine Unternehmen, die mit Compliance beginnen"
+      "description": "Perfekt für kleine Unternehmen, die mit Compliance beginnen",
+      "features": [
+        "Grundlegende DSGVO-Compliance-Überwachung",
+        "Monatliche Compliance-Berichte",
+        "E-Mail-Support",
+        "Bis zu 100 betroffene Personen",
+        "Standard-Vorlagen"
+      ]
     },
     "professional": {
-      "name": "Professional", 
-      "price": "€399",
-      "description": "Umfassende Compliance für wachsende Unternehmen"
+      "name": "Professional",
+      "description": "Umfassende Compliance-Lösung für wachsende Unternehmen",
+      "features": [
+        "Vollständige DSGVO-, CSRD- und ESG-Compliance",
+        "Echtzeit-Überwachung und Warnungen",
+        "Benutzerdefinierte Berichtsgenerierung",
+        "Priority-Support",
+        "Bis zu 10.000 betroffene Personen",
+        "Erweiterte Analytik",
+        "API-Zugriff"
+      ]
     },
     "enterprise": {
       "name": "Enterprise",
-      "price": "€799", 
-      "description": "Erweiterte Funktionen für große Organisationen"
+      "description": "Compliance auf Unternehmensniveau für große Organisationen",
+      "features": [
+        "Alles aus Professional",
+        "Multi-Jurisdiktions-Unterstützung",
+        "Dedicated Compliance Manager",
+        "Benutzerdefinierte Integrationen",
+        "Unbegrenzte betroffene Personen",
+        "White-Label-Optionen",
+        "24/7-Telefon-Support",
+        "Compliance-Beratung"
+      ]
     },
-    "contactSales": "Vertrieb Kontaktieren",
-    "customSolution": "Benötigen Sie eine maßgeschneiderte Lösung? Wir bieten individuelle Pakete für große Unternehmen."
+    "mostPopular": "Am beliebtesten",
+    "subscribeNow": "Jetzt abonnieren",
+    "signUpToSubscribe": "Registrieren zum Abonnieren",
+    "contactSales": "Vertrieb kontaktieren",
+    "customSolution": "Benötigen Sie eine maßgeschneiderte Lösung? Wir bieten individuelle Pakete für große Unternehmen.",
+    "authRequired": "Authentifizierung erforderlich",
+    "authRequiredDescription": "Bitte melden Sie sich an, um einen Plan zu abonnieren.",
+    "subscriptionError": "Abonnement-Fehler",
+    "subscriptionErrorDescription": "Fehler beim Starten des Abonnement-Prozesses. Bitte versuchen Sie es erneut."
   },
   "demo": {
-    "title": "Demo Buchen",
+    "title": "Demo buchen",
     "subtitle": "Sehen Sie, wie Compliance Ease Ihren Compliance-Workflow transformieren kann",
     "preferredDate": "Bevorzugtes Datum",
     "preferredTime": "Bevorzugte Zeit",
     "requirements": "Spezifische Anforderungen",
     "requirementsPlaceholder": "Erzählen Sie uns von Ihren Compliance-Herausforderungen...",
-    "schedule": "Demo Planen",
+    "schedule": "Demo planen",
     "success": "Demo erfolgreich geplant! Wir kontaktieren Sie innerhalb von 24 Stunden.",
+    "error": "Demo-Planung fehlgeschlagen. Bitte versuchen Sie es erneut.",
     "timeSlots": {
       "morning": "Morgen (9:00-12:00)",
       "afternoon": "Nachmittag (13:00-17:00)",
       "evening": "Abend (18:00-20:00)"
     }
+  },
+  "subscription": {
+    "success": {
+      "title": "Abonnement erfolgreich!",
+      "description": "Vielen Dank für Ihr Abonnement von Compliance Ease. Ihr Abonnement ist jetzt aktiv.",
+      "verifying": "Ihr Abonnement wird überprüft...",
+      "startUsing": "Compliance Ease verwenden",
+      "returnHome": "Zur Startseite"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Compliance Ease. Für EU-Compliance-Exzellenz entwickelt.",
+    "builtFor": "Für EU-Compliance-Exzellenz entwickelt"
+  },
+  "errors": {
+    "notFound": "Seite nicht gefunden",
+    "notFoundDescription": "Die gesuchte Seite existiert nicht.",
+    "serverError": "Server-Fehler",
+    "serverErrorDescription": "Etwas ist auf unserer Seite schiefgelaufen.",
+    "networkError": "Netzwerk-Fehler",
+    "networkErrorDescription": "Bitte überprüfen Sie Ihre Internetverbindung."
+  },
+  "dashboard": {
+    "welcome": "Willkommen bei Compliance Ease",
+    "overview": "Übersicht",
+    "reports": "Berichte",
+    "settings": "Einstellungen",
+    "profile": "Profil",
+    "subscription": "Abonnement",
+    "billing": "Abrechnung"
+  },
+  "notifications": {
+    "processing": "Wird verarbeitet...",
+    "completed": "Abgeschlossen",
+    "failed": "Fehlgeschlagen",
+    "tryAgain": "Erneut versuchen"
   }
 }

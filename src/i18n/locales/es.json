@@ -2,122 +2,232 @@
   "common": {
     "signIn": "Iniciar Sesión",
     "signUp": "Registrarse",
-    "getStarted": "Comenzar",
+    "signOut": "Cerrar Sesión",
+    "getStarted": "Empezar",
     "bookDemo": "Reservar Demo",
     "freeTrial": "Prueba Gratuita",
     "upload": "Subir",
     "download": "Descargar",
     "submit": "Enviar",
     "cancel": "Cancelar",
-    "email": "Correo",
+    "email": "Email",
     "password": "Contraseña",
     "confirmPassword": "Confirmar Contraseña",
     "firstName": "Nombre",
     "lastName": "Apellido",
     "company": "Empresa",
     "phone": "Teléfono",
-    "message": "Mensaje"
+    "message": "Mensaje",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "continue": "Continuar",
+    "finish": "Finalizar",
+    "retry": "Reintentar",
+    "refresh": "Actualizar"
+  },
+  "currency": {
+    "symbol": "€",
+    "code": "EUR",
+    "name": "Euro"
   },
   "navigation": {
     "features": "Características",
     "pricing": "Precios",
     "dashboard": "Panel",
-    "language": "Idioma"
+    "language": "Idioma",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "support": "Soporte",
+    "account": "Cuenta",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión",
+    "menu": "Menú"
   },
   "hero": {
     "title": "Automatización de Cumplimiento UE Impulsada por IA",
-    "subtitle": "Automatice los informes de cumplimiento GDPR, CSRD y ESG con IA inteligente. Manténgase conforme, reduzca costos y enfóquese en el crecimiento.",
+    "subtitle": "Automatiza los informes de cumplimiento GDPR, CSRD y ESG con IA inteligente. Mantente conforme, reduce costos y enfócate en el crecimiento.",
     "cta": "Iniciar Prueba Gratuita",
-    "bookDemo": "Reservar Demo"
+    "bookDemo": "Reservar Demo",
+    "learnMore": "Saber Más"
   },
   "login": {
-    "title": "Bienvenido de Vuelta",
-    "subtitle": "Inicie sesión en su cuenta Compliance Ease",
-    "forgotPassword": "¿Olvidó su contraseña?",
-    "noAccount": "¿No tiene cuenta?",
-    "signUpLink": "Regístrese aquí"
+    "title": "Bienvenido de Nuevo",
+    "subtitle": "Inicia sesión en tu cuenta de Compliance Ease",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUpLink": "Regístrate aquí",
+    "invalidCredentials": "Email o contraseña inválidos",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "loginError": "Error al iniciar sesión"
   },
   "signup": {
     "title": "Crear Cuenta",
-    "subtitle": "Comience su viaje de automatización de cumplimiento",
-    "hasAccount": "¿Ya tiene cuenta?",
-    "signInLink": "Inicie sesión aquí",
-    "terms": "Al crear una cuenta, acepta nuestros Términos de Servicio y Política de Privacidad"
+    "subtitle": "Comienza tu viaje de automatización de cumplimiento",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "signInLink": "Inicia sesión aquí",
+    "terms": "Al crear una cuenta, aceptas nuestros Términos de Servicio y Política de Privacidad",
+    "signupSuccess": "Cuenta creada exitosamente",
+    "signupError": "Error al crear la cuenta",
+    "passwordMismatch": "Las contraseñas no coinciden"
   },
   "freeTrial": {
-    "title": "Comience Su Prueba Gratuita",
-    "subtitle": "Suba un documento y vea Compliance Ease en acción",
-    "uploadTitle": "Suba Su Documento",
-    "uploadDescription": "Suba cualquier documento de cumplimiento (evaluación GDPR, informe de sostenibilidad, etc.)",
+    "title": "Comienza tu Prueba Gratuita",
+    "subtitle": "Sube un documento y ve Compliance Ease en acción",
+    "description": "Sube datos de empresa, registros operacionales o documentos regulatorios para ver cómo nuestra IA automatiza los informes de cumplimiento para GDPR, CSRD y ESG.",
+    "uploadTitle": "Sube tu Documento",
+    "uploadDescription": "Sube cualquier documento de cumplimiento (evaluación GDPR, informe de sostenibilidad, etc.)",
     "supportedFormats": "Formatos soportados: PDF, DOC, DOCX, TXT",
     "generateReport": "Generar Informe IA",
     "downloadReport": "Descargar Informe Generado",
-    "sampleReport": "Ejemplo_Informe_Cumplimiento.pdf",
-    "processing": "Procesando su documento...",
-    "success": "¡Informe generado exitosamente!"
+    "sampleReport": "Informe_Cumplimiento_Ejemplo.pdf",
+    "processing": "Procesando tu documento...",
+    "success": "¡Informe generado exitosamente!",
+    "trialUsed": "Prueba Ya Utilizada",
+    "trialUsedDescription": "Ya has utilizado tu prueba gratuita. Por favor actualiza a una suscripción pagada para continuar.",
+    "upgradeNow": "Actualizar Ahora"
   },
   "features": {
-    "title": "Todo lo que necesitas para el cumplimiento de la UE",
-    "subtitle": "Nuestra plataforma integral cubre todas las principales regulaciones de la UE con automatización inteligente y flujos de trabajo diseñados por expertos.",
+    "title": "Todo lo que Necesitas para el Cumplimiento UE",
+    "subtitle": "Nuestra plataforma integral cubre todas las principales regulaciones UE con automatización inteligente y flujos de trabajo diseñados por expertos.",
     "gdpr": {
-      "title": "Cumplimiento RGPD",
-      "description": "Evaluaciones automáticas del impacto en la protección de datos, gestión del consentimiento e informes de privacidad."
+      "title": "Cumplimiento GDPR",
+      "description": "Evaluaciones automatizadas de impacto en protección de datos, gestión de consentimiento e informes de privacidad."
     },
     "csrd": {
       "title": "Informes CSRD", 
-      "description": "Cumplimiento optimizado de la Directiva de Informes de Sostenibilidad Corporativa con recopilación automática de datos."
+      "description": "Cumplimiento simplificado de la Directiva de Informes de Sostenibilidad Corporativa con recolección automatizada de datos."
     },
     "esg": {
       "title": "Métricas ESG",
-      "description": "Informes integrales ambientales, sociales y de gobernanza con paneles de control en tiempo real."
+      "description": "Informes integrales Ambientales, Sociales y de Gobernanza con dashboards en tiempo real."
     },
     "ai": {
-      "title": "Automatización impulsada por IA",
-      "description": "Algoritmos de aprendizaje automático que se adaptan a los cambios regulatorios y optimizan los procesos de informes."
+      "title": "Automatización Impulsada por IA",
+      "description": "Algoritmos de aprendizaje automático que se adaptan a cambios regulatorios y optimizan procesos de informes."
     },
     "risk": {
-      "title": "Evaluación de riesgos", 
+      "title": "Evaluación de Riesgos", 
       "description": "Identificación proactiva de riesgos de cumplimiento con alertas automatizadas y sugerencias de remediación."
     },
     "multi": {
-      "title": "Soporte multijurisdiccional",
-      "description": "Navega por las complejas regulaciones de la UE en diferentes estados miembros con reglas de cumplimiento localizadas."
+      "title": "Soporte Multi-jurisdiccional",
+      "description": "Navega regulaciones complejas de la UE a través de diferentes estados miembros con reglas de cumplimiento localizadas."
     }
   },
   "pricing": {
-    "title": "Precios simples y transparentes",
-    "subtitle": "Elige el plan que se adapte a las necesidades de tu negocio. Todos los planes incluyen funciones básicas de cumplimiento con prueba gratuita de 30 días.",
+    "title": "Elige tu Plan",
+    "subtitle": "Precios simples y transparentes para empresas de todos los tamaños",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "save": "Ahorrar 10%",
+    "saveAmount": "Ahorra {{amount}}/año",
     "starter": {
       "name": "Starter",
-      "price": "€199",
-      "description": "Perfecto para pequeñas empresas que comienzan con el cumplimiento"
+      "description": "Perfecto para pequeñas empresas comenzando su viaje de cumplimiento",
+      "features": [
+        "Monitoreo básico de cumplimiento GDPR",
+        "Informes de cumplimiento mensuales",
+        "Soporte por email",
+        "Hasta 100 sujetos de datos",
+        "Plantillas estándar"
+      ]
     },
     "professional": {
-      "name": "Profesional", 
-      "price": "€399",
-      "description": "Cumplimiento integral para empresas en crecimiento"
+      "name": "Profesional",
+      "description": "Solución integral de cumplimiento para empresas en crecimiento",
+      "features": [
+        "Cumplimiento completo GDPR, CSRD y ESG",
+        "Monitoreo y alertas en tiempo real",
+        "Generación de informes personalizados",
+        "Soporte prioritario",
+        "Hasta 10,000 sujetos de datos",
+        "Analytics avanzado",
+        "Acceso API"
+      ]
     },
     "enterprise": {
       "name": "Empresa",
-      "price": "€799", 
-      "description": "Características avanzadas para grandes organizaciones"
+      "description": "Cumplimiento de nivel empresarial para grandes organizaciones",
+      "features": [
+        "Todo en Profesional",
+        "Soporte multi-jurisdiccional",
+        "Gerente de cumplimiento dedicado",
+        "Integraciones personalizadas",
+        "Sujetos de datos ilimitados",
+        "Opciones de marca blanca",
+        "Soporte telefónico 24/7",
+        "Consultoría de cumplimiento"
+      ]
     },
+    "mostPopular": "Más Popular",
+    "subscribeNow": "Suscribirse Ahora",
+    "signUpToSubscribe": "Registrarse para Suscribirse",
     "contactSales": "Contactar Ventas",
-    "customSolution": "¿Necesitas una solución personalizada? Ofrecemos paquetes a medida para grandes empresas."
+    "customSolution": "¿Necesitas una solución personalizada? Ofrecemos paquetes adaptados para grandes empresas.",
+    "authRequired": "Autenticación Requerida",
+    "authRequiredDescription": "Por favor inicia sesión para suscribirte a un plan.",
+    "subscriptionError": "Error de Suscripción",
+    "subscriptionErrorDescription": "Error al iniciar el proceso de suscripción. Por favor intenta de nuevo."
   },
   "demo": {
-    "title": "Reservar una Demo",
-    "subtitle": "Vea cómo Compliance Ease puede transformar su flujo de trabajo de cumplimiento",
+    "title": "Reservar Demo",
+    "subtitle": "Ve cómo Compliance Ease puede transformar tu flujo de trabajo de cumplimiento",
     "preferredDate": "Fecha Preferida",
     "preferredTime": "Hora Preferida",
     "requirements": "Requisitos Específicos",
-    "requirementsPlaceholder": "Háblenos de sus desafíos de cumplimiento...",
+    "requirementsPlaceholder": "Cuéntanos sobre tus desafíos de cumplimiento...",
     "schedule": "Programar Demo",
-    "success": "¡Demo programada exitosamente! Lo contactaremos en 24 horas.",
+    "success": "¡Demo programada exitosamente! Te contactaremos dentro de 24 horas.",
+    "error": "Error al programar demo. Por favor intenta de nuevo.",
     "timeSlots": {
       "morning": "Mañana (9:00-12:00)",
       "afternoon": "Tarde (13:00-17:00)",
       "evening": "Noche (18:00-20:00)"
     }
+  },
+  "subscription": {
+    "success": {
+      "title": "¡Suscripción Exitosa!",
+      "description": "Gracias por suscribirte a Compliance Ease. Tu suscripción está ahora activa.",
+      "verifying": "Verificando tu suscripción...",
+      "startUsing": "Comenzar a Usar Compliance Ease",
+      "returnHome": "Volver al Inicio"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Compliance Ease. Construido para la excelencia en cumplimiento UE.",
+    "builtFor": "Construido para la excelencia en cumplimiento UE"
+  },
+  "errors": {
+    "notFound": "Página No Encontrada",
+    "notFoundDescription": "La página que buscas no existe.",
+    "serverError": "Error del Servidor",
+    "serverErrorDescription": "Algo salió mal de nuestro lado.",
+    "networkError": "Error de Red",
+    "networkErrorDescription": "Por favor verifica tu conexión a internet."
+  },
+  "dashboard": {
+    "welcome": "Bienvenido a Compliance Ease",
+    "overview": "Resumen",
+    "reports": "Informes",
+    "settings": "Configuración",
+    "profile": "Perfil",
+    "subscription": "Suscripción",
+    "billing": "Facturación"
+  },
+  "notifications": {
+    "processing": "Procesando...",
+    "completed": "Completado",
+    "failed": "Falló",
+    "tryAgain": "Intentar de Nuevo"
   }
 }

@@ -111,16 +111,16 @@ export function PricingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Choose Your Plan
+            {t('pricing.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Simple, transparent pricing for businesses of all sizes
+            {t('pricing.subtitle')}
           </p>
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <Label htmlFor="billing-toggle" className={`text-sm font-medium ${!isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Monthly
+              {t('pricing.monthly')}
             </Label>
             <Switch
               id="billing-toggle"
@@ -128,11 +128,11 @@ export function PricingSection() {
               onCheckedChange={setIsYearly}
             />
             <Label htmlFor="billing-toggle" className={`text-sm font-medium ${isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Yearly
+              {t('pricing.yearly')}
             </Label>
             {isYearly && (
               <Badge variant="secondary" className="ml-2 bg-success/20 text-success">
-                Save 10%
+                {t('pricing.save')}
               </Badge>
             )}
           </div>

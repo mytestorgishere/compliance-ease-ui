@@ -1,75 +1,114 @@
 {
   "common": {
-    "signIn": "Se Connecter",
+    "signIn": "Se connecter",
     "signUp": "S'inscrire",
+    "signOut": "Se déconnecter",
     "getStarted": "Commencer",
-    "bookDemo": "Réserver Démo",
-    "freeTrial": "Essai Gratuit",
+    "bookDemo": "Réserver une démo",
+    "freeTrial": "Essai gratuit",
     "upload": "Télécharger",
     "download": "Télécharger",
     "submit": "Soumettre",
     "cancel": "Annuler",
-    "email": "E-mail",
-    "password": "Mot de Passe",
-    "confirmPassword": "Confirmer Mot de Passe",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
     "firstName": "Prénom",
-    "lastName": "Nom",
+    "lastName": "Nom de famille",
     "company": "Entreprise",
     "phone": "Téléphone",
-    "message": "Message"
+    "message": "Message",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "continue": "Continuer",
+    "finish": "Terminer",
+    "retry": "Réessayer",
+    "refresh": "Actualiser"
+  },
+  "currency": {
+    "symbol": "€",
+    "code": "EUR",
+    "name": "Euro"
   },
   "navigation": {
     "features": "Fonctionnalités",
     "pricing": "Tarifs",
-    "dashboard": "Tableau de Bord",
-    "language": "Langue"
+    "dashboard": "Tableau de bord",
+    "language": "Langue",
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "support": "Support",
+    "account": "Compte",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter",
+    "menu": "Menu"
   },
   "hero": {
-    "title": "Automatisation de Conformité UE Alimentée par l'IA",
-    "subtitle": "Automatisez les rapports de conformité RGPD, CSRD et ESG avec l'IA intelligente. Restez conforme, réduisez les coûts et concentrez-vous sur la croissance.",
-    "cta": "Commencer l'Essai Gratuit",
-    "bookDemo": "Réserver Démo"
+    "title": "Automatisation de la conformité UE alimentée par l'IA",
+    "subtitle": "Automatisez les rapports de conformité RGPD, CSRD et ESG avec une IA intelligente. Restez conforme, réduisez les coûts et concentrez-vous sur la croissance.",
+    "cta": "Commencer l'essai gratuit",
+    "bookDemo": "Réserver une démo",
+    "learnMore": "En savoir plus"
   },
   "login": {
-    "title": "Bon Retour",
+    "title": "Bon retour",
     "subtitle": "Connectez-vous à votre compte Compliance Ease",
-    "forgotPassword": "Mot de passe oublié?",
-    "noAccount": "Pas de compte?",
-    "signUpLink": "S'inscrire ici"
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Pas encore de compte ?",
+    "signUpLink": "S'inscrire ici",
+    "invalidCredentials": "Email ou mot de passe invalide",
+    "loginSuccess": "Connexion réussie",
+    "loginError": "Échec de la connexion"
   },
   "signup": {
-    "title": "Créer un Compte",
-    "subtitle": "Commencez votre parcours d'automatisation de conformité",
-    "hasAccount": "Déjà un compte?",
+    "title": "Créer un compte",
+    "subtitle": "Commencez votre parcours d'automatisation de la conformité",
+    "hasAccount": "Vous avez déjà un compte ?",
     "signInLink": "Se connecter ici",
-    "terms": "En créant un compte, vous acceptez nos Conditions d'Utilisation et Politique de Confidentialité"
+    "terms": "En créant un compte, vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité",
+    "signupSuccess": "Compte créé avec succès",
+    "signupError": "Échec de la création du compte",
+    "passwordMismatch": "Les mots de passe ne correspondent pas"
   },
   "freeTrial": {
-    "title": "Commencez Votre Essai Gratuit",
+    "title": "Commencez votre essai gratuit",
     "subtitle": "Téléchargez un document et voyez Compliance Ease en action",
-    "uploadTitle": "Téléchargez Votre Document",
+    "description": "Téléchargez des données d'entreprise, des journaux opérationnels ou des documents réglementaires pour voir comment notre IA automatise les rapports de conformité pour RGPD, CSRD et ESG.",
+    "uploadTitle": "Téléchargez votre document",
     "uploadDescription": "Téléchargez n'importe quel document de conformité (évaluation RGPD, rapport de durabilité, etc.)",
-    "supportedFormats": "Formats supportés: PDF, DOC, DOCX, TXT",
-    "generateReport": "Générer Rapport IA",
-    "downloadReport": "Télécharger Rapport Généré",
-    "sampleReport": "Exemple_Rapport_Conformité.pdf",
+    "supportedFormats": "Formats supportés : PDF, DOC, DOCX, TXT",
+    "generateReport": "Générer un rapport IA",
+    "downloadReport": "Télécharger le rapport généré",
+    "sampleReport": "Exemple_Rapport_Conformite.pdf",
     "processing": "Traitement de votre document...",
-    "success": "Rapport généré avec succès!"
+    "success": "Rapport généré avec succès !",
+    "trialUsed": "Essai déjà utilisé",
+    "trialUsedDescription": "Vous avez déjà utilisé votre essai gratuit. Veuillez passer à un abonnement payant pour continuer.",
+    "upgradeNow": "Mettre à niveau maintenant"
   },
   "features": {
     "title": "Tout ce dont vous avez besoin pour la conformité UE",
-    "subtitle": "Notre plateforme complète couvre toutes les principales réglementations européennes avec une automatisation intelligente et des flux de travail conçus par des experts.",
+    "subtitle": "Notre plateforme complète couvre toutes les principales réglementations UE avec une automatisation intelligente et des flux de travail conçus par des experts.",
     "gdpr": {
       "title": "Conformité RGPD",
-      "description": "Analyses d'impact sur la protection des données automatisées, gestion du consentement et rapports de confidentialité."
+      "description": "Évaluations d'impact sur la protection des données automatisées, gestion du consentement et rapports de confidentialité."
     },
     "csrd": {
-      "title": "Rapports CSRD", 
-      "description": "Conformité rationalisée à la directive sur les rapports de durabilité d'entreprise avec collecte de données automatisée."
+      "title": "Rapport CSRD", 
+      "description": "Conformité rationalisée de la Directive de rapport de durabilité d'entreprise avec collecte de données automatisée."
     },
     "esg": {
       "title": "Métriques ESG",
-      "description": "Rapports environnementaux, sociaux et de gouvernance complets avec tableaux de bord en temps réel."
+      "description": "Rapports complets Environnementaux, Sociaux et de Gouvernance avec tableaux de bord en temps réel."
     },
     "ai": {
       "title": "Automatisation alimentée par l'IA",
@@ -81,43 +120,114 @@
     },
     "multi": {
       "title": "Support multi-juridictionnel",
-      "description": "Naviguez dans les réglementations UE complexes entre différents États membres avec des règles de conformité localisées."
+      "description": "Naviguez dans les réglementations UE complexes de différents États membres avec des règles de conformité localisées."
     }
   },
   "pricing": {
-    "title": "Tarifs simples et transparents",
-    "subtitle": "Choisissez le plan qui convient aux besoins de votre entreprise. Tous les plans incluent les fonctionnalités de conformité de base avec un essai gratuit de 30 jours.",
+    "title": "Choisissez votre plan",
+    "subtitle": "Tarification simple et transparente pour les entreprises de toutes tailles",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économiser 10%",
+    "saveAmount": "Économisez {{amount}}/an",
     "starter": {
       "name": "Starter",
-      "price": "€199",
-      "description": "Parfait pour les petites entreprises qui commencent avec la conformité"
+      "description": "Parfait pour les petites entreprises commençant leur parcours de conformité",
+      "features": [
+        "Surveillance de conformité RGPD de base",
+        "Rapports de conformité mensuels",
+        "Support par email",
+        "Jusqu'à 100 personnes concernées",
+        "Modèles standard"
+      ]
     },
     "professional": {
-      "name": "Professionnel", 
-      "price": "€399",
-      "description": "Conformité complète pour les entreprises en croissance"
+      "name": "Professionnel",
+      "description": "Solution de conformité complète pour les entreprises en croissance",
+      "features": [
+        "Conformité complète RGPD, CSRD et ESG",
+        "Surveillance et alertes en temps réel",
+        "Génération de rapports personnalisés",
+        "Support prioritaire",
+        "Jusqu'à 10 000 personnes concernées",
+        "Analytiques avancées",
+        "Accès API"
+      ]
     },
     "enterprise": {
       "name": "Entreprise",
-      "price": "€799", 
-      "description": "Fonctionnalités avancées pour les grandes organisations"
+      "description": "Conformité de niveau entreprise pour les grandes organisations",
+      "features": [
+        "Tout dans Professionnel",
+        "Support multi-juridictionnel",
+        "Gestionnaire de conformité dédié",
+        "Intégrations personnalisées",
+        "Personnes concernées illimitées",
+        "Options de marque blanche",
+        "Support téléphonique 24/7",
+        "Conseil en conformité"
+      ]
     },
-    "contactSales": "Contacter les Ventes",
-    "customSolution": "Besoin d'une solution personnalisée ? Nous proposons des forfaits sur mesure pour les grandes entreprises."
+    "mostPopular": "Le plus populaire",
+    "subscribeNow": "S'abonner maintenant",
+    "signUpToSubscribe": "S'inscrire pour s'abonner",
+    "contactSales": "Contacter les ventes",
+    "customSolution": "Besoin d'une solution personnalisée ? Nous proposons des forfaits sur mesure pour les grandes entreprises.",
+    "authRequired": "Authentification requise",
+    "authRequiredDescription": "Veuillez vous connecter pour vous abonner à un plan.",
+    "subscriptionError": "Erreur d'abonnement",
+    "subscriptionErrorDescription": "Échec du démarrage du processus d'abonnement. Veuillez réessayer."
   },
   "demo": {
-    "title": "Réserver une Démo",
+    "title": "Réserver une démo",
     "subtitle": "Voyez comment Compliance Ease peut transformer votre flux de travail de conformité",
-    "preferredDate": "Date Préférée",
-    "preferredTime": "Heure Préférée",
-    "requirements": "Exigences Spécifiques",
+    "preferredDate": "Date préférée",
+    "preferredTime": "Heure préférée",
+    "requirements": "Exigences spécifiques",
     "requirementsPlaceholder": "Parlez-nous de vos défis de conformité...",
-    "schedule": "Planifier Démo",
-    "success": "Démo planifiée avec succès! Nous vous contacterons dans les 24 heures.",
+    "schedule": "Planifier la démo",
+    "success": "Démo planifiée avec succès ! Nous vous contacterons dans les 24 heures.",
+    "error": "Échec de la planification de la démo. Veuillez réessayer.",
     "timeSlots": {
       "morning": "Matin (9:00-12:00)",
       "afternoon": "Après-midi (13:00-17:00)",
       "evening": "Soir (18:00-20:00)"
     }
+  },
+  "subscription": {
+    "success": {
+      "title": "Abonnement réussi !",
+      "description": "Merci de vous être abonné à Compliance Ease. Votre abonnement est maintenant actif.",
+      "verifying": "Vérification de votre abonnement...",
+      "startUsing": "Commencer à utiliser Compliance Ease",
+      "returnHome": "Retour à l'accueil"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Compliance Ease. Conçu pour l'excellence de la conformité UE.",
+    "builtFor": "Conçu pour l'excellence de la conformité UE"
+  },
+  "errors": {
+    "notFound": "Page non trouvée",
+    "notFoundDescription": "La page que vous recherchez n'existe pas.",
+    "serverError": "Erreur serveur",
+    "serverErrorDescription": "Quelque chose s'est mal passé de notre côté.",
+    "networkError": "Erreur réseau",
+    "networkErrorDescription": "Veuillez vérifier votre connexion internet."
+  },
+  "dashboard": {
+    "welcome": "Bienvenue chez Compliance Ease",
+    "overview": "Aperçu",
+    "reports": "Rapports",
+    "settings": "Paramètres",
+    "profile": "Profil",
+    "subscription": "Abonnement",
+    "billing": "Facturation"
+  },
+  "notifications": {
+    "processing": "Traitement...",
+    "completed": "Terminé",
+    "failed": "Échec",
+    "tryAgain": "Réessayer"
   }
 }

@@ -2,122 +2,232 @@
   "common": {
     "signIn": "Inloggen",
     "signUp": "Registreren",
-    "getStarted": "Beginnen",
+    "signOut": "Uitloggen",
+    "getStarted": "Aan de Slag",
     "bookDemo": "Demo Boeken",
-    "freeTrial": "Gratis Proefperiode",
+    "freeTrial": "Gratis Proef",
     "upload": "Uploaden",
     "download": "Downloaden",
     "submit": "Verzenden",
     "cancel": "Annuleren",
-    "email": "E-mail",
+    "email": "Email",
     "password": "Wachtwoord",
-    "confirmPassword": "Wachtwoord Bevestigen",
+    "confirmPassword": "Bevestig Wachtwoord",
     "firstName": "Voornaam",
     "lastName": "Achternaam",
     "company": "Bedrijf",
     "phone": "Telefoon",
-    "message": "Bericht"
+    "message": "Bericht",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "save": "Opslaan",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "continue": "Doorgaan",
+    "finish": "Voltooien",
+    "retry": "Opnieuw Proberen",
+    "refresh": "Verversen"
+  },
+  "currency": {
+    "symbol": "€",
+    "code": "EUR",
+    "name": "Euro"
   },
   "navigation": {
     "features": "Functies",
     "pricing": "Prijzen",
     "dashboard": "Dashboard",
-    "language": "Taal"
+    "language": "Taal",
+    "home": "Home",
+    "about": "Over Ons",
+    "contact": "Contact",
+    "support": "Ondersteuning",
+    "account": "Account",
+    "settings": "Instellingen",
+    "logout": "Uitloggen",
+    "menu": "Menu"
   },
   "hero": {
-    "title": "AI-Aangedreven EU Compliance Automatisering",
-    "subtitle": "Automatiseer AVG, CSRD en ESG compliance rapportage met intelligente AI. Blijf compliant, verlaag kosten en focus op groei.",
-    "cta": "Start Gratis Proefperiode",
-    "bookDemo": "Demo Boeken"
+    "title": "AI-Gedreven EU Compliance Automatisering",
+    "subtitle": "Automatiseer GDPR, CSRD en ESG compliance rapportage met intelligente AI. Blijf compliant, verlaag kosten en focus op groei.",
+    "cta": "Start Gratis Proef",
+    "bookDemo": "Demo Boeken",
+    "learnMore": "Meer Leren"
   },
   "login": {
     "title": "Welkom Terug",
-    "subtitle": "Log in op uw Compliance Ease account",
+    "subtitle": "Log in op je Compliance Ease account",
     "forgotPassword": "Wachtwoord vergeten?",
-    "noAccount": "Geen account?",
-    "signUpLink": "Hier registreren"
+    "noAccount": "Nog geen account?",
+    "signUpLink": "Registreer hier",
+    "invalidCredentials": "Ongeldige email of wachtwoord",
+    "loginSuccess": "Inloggen succesvol",
+    "loginError": "Inloggen mislukt"
   },
   "signup": {
     "title": "Account Aanmaken",
-    "subtitle": "Begin uw compliance automatisering reis",
+    "subtitle": "Begin je compliance automatisering reis",
     "hasAccount": "Al een account?",
-    "signInLink": "Hier inloggen",
-    "terms": "Door een account aan te maken, gaat u akkoord met onze Servicevoorwaarden en Privacybeleid"
+    "signInLink": "Log hier in",
+    "terms": "Door een account aan te maken, ga je akkoord met onze Servicevoorwaarden en Privacybeleid",
+    "signupSuccess": "Account succesvol aangemaakt",
+    "signupError": "Account aanmaken mislukt",
+    "passwordMismatch": "Wachtwoorden komen niet overeen"
   },
   "freeTrial": {
-    "title": "Start Uw Gratis Proefperiode",
+    "title": "Start Je Gratis Proef",
     "subtitle": "Upload een document en zie Compliance Ease in actie",
-    "uploadTitle": "Upload Uw Document",
-    "uploadDescription": "Upload elk compliance document (AVG beoordeling, duurzaamheidsrapport, etc.)",
+    "description": "Upload bedrijfsgegevens, operationele logs of regulatoire documenten om te zien hoe onze AI compliance rapportage automatiseert voor GDPR, CSRD en ESG.",
+    "uploadTitle": "Upload Je Document",
+    "uploadDescription": "Upload elk compliance document (GDPR beoordeling, duurzaamheidsrapport, etc.)",
     "supportedFormats": "Ondersteunde formaten: PDF, DOC, DOCX, TXT",
-    "generateReport": "Genereer AI Rapport",
-    "downloadReport": "Download Gegenereerd Rapport",
+    "generateReport": "AI Rapport Genereren",
+    "downloadReport": "Gegenereerd Rapport Downloaden",
     "sampleReport": "Voorbeeld_Compliance_Rapport.pdf",
-    "processing": "Uw document wordt verwerkt...",
-    "success": "Rapport succesvol gegenereerd!"
+    "processing": "Je document wordt verwerkt...",
+    "success": "Rapport succesvol gegenereerd!",
+    "trialUsed": "Proef Al Gebruikt",
+    "trialUsedDescription": "Je hebt al je gratis proef gebruikt. Upgrade naar een betaald abonnement om door te gaan.",
+    "upgradeNow": "Nu Upgraden"
   },
   "features": {
-    "title": "Alles wat je nodig hebt voor EU-naleving",
-    "subtitle": "Ons uitgebreide platform dekt alle belangrijke EU-regelgeving met intelligente automatisering en door experts ontworpen workflows.",
+    "title": "Alles Wat Je Nodig Hebt voor EU Compliance",
+    "subtitle": "Ons uitgebreide platform dekt alle belangrijke EU regelgeving met intelligente automatisering en door experts ontworpen workflows.",
     "gdpr": {
-      "title": "AVG-naleving",
-      "description": "Geautomatiseerde gegevensbeschermingseffectbeoordelingen, toestemmingsbeheer en privacyrapportage."
+      "title": "GDPR Compliance",
+      "description": "Geautomatiseerde gegevensbescherming impactbeoordelingen, toestemmingsbeheer en privacyrapportage."
     },
     "csrd": {
-      "title": "CSRD-rapportage", 
-      "description": "Gestroomlijnde Corporate Sustainability Reporting Directive-naleving met geautomatiseerde gegevensverzameling."
+      "title": "CSRD Rapportage", 
+      "description": "Gestroomlijnde Corporate Sustainability Reporting Directive compliance met geautomatiseerde gegevensverzameling."
     },
     "esg": {
-      "title": "ESG-metrieken",
-      "description": "Uitgebreide milieu-, sociale en governance-rapportage met realtime dashboards."
+      "title": "ESG Metrics",
+      "description": "Uitgebreide Milieu-, Sociale en Governance-rapportage met real-time dashboards."
     },
     "ai": {
-      "title": "AI-aangedreven automatisering",
-      "description": "Machine learning-algoritmen die zich aanpassen aan regelgevingswijzigingen en rapportageprocessen optimaliseren."
+      "title": "AI-Gedreven Automatisering",
+      "description": "Machine learning algoritmes die zich aanpassen aan regulatoire veranderingen en rapportageprocessen optimaliseren."
     },
     "risk": {
       "title": "Risicobeoordeling", 
-      "description": "Proactieve identificatie van nalevingsrisico's met geautomatiseerde waarschuwingen en herstelvoorstellen."
+      "description": "Proactieve compliance risico-identificatie met geautomatiseerde waarschuwingen en herstelSuggesties."
     },
     "multi": {
-      "title": "Multi-jurisdictie ondersteuning",
-      "description": "Navigeer door complexe EU-regelgeving in verschillende lidstaten met gelokaliseerde nalevingsregels."
+      "title": "Multi-jurisdictionele Ondersteuning",
+      "description": "Navigeer complexe EU regelgeving over verschillende lidstaten met gelokaliseerde compliance regels."
     }
   },
   "pricing": {
-    "title": "Eenvoudige, transparante prijzen",
-    "subtitle": "Kies het plan dat past bij de behoeften van uw bedrijf. Alle plannen bevatten basis nalevingsfunctionaliteiten met 30 dagen gratis proefperiode.",
+    "title": "Kies Je Plan",
+    "subtitle": "Eenvoudige, transparante prijzen voor bedrijven van alle groottes",
+    "monthly": "Maandelijks",
+    "yearly": "Jaarlijks",
+    "save": "Bespaar 10%",
+    "saveAmount": "Bespaar {{amount}}/jaar",
     "starter": {
       "name": "Starter",
-      "price": "€199",
-      "description": "Perfect voor kleine bedrijven die beginnen met naleving"
+      "description": "Perfect voor kleine bedrijven die beginnen aan hun compliance reis",
+      "features": [
+        "Basis GDPR compliance monitoring",
+        "Maandelijkse compliance rapporten",
+        "Email ondersteuning",
+        "Tot 100 betrokkenen",
+        "Standaard templates"
+      ]
     },
     "professional": {
-      "name": "Professioneel", 
-      "price": "€399",
-      "description": "Uitgebreide naleving voor groeiende bedrijven"
+      "name": "Professioneel",
+      "description": "Uitgebreide compliance oplossing voor groeiende bedrijven",
+      "features": [
+        "Volledige GDPR, CSRD & ESG compliance",
+        "Real-time monitoring & waarschuwingen",
+        "Aangepaste rapport generatie",
+        "Priority ondersteuning",
+        "Tot 10.000 betrokkenen",
+        "Geavanceerde analytics",
+        "API toegang"
+      ]
     },
     "enterprise": {
       "name": "Enterprise",
-      "price": "€799", 
-      "description": "Geavanceerde functies voor grote organisaties"
+      "description": "Enterprise-niveau compliance voor grote organisaties",
+      "features": [
+        "Alles in Professioneel",
+        "Multi-jurisdictionele ondersteuning",
+        "Toegewijde compliance manager",
+        "Aangepaste integraties",
+        "Onbeperkte betrokkenen",
+        "White-label opties",
+        "24/7 telefoon ondersteuning",
+        "Compliance consulting"
+      ]
     },
+    "mostPopular": "Meest Populair",
+    "subscribeNow": "Nu Abonneren",
+    "signUpToSubscribe": "Registreer om te Abonneren",
     "contactSales": "Contact Verkoop",
-    "customSolution": "Heeft u een aangepaste oplossing nodig? Wij bieden op maat gemaakte pakketten voor grote bedrijven."
+    "customSolution": "Aangepaste oplossing nodig? We bieden op maat gemaakte pakketten voor grote ondernemingen.",
+    "authRequired": "Authenticatie Vereist",
+    "authRequiredDescription": "Log in om je te abonneren op een plan.",
+    "subscriptionError": "Abonnement Fout",
+    "subscriptionErrorDescription": "Fout bij het starten van het abonnement proces. Probeer opnieuw."
   },
   "demo": {
-    "title": "Boek een Demo",
-    "subtitle": "Zie hoe Compliance Ease uw compliance workflow kan transformeren",
-    "preferredDate": "Voorkeursdatum",
-    "preferredTime": "Voorkeurstijd",
+    "title": "Demo Boeken",
+    "subtitle": "Zie hoe Compliance Ease je compliance workflow kan transformeren",
+    "preferredDate": "Gewenste Datum",
+    "preferredTime": "Gewenste Tijd",
     "requirements": "Specifieke Vereisten",
-    "requirementsPlaceholder": "Vertel ons over uw compliance uitdagingen...",
+    "requirementsPlaceholder": "Vertel ons over je compliance uitdagingen...",
     "schedule": "Demo Plannen",
-    "success": "Demo succesvol gepland! We nemen binnen 24 uur contact op.",
+    "success": "Demo succesvol gepland! We nemen binnen 24 uur contact met je op.",
+    "error": "Fout bij het plannen van demo. Probeer opnieuw.",
     "timeSlots": {
       "morning": "Ochtend (9:00-12:00)",
       "afternoon": "Middag (13:00-17:00)",
       "evening": "Avond (18:00-20:00)"
     }
+  },
+  "subscription": {
+    "success": {
+      "title": "Abonnement Succesvol!",
+      "description": "Bedankt voor je abonnement op Compliance Ease. Je abonnement is nu actief.",
+      "verifying": "Je abonnement wordt geverifieerd...",
+      "startUsing": "Begin met Compliance Ease",
+      "returnHome": "Terug naar Home"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Compliance Ease. Gebouwd voor EU compliance excellentie.",
+    "builtFor": "Gebouwd voor EU compliance excellentie"
+  },
+  "errors": {
+    "notFound": "Pagina Niet Gevonden",
+    "notFoundDescription": "De pagina die je zoekt bestaat niet.",
+    "serverError": "Server Fout",
+    "serverErrorDescription": "Er is iets misgegaan aan onze kant.",
+    "networkError": "Netwerk Fout",
+    "networkErrorDescription": "Controleer je internetverbinding."
+  },
+  "dashboard": {
+    "welcome": "Welkom bij Compliance Ease",
+    "overview": "Overzicht",
+    "reports": "Rapporten",
+    "settings": "Instellingen",
+    "profile": "Profiel",
+    "subscription": "Abonnement",
+    "billing": "Facturering"
+  },
+  "notifications": {
+    "processing": "Verwerken...",
+    "completed": "Voltooid",
+    "failed": "Mislukt",
+    "tryAgain": "Opnieuw Proberen"
   }
 }
