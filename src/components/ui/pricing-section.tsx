@@ -2,18 +2,28 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { Check, Zap, Building, Briefcase } from "lucide-react";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 
 export function PricingSection() {
   const { t } = useTranslation();
+  const { user } = useAuth();
+  const { toast } = useToast();
+  const [isYearly, setIsYearly] = useState(false);
   
   const plans = [
     {
-      name: t('pricing.starter.name'),
-      price: t('pricing.starter.price'),
-      period: "per month",
-      description: t('pricing.starter.description'),
+      name: "Starter",
+      monthlyPrice: 199,
+      yearlyPrice: 179, // 10% discount
+      tier: "starter",
+      description: "Perfect for small businesses starting their compliance journey",
       icon: Zap,
       features: [
         "Basic GDPR compliance monitoring",
@@ -25,10 +35,11 @@ export function PricingSection() {
       popular: false
     },
     {
-      name: t('pricing.professional.name'), 
-      price: t('pricing.professional.price'),
-      period: "per month",
-      description: t('pricing.professional.description'),
+      name: "Professional", 
+      monthlyPrice: 399,
+      yearlyPrice: 359, // 10% discount
+      tier: "professional",
+      description: "Comprehensive compliance solution for growing businesses",
       icon: Building,
       features: [
         "Full GDPR, CSRD & ESG compliance",
@@ -42,10 +53,11 @@ export function PricingSection() {
       popular: true
     },
     {
-      name: t('pricing.enterprise.name'),
-      price: t('pricing.enterprise.price'),
-      period: "per month",
-      description: t('pricing.enterprise.description'),
+      name: "Enterprise",
+      monthlyPrice: 799,
+      yearlyPrice: 719, // 10% discount
+      tier: "enterprise",
+      description: "Enterprise-grade compliance for large organizations",
       icon: Briefcase,
       features: [
         "Everything in Professional",
@@ -60,17 +72,70 @@ export function PricingSection() {
       popular: false
     }
   ];
+
+  const handleSubscribe = async (tier: string) => {
+    if (!user) {
+      toast({
+        title: "Authentication Required",
+        description: "Please log in to subscribe to a plan.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { 
+          tier: tier,
+          yearly: isYearly
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.open(data.url, '_blank');
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Subscription Error",
+        description: "Failed to start subscription process. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
   
   return (
     <section id="pricing" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {t('pricing.title')}
+            Choose Your Plan
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('pricing.subtitle')}
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Simple, transparent pricing for businesses of all sizes
           </p>
+          
+          {/* Billing Toggle */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <Label htmlFor="billing-toggle" className={`text-sm font-medium ${!isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
+              Monthly
+            </Label>
+            <Switch
+              id="billing-toggle"
+              checked={isYearly}
+              onCheckedChange={setIsYearly}
+            />
+            <Label htmlFor="billing-toggle" className={`text-sm font-medium ${isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
+              Yearly
+            </Label>
+            {isYearly && (
+              <Badge variant="secondary" className="ml-2 bg-success/20 text-success">
+                Save 10%
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -96,9 +161,18 @@ export function PricingSection() {
                   <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
                   <div className="flex items-baseline justify-center">
-                    <span className="text-3xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground ml-1">/{plan.period}</span>
+                    <span className="text-3xl font-bold text-foreground">
+                      €{isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                    </span>
+                    <span className="text-muted-foreground ml-1">
+                      /{isYearly ? 'year' : 'month'}
+                    </span>
                   </div>
+                  {isYearly && (
+                    <p className="text-xs text-success mt-1">
+                      Save €{(plan.monthlyPrice * 12) - (plan.yearlyPrice * 12)}/year
+                    </p>
+                  )}
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -117,8 +191,9 @@ export function PricingSection() {
                       : 'bg-background hover:bg-muted border border-border'
                   }`}
                   variant={plan.popular ? "default" : "outline"}
+                  onClick={() => handleSubscribe(plan.tier)}
                 >
-                  Start Free Trial
+                  {user ? 'Subscribe Now' : 'Sign Up to Subscribe'}
                 </Button>
               </Card>
             );
