@@ -1,17 +1,33 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Upload, Download, FileText, CheckCircle } from "lucide-react";
+import { Shield, Upload, Download, FileText, CheckCircle, AlertCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function FreeTrial() {
   const { t } = useTranslation();
+  const { user, profile, refreshProfile } = useAuth();
+  const navigate = useNavigate();
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [reportReady, setReportReady] = useState(false);
+  const [generatedReport, setGeneratedReport] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!user) {
+      toast({
+        title: "Authentication Required",
+        description: "Please sign in to use the free trial.",
+        variant: "destructive",
+      });
+      navigate('/login');
+    }
+  }, [user, navigate]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -40,7 +56,7 @@ export default function FreeTrial() {
     }
   };
 
-  const generateReport = () => {
+  const generateReport = async () => {
     if (!uploadedFile) {
       toast({
         title: "No file uploaded",
@@ -50,24 +66,84 @@ export default function FreeTrial() {
       return;
     }
 
+    // Check if trial already used
+    if (profile?.trial_used && profile?.subscription_status === 'free') {
+      toast({
+        title: "Trial Already Used",
+        description: "You've already used your free trial. Please upgrade to a paid subscription to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsProcessing(true);
     
-    // Simulate AI processing
-    setTimeout(() => {
-      setIsProcessing(false);
+    try {
+      // Read file content
+      const fileContent = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target?.result as string);
+        reader.readAsText(uploadedFile);
+      });
+
+      // Call the edge function
+      const { data, error } = await supabase.functions.invoke('process-document', {
+        body: {
+          document: fileContent,
+          filename: uploadedFile.name,
+          reportType: 'compliance'
+        }
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      setGeneratedReport(data.report);
       setReportReady(true);
+      
+      // Refresh profile to update trial status
+      await refreshProfile();
+      
       toast({
         title: t('freeTrial.success'),
         description: "Your AI compliance report is ready for download.",
       });
-    }, 3000);
+      
+      if (data.trialUsed) {
+        toast({
+          title: "Free Trial Used",
+          description: "This was your free trial. Upgrade for unlimited reports!",
+        });
+      }
+
+    } catch (error: any) {
+      console.error('Error processing document:', error);
+      toast({
+        title: "Processing Failed",
+        description: error.message || "Failed to process document. Please try again.",
+        variant: "destructive",
+      });
+    }
+    
+    setIsProcessing(false);
   };
 
   const downloadReport = () => {
-    // Simulate downloading a PDF report
+    if (!generatedReport) {
+      toast({
+        title: "No report available",
+        description: "Please generate a report first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Create and download the report as a text file
+    const blob = new Blob([generatedReport], { type: 'text/plain' });
     const link = document.createElement('a');
-    link.href = 'data:application/pdf;base64,'; // In real app, this would be the actual PDF data
-    link.download = t('freeTrial.sampleReport');
+    link.href = URL.createObjectURL(blob);
+    link.download = `Compliance_Report_${uploadedFile?.name || 'document'}.txt`;
     link.click();
     
     toast({
@@ -99,6 +175,17 @@ export default function FreeTrial() {
             Upload company data, operational logs, or regulatory documents to see how our AI automates 
             compliance reporting for GDPR, CSRD, and ESG requirements.
           </p>
+          {profile?.trial_used && profile?.subscription_status === 'free' && (
+            <div className="mt-4 p-4 bg-warning/20 border border-warning/30 rounded-lg max-w-2xl mx-auto">
+              <div className="flex items-center text-warning">
+                <AlertCircle className="h-5 w-5 mr-2" />
+                <span className="font-medium">Trial Already Used</span>
+              </div>
+              <p className="text-white/80 text-sm mt-1">
+                You've used your free trial. Upgrade to continue processing documents.
+              </p>
+            </div>
+          )}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -125,7 +212,7 @@ export default function FreeTrial() {
                 onClick={() => fileInputRef.current?.click()}
                 variant={uploadedFile ? "secondary" : "default"}
                 className="w-full"
-                disabled={isProcessing}
+                disabled={isProcessing || (profile?.trial_used && profile?.subscription_status === 'free')}
               >
                 <Upload className="h-4 w-4 mr-2" />
                 {uploadedFile ? uploadedFile.name : t('common.upload')}
@@ -156,7 +243,7 @@ export default function FreeTrial() {
             <CardContent>
               <Button
                 onClick={generateReport}
-                disabled={!uploadedFile || isProcessing || reportReady}
+                disabled={!uploadedFile || isProcessing || reportReady || (profile?.trial_used && profile?.subscription_status === 'free')}
                 className="w-full bg-gradient-success hover:opacity-90"
               >
                 {isProcessing ? (
