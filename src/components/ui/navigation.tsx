@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut } from "lucide-react";
+import complyLogo from "@/assets/comply-logo.png";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useAuth } from "@/contexts/AuthContext";
 import {
@@ -27,7 +28,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
+            <img src={complyLogo} alt="Logo" className="h-8 w-8" />
             <span className="text-xl font-bold text-foreground">ComplianceAI</span>
           </Link>
 

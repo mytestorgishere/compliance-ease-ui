@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Shield, Calendar, Clock, CheckCircle } from "lucide-react";
+import { Calendar, Clock, CheckCircle } from "lucide-react";
+import complyLogo from "@/assets/comply-logo.png";
 import { toast } from "@/hooks/use-toast";
 
 interface DemoFormData {
@@ -85,7 +86,7 @@ export default function Demo() {
       {/* Header */}
       <header className="p-4">
         <Link to="/" className="inline-flex items-center gap-2 text-white">
-          <Shield className="h-8 w-8" />
+          <img src={complyLogo} alt="Logo" className="h-8 w-8" />
           <span className="text-xl font-bold">ComplianceAI</span>
         </Link>
       </header>

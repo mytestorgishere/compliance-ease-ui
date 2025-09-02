@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Upload, Download, FileText, CheckCircle, AlertCircle } from "lucide-react";
+import { Upload, Download, FileText, CheckCircle, AlertCircle } from "lucide-react";
+import complyLogo from "@/assets/comply-logo.png";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
@@ -157,7 +158,7 @@ export default function FreeTrial() {
       {/* Header */}
       <header className="p-4">
         <Link to="/" className="inline-flex items-center gap-2 text-white">
-          <Shield className="h-8 w-8" />
+          <img src={complyLogo} alt="Logo" className="h-8 w-8" />
           <span className="text-xl font-bold">ComplianceAI</span>
         </Link>
       </header>

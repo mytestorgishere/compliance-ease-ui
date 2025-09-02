@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Separator } from "@/components/ui/separator";
-import { Shield } from "lucide-react";
+import complyLogo from "@/assets/comply-logo.png";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -72,7 +72,7 @@ export default function Login() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 text-white">
-            <Shield className="h-8 w-8" />
+            <img src={complyLogo} alt="Logo" className="h-8 w-8" />
             <span className="text-xl font-bold">ComplianceAI</span>
           </Link>
         </div>
