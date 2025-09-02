@@ -2,6 +2,7 @@
   "common": {
     "signIn": "Sign In",
     "signUp": "Sign Up",
+    "signOut": "Sign Out",
     "getStarted": "Get Started",
     "bookDemo": "Book Demo",
     "freeTrial": "Free Trial",

@@ -2,12 +2,24 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Shield, Menu, X, User, LogOut } from "lucide-react";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { useAuth } from "@/contexts/AuthContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navigation() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, profile, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
 
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-border">
@@ -19,25 +31,45 @@ export function Navigation() {
             <span className="text-xl font-bold text-foreground">ComplianceAI</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navigation.features')}
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navigation.pricing')}
-            </a>
-            <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              {t('navigation.dashboard')}
-            </a>
-            <LanguageSelector />
-            <Button asChild variant="outline" size="sm">
-              <Link to="/login">{t('common.signIn')}</Link>
-            </Button>
-            <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
-              <Link to="/free-trial">{t('common.getStarted')}</Link>
-            </Button>
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+                {t('navigation.features')}
+              </a>
+              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+                {t('navigation.pricing')}
+              </a>
+              <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
+                {t('navigation.dashboard')}
+              </a>
+              <LanguageSelector />
+              
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <User className="h-4 w-4" />
+                      {profile?.first_name || user.email?.split('@')[0] || 'User'}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={handleSignOut} className="gap-2 cursor-pointer">
+                      <LogOut className="h-4 w-4" />
+                      {t('common.signOut')}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <>
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/login">{t('common.signIn')}</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
+                    <Link to="/free-trial">{t('common.getStarted')}</Link>
+                  </Button>
+                </>
+              )}
+            </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -67,12 +99,28 @@ export function Navigation() {
               <div className="py-2">
                 <LanguageSelector />
               </div>
-              <Button asChild variant="outline" size="sm" className="mt-2">
-                <Link to="/login">{t('common.signIn')}</Link>
-              </Button>
-              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
-                <Link to="/free-trial">{t('common.getStarted')}</Link>
-              </Button>
+              
+              {user ? (
+                <div className="flex flex-col space-y-2 pt-2 border-t border-border">
+                  <div className="flex items-center gap-2 py-2 text-foreground">
+                    <User className="h-4 w-4" />
+                    <span>{profile?.first_name || user.email?.split('@')[0] || 'User'}</span>
+                  </div>
+                  <Button onClick={handleSignOut} variant="outline" size="sm" className="gap-2">
+                    <LogOut className="h-4 w-4" />
+                    {t('common.signOut')}
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <Button asChild variant="outline" size="sm" className="mt-2">
+                    <Link to="/login">{t('common.signIn')}</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
+                    <Link to="/free-trial">{t('common.getStarted')}</Link>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         )}
