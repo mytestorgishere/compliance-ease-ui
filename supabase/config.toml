@@ -28,8 +28,8 @@ file_size_limit = "50MiB"
 [auth]
 enabled = true
 port = 54328
-site_url = "http://127.0.0.1:3000"
-additional_redirect_urls = ["https://efgtymqsurnqkwfwjefj.supabase.co"]
+site_url = "http://localhost:8080"
+additional_redirect_urls = ["https://efgtymqsurnqkwfwjefj.supabase.co", "http://127.0.0.1:8080", "http://localhost:3000"]
 
 [auth.email]
 enable_signup = true
