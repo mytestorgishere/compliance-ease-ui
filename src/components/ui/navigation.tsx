@@ -29,7 +29,7 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src={complyLogo} alt="Logo" className="h-8 w-8" />
-            <span className="text-xl font-bold text-foreground">ComplianceAI</span>
+            <span className="text-xl font-bold text-foreground">Compliance Ease</span>
           </Link>
 
             {/* Desktop Navigation */}

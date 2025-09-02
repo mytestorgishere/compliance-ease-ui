@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Willkommen Zurück",
-    "subtitle": "Melden Sie sich in Ihrem ComplianceAI-Konto an",
+    "subtitle": "Melden Sie sich in Ihrem Compliance Ease-Konto an",
     "forgotPassword": "Passwort vergessen?",
     "noAccount": "Noch kein Konto?",
     "signUpLink": "Hier registrieren"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Starten Sie Ihre Kostenlose Testversion",
-    "subtitle": "Laden Sie ein Dokument hoch und sehen Sie ComplianceAI in Aktion",
+    "subtitle": "Laden Sie ein Dokument hoch und sehen Sie Compliance Ease in Aktion",
     "uploadTitle": "Laden Sie Ihr Dokument Hoch",
     "uploadDescription": "Laden Sie beliebige Compliance-Dokumente hoch (DSGVO-Bewertung, Nachhaltigkeitsbericht, etc.)",
     "supportedFormats": "Unterstützte Formate: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Demo Buchen",
-    "subtitle": "Sehen Sie, wie ComplianceAI Ihren Compliance-Workflow transformieren kann",
+    "subtitle": "Sehen Sie, wie Compliance Ease Ihren Compliance-Workflow transformieren kann",
     "preferredDate": "Bevorzugtes Datum",
     "preferredTime": "Bevorzugte Zeit",
     "requirements": "Spezifische Anforderungen",

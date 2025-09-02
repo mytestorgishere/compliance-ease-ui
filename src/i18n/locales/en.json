@@ -33,7 +33,7 @@
   },
   "login": {
     "title": "Welcome Back",
-    "subtitle": "Sign in to your ComplianceAI account",
+    "subtitle": "Sign in to your Compliance Ease account",
     "forgotPassword": "Forgot your password?",
     "noAccount": "Don't have an account?",
     "signUpLink": "Sign up here"
@@ -47,7 +47,7 @@
   },
   "freeTrial": {
     "title": "Start Your Free Trial",
-    "subtitle": "Upload a document and see ComplianceAI in action",
+    "subtitle": "Upload a document and see Compliance Ease in action",
     "uploadTitle": "Upload Your Document",
     "uploadDescription": "Upload any compliance document (GDPR assessment, sustainability report, etc.)",
     "supportedFormats": "Supported formats: PDF, DOC, DOCX, TXT",
@@ -108,7 +108,7 @@
   },
   "demo": {
     "title": "Book a Demo",
-    "subtitle": "See how ComplianceAI can transform your compliance workflow",
+    "subtitle": "See how Compliance Ease can transform your compliance workflow",
     "preferredDate": "Preferred Date",
     "preferredTime": "Preferred Time",
     "requirements": "Specific Requirements",

@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Welkom Terug",
-    "subtitle": "Log in op uw ComplianceAI account",
+    "subtitle": "Log in op uw Compliance Ease account",
     "forgotPassword": "Wachtwoord vergeten?",
     "noAccount": "Geen account?",
     "signUpLink": "Hier registreren"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Start Uw Gratis Proefperiode",
-    "subtitle": "Upload een document en zie ComplianceAI in actie",
+    "subtitle": "Upload een document en zie Compliance Ease in actie",
     "uploadTitle": "Upload Uw Document",
     "uploadDescription": "Upload elk compliance document (AVG beoordeling, duurzaamheidsrapport, etc.)",
     "supportedFormats": "Ondersteunde formaten: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Boek een Demo",
-    "subtitle": "Zie hoe ComplianceAI uw compliance workflow kan transformeren",
+    "subtitle": "Zie hoe Compliance Ease uw compliance workflow kan transformeren",
     "preferredDate": "Voorkeursdatum",
     "preferredTime": "Voorkeurstijd",
     "requirements": "Specifieke Vereisten",

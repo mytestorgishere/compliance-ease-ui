@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Välkommen Tillbaka",
-    "subtitle": "Logga in på ditt ComplianceAI-konto",
+    "subtitle": "Logga in på ditt Compliance Ease-konto",
     "forgotPassword": "Glömt lösenordet?",
     "noAccount": "Har inget konto?",
     "signUpLink": "Registrera här"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Starta Din Gratis Testversion",
-    "subtitle": "Ladda upp ett dokument och se ComplianceAI i aktion",
+    "subtitle": "Ladda upp ett dokument och se Compliance Ease i aktion",
     "uploadTitle": "Ladda Upp Ditt Dokument",
     "uploadDescription": "Ladda upp vilket dokument som helst (GDPR-bedömning, hållbarhetsrapport, etc.)",
     "supportedFormats": "Format som stöds: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Boka en Demo",
-    "subtitle": "Se hur ComplianceAI kan förändra ditt arbetsflöde för regelefterlevnad",
+    "subtitle": "Se hur Compliance Ease kan förändra ditt arbetsflöde för regelefterlevnad",
     "preferredDate": "Föredragen Datum",
     "preferredTime": "Föredragen Tid",
     "requirements": "Specifika Krav",

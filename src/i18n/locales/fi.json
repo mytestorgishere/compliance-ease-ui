@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Tervetuloa Takaisin",
-    "subtitle": "Kirjaudu ComplianceAI tilillesi",
+    "subtitle": "Kirjaudu Compliance Ease tilillesi",
     "forgotPassword": "Unohditko salasanan?",
     "noAccount": "Ei tiliä?",
     "signUpLink": "Rekisteröidy tässä"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Aloita Ilmainen Kokeilu",
-    "subtitle": "Lataa asiakirja ja katso ComplianceAI toiminnassa",
+    "subtitle": "Lataa asiakirja ja katso Compliance Ease toiminnassa",
     "uploadTitle": "Lataa Asiakirjasi",
     "uploadDescription": "Lataa mikä tahansa compliance asiakirja (GDPR arviointi, kestävyysraportti, jne.)",
     "supportedFormats": "Tuetut tiedostomuodot: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Varaa Demo",
-    "subtitle": "Katso kuinka ComplianceAI voi muuttaa compliance työnkulkusi",
+    "subtitle": "Katso kuinka Compliance Ease voi muuttaa compliance työnkulkusi",
     "preferredDate": "Haluttu Päivämäärä",
     "preferredTime": "Haluttu Aika",
     "requirements": "Erityisvaatimukset",

@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Witamy z powrotem",
-    "subtitle": "Zaloguj się do swojego konta ComplianceAI",
+    "subtitle": "Zaloguj się do swojego konta Compliance Ease",
     "forgotPassword": "Zapomniałeś hasła?",
     "noAccount": "Nie masz konta?",
     "signUpLink": "Zarejestruj się tutaj"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Rozpocznij Swój Bezpłatny Okres Próbny",
-    "subtitle": "Prześlij dokument i zobacz ComplianceAI w akcji",
+    "subtitle": "Prześlij dokument i zobacz Compliance Ease w akcji",
     "uploadTitle": "Prześlij Swój Dokument",
     "uploadDescription": "Prześlij dowolny dokument zgodności (ocena RODO, raport zrównoważonego rozwoju, itp.)",
     "supportedFormats": "Obsługiwane formaty: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Zarezerwuj Demo",
-    "subtitle": "Zobacz, jak ComplianceAI może przekształcić Twój przepływ pracy zgodności",
+    "subtitle": "Zobacz, jak Compliance Ease może przekształcić Twój przepływ pracy zgodności",
     "preferredDate": "Preferowana Data",
     "preferredTime": "Preferowany Czas",
     "requirements": "Specyficzne Wymagania",

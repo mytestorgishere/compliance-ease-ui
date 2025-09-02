@@ -87,7 +87,7 @@ export default function Demo() {
       <header className="p-4">
         <Link to="/" className="inline-flex items-center gap-2 text-white">
           <img src={complyLogo} alt="Logo" className="h-8 w-8" />
-          <span className="text-xl font-bold">ComplianceAI</span>
+          <span className="text-xl font-bold">Compliance Ease</span>
         </Link>
       </header>
 
@@ -106,7 +106,7 @@ export default function Demo() {
           <CardHeader>
             <CardTitle className="text-2xl text-center">Schedule Your Demo</CardTitle>
             <CardDescription className="text-center">
-              See how ComplianceAI transforms your regulatory documents into actionable compliance reports with risk assessments and automated recommendations.
+              See how Compliance Ease transforms your regulatory documents into actionable compliance reports with risk assessments and automated recommendations.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -284,7 +284,7 @@ export default function Demo() {
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                  <span>Personalized walkthrough of ComplianceAI features</span>
+                  <span>Personalized walkthrough of Compliance Ease features</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />

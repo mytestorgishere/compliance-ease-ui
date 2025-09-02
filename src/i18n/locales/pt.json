@@ -32,7 +32,7 @@
   },
   "login": {
     "title": "Bem-vindo de Volta",
-    "subtitle": "Entre na sua conta ComplianceAI",
+    "subtitle": "Entre na sua conta Compliance Ease",
     "forgotPassword": "Esqueceu sua senha?",
     "noAccount": "Não tem conta?",
     "signUpLink": "Registre-se aqui"
@@ -46,7 +46,7 @@
   },
   "freeTrial": {
     "title": "Inicie Seu Teste Gratuito",
-    "subtitle": "Carregue um documento e veja ComplianceAI em ação",
+    "subtitle": "Carregue um documento e veja Compliance Ease em ação",
     "uploadTitle": "Carregue Seu Documento",
     "uploadDescription": "Carregue qualquer documento de conformidade (avaliação GDPR, relatório de sustentabilidade, etc.)",
     "supportedFormats": "Formatos suportados: PDF, DOC, DOCX, TXT",
@@ -107,7 +107,7 @@
   },
   "demo": {
     "title": "Reservar uma Demo",
-    "subtitle": "Veja como ComplianceAI pode transformar seu fluxo de trabalho de conformidade",
+    "subtitle": "Veja como Compliance Ease pode transformar seu fluxo de trabalho de conformidade",
     "preferredDate": "Data Preferida",
     "preferredTime": "Horário Preferido",
     "requirements": "Requisitos Específicos",

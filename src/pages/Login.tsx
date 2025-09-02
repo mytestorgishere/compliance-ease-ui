@@ -73,7 +73,7 @@ export default function Login() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 text-white">
             <img src={complyLogo} alt="Logo" className="h-8 w-8" />
-            <span className="text-xl font-bold">ComplianceAI</span>
+            <span className="text-xl font-bold">Compliance Ease</span>
           </Link>
         </div>
 

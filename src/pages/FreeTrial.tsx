@@ -159,7 +159,7 @@ export default function FreeTrial() {
       <header className="p-4">
         <Link to="/" className="inline-flex items-center gap-2 text-white">
           <img src={complyLogo} alt="Logo" className="h-8 w-8" />
-          <span className="text-xl font-bold">ComplianceAI</span>
+          <span className="text-xl font-bold">Compliance Ease</span>
         </Link>
       </header>
 
@@ -310,7 +310,7 @@ export default function FreeTrial() {
         {/* CTA */}
         <div className="text-center mt-12">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Want the full ComplianceAI experience?
+            Want the full Compliance Ease experience?
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">

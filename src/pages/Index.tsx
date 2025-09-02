@@ -18,7 +18,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-muted-foreground">
-              © 2024 ComplianceAI. Built for EU compliance excellence.
+              © 2024 Compliance Ease. Built for EU compliance excellence.
             </p>
           </div>
         </div>
