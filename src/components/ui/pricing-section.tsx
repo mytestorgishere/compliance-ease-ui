@@ -9,6 +9,9 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 interface SubscriptionTier {
   id: string;
@@ -27,6 +30,16 @@ export function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
   const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    phone: '',
+    requirements: ''
+  });
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
 
   useEffect(() => {
     const fetchSubscriptionTiers = async () => {
@@ -115,6 +128,58 @@ export function PricingSection() {
         description: "Failed to start subscription process. Please try again.",
         variant: "destructive",
       });
+    }
+  };
+
+  const handleContactSales = async () => {
+    if (!contactForm.firstName || !contactForm.lastName || !contactForm.email) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in at least your name and email.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmittingContact(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-sales-email', {
+        body: {
+          contactType: 'sales',
+          firstName: contactForm.firstName,
+          lastName: contactForm.lastName,
+          email: contactForm.email,
+          company: contactForm.company,
+          phone: contactForm.phone,
+          requirements: contactForm.requirements,
+        }
+      });
+
+      if (error) throw error;
+
+      setShowContactForm(false);
+      setContactForm({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        phone: '',
+        requirements: ''
+      });
+
+      toast({
+        title: "Contact Request Sent",
+        description: "Our sales team will get back to you within 24 hours.",
+      });
+    } catch (error: any) {
+      console.error('Contact sales error:', error);
+      toast({
+        title: "Failed to Send",
+        description: error.message || "Failed to send contact request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmittingContact(false);
     }
   };
   
@@ -237,9 +302,96 @@ export function PricingSection() {
           <p className="text-muted-foreground mb-4">
             {t('pricing.customSolution')}
           </p>
-          <Button variant="outline">
-            {t('pricing.contactSales')}
-          </Button>
+          <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
+            <DialogTrigger asChild>
+              <Button variant="outline">
+                {t('pricing.contactSales')}
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Contact Sales</DialogTitle>
+                <DialogDescription>
+                  Get in touch with our sales team for custom pricing and enterprise solutions.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input
+                      id="firstName"
+                      value={contactForm.firstName}
+                      onChange={(e) => setContactForm({...contactForm, firstName: e.target.value})}
+                      placeholder="John"
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input
+                      id="lastName"
+                      value={contactForm.lastName}
+                      onChange={(e) => setContactForm({...contactForm, lastName: e.target.value})}
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={contactForm.email}
+                    onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                    placeholder="john@company.com"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="company">Company</Label>
+                  <Input
+                    id="company"
+                    value={contactForm.company}
+                    onChange={(e) => setContactForm({...contactForm, company: e.target.value})}
+                    placeholder="Acme Inc."
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="phone">Phone (Optional)</Label>
+                  <Input
+                    id="phone"
+                    value={contactForm.phone}
+                    onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="requirements">Requirements (Optional)</Label>
+                  <Textarea
+                    id="requirements"
+                    value={contactForm.requirements}
+                    onChange={(e) => setContactForm({...contactForm, requirements: e.target.value})}
+                    placeholder="Tell us about your compliance needs..."
+                    className="min-h-[80px]"
+                  />
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setShowContactForm(false)} className="flex-1">
+                  Cancel
+                </Button>
+                <Button onClick={handleContactSales} disabled={isSubmittingContact} className="flex-1">
+                  {isSubmittingContact ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Request'
+                  )}
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

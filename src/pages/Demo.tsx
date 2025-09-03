@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface DemoFormData {
   firstName: string;
@@ -44,15 +45,39 @@ export default function Demo() {
   const onSubmit = async (data: DemoFormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Send demo booking to backend
+      const { error } = await supabase.functions.invoke('send-sales-email', {
+        body: {
+          contactType: 'demo',
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          preferredDate: data.preferredDate,
+          preferredTime: data.preferredTime,
+          requirements: data.requirements,
+        }
+      });
+
+      if (error) throw error;
+
       setIsSubmitted(true);
       toast({
         title: t('demo.success'),
         description: "We'll send you a calendar invite within 24 hours.",
       });
-    }, 2000);
+    } catch (error: any) {
+      console.error('Demo booking error:', error);
+      toast({
+        title: "Booking Failed",
+        description: error.message || "Failed to book demo. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {

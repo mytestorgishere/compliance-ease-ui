@@ -17,6 +17,7 @@ export default function FreeTrial() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [reportReady, setReportReady] = useState(false);
   const [generatedReport, setGeneratedReport] = useState<string | null>(null);
+  const [subscriptionData, setSubscriptionData] = useState<any>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -27,7 +28,27 @@ export default function FreeTrial() {
         variant: "destructive",
       });
       navigate('/login');
+      return;
     }
+
+    // Check subscription status
+    const checkSubscription = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('subscribers')
+          .select('*')
+          .eq('user_id', user.id)
+          .single();
+
+        if (!error && data) {
+          setSubscriptionData(data);
+        }
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+      }
+    };
+
+    checkSubscription();
   }, [user, navigate]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,11 +88,24 @@ export default function FreeTrial() {
       return;
     }
 
-    // Check if trial already used
-    if (profile?.trial_used && profile?.subscription_status === 'free') {
+    // Check usage limits based on subscription
+    const isSubscribed = subscriptionData?.subscribed;
+    const fileUploadLimit = subscriptionData?.file_upload_limit || 0;
+    const filesUsed = subscriptionData?.file_uploads_used || 0;
+
+    if (!isSubscribed && profile?.trial_used) {
       toast({
         title: "Trial Already Used",
         description: "You've already used your free trial. Please upgrade to a paid subscription to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (isSubscribed && filesUsed >= fileUploadLimit) {
+      toast({
+        title: "Upload Limit Reached",
+        description: `You've reached your ${subscriptionData.subscription_tier} plan limit of ${fileUploadLimit} file uploads. Please upgrade your plan.`,
         variant: "destructive",
       });
       return;
@@ -176,7 +210,7 @@ export default function FreeTrial() {
             Upload company data, operational logs, or regulatory documents to see how our AI automates 
             compliance reporting for GDPR, CSRD, and ESG requirements.
           </p>
-          {profile?.trial_used && profile?.subscription_status === 'free' && (
+          {!subscriptionData?.subscribed && profile?.trial_used && (
             <div className="mt-4 p-4 bg-warning/20 border border-warning/30 rounded-lg max-w-2xl mx-auto">
               <div className="flex items-center text-warning">
                 <AlertCircle className="h-5 w-5 mr-2" />
@@ -213,7 +247,7 @@ export default function FreeTrial() {
                 onClick={() => fileInputRef.current?.click()}
                 variant={uploadedFile ? "secondary" : "default"}
                 className="w-full"
-                disabled={isProcessing || (profile?.trial_used && profile?.subscription_status === 'free')}
+                disabled={isProcessing || (!subscriptionData?.subscribed && profile?.trial_used)}
               >
                 <Upload className="h-4 w-4 mr-2" />
                 {uploadedFile ? uploadedFile.name : t('common.upload')}
@@ -244,7 +278,7 @@ export default function FreeTrial() {
             <CardContent>
               <Button
                 onClick={generateReport}
-                disabled={!uploadedFile || isProcessing || reportReady || (profile?.trial_used && profile?.subscription_status === 'free')}
+                disabled={!uploadedFile || isProcessing || reportReady || (!subscriptionData?.subscribed && profile?.trial_used)}
                 className="w-full bg-gradient-success hover:opacity-90"
               >
                 {isProcessing ? (
@@ -309,17 +343,44 @@ export default function FreeTrial() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Want the full Compliance Ease experience?
-          </h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
-              <Link to="/signup">{t('common.getStarted')}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-white border-white/20 hover:bg-white/10">
-              <Link to="/demo">{t('common.bookDemo')}</Link>
-            </Button>
-          </div>
+          {subscriptionData?.subscribed ? (
+            <div className="backdrop-blur bg-card/80 border border-border/50 shadow-medium rounded-lg p-6 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                🎉 Welcome, {subscriptionData.subscription_tier} subscriber!
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div className="p-4 bg-success/10 rounded-lg">
+                  <p className="text-success font-semibold text-lg">{subscriptionData.file_upload_limit}</p>
+                  <p className="text-muted-foreground text-sm">Monthly Uploads</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg">
+                  <p className="text-primary font-semibold text-lg">{subscriptionData.file_uploads_used || 0}</p>
+                  <p className="text-muted-foreground text-sm">Used This Month</p>
+                </div>
+                <div className="p-4 bg-warning/10 rounded-lg">
+                  <p className="text-warning font-semibold text-lg">{subscriptionData.file_upload_limit - (subscriptionData.file_uploads_used || 0)}</p>
+                  <p className="text-muted-foreground text-sm">Remaining</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground mt-4">
+                Continue processing your compliance documents with unlimited AI analysis and reporting.
+              </p>
+            </div>
+          ) : (
+            <>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Want the full Compliance Ease experience?
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90">
+                  <Link to="/signup">{t('common.getStarted')}</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="text-white border-white/20 hover:bg-white/10">
+                  <Link to="/demo">{t('common.bookDemo')}</Link>
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
