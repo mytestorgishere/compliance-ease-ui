@@ -86,6 +86,51 @@ export type Database = {
         }
         Relationships: []
       }
+      sales_contacts: {
+        Row: {
+          company: string | null
+          contact_type: string
+          created_at: string
+          email: string
+          first_name: string | null
+          id: string
+          last_name: string | null
+          phone: string | null
+          preferred_date: string | null
+          preferred_time: string | null
+          requirements: string | null
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          contact_type: string
+          created_at?: string
+          email: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          requirements?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          contact_type?: string
+          created_at?: string
+          email?: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          requirements?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       subscribers: {
         Row: {
           created_at: string
