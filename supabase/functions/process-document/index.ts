@@ -166,6 +166,7 @@ Focus on practical, actionable advice that businesses can implement. Include rel
 The report should be comprehensive, professional, and directly applicable to the company's situation as described in the document.`;
 
     // Call OpenAI API
+    console.log('Calling OpenAI API with model gpt-4o-mini...');
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -173,7 +174,7 @@ The report should be comprehensive, professional, and directly applicable to the
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-5-2025-08-07',
+        model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: systemPrompt },
           { 
@@ -186,7 +187,8 @@ Document Content: ${document}
 Generate a detailed compliance analysis and recommendations.` 
           }
         ],
-        max_completion_tokens: 4000,
+        max_tokens: 4000,
+        temperature: 0.7,
       }),
     });
 
