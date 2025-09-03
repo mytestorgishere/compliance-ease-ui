@@ -90,6 +90,8 @@ export type Database = {
         Row: {
           created_at: string
           email: string
+          file_upload_limit: number | null
+          file_uploads_used: number | null
           id: string
           stripe_customer_id: string | null
           subscribed: boolean
@@ -101,6 +103,8 @@ export type Database = {
         Insert: {
           created_at?: string
           email: string
+          file_upload_limit?: number | null
+          file_uploads_used?: number | null
           id?: string
           stripe_customer_id?: string | null
           subscribed?: boolean
@@ -112,6 +116,8 @@ export type Database = {
         Update: {
           created_at?: string
           email?: string
+          file_upload_limit?: number | null
+          file_uploads_used?: number | null
           id?: string
           stripe_customer_id?: string | null
           subscribed?: boolean
@@ -119,6 +125,39 @@ export type Database = {
           subscription_tier?: string | null
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      subscription_tiers: {
+        Row: {
+          created_at: string
+          features: Json | null
+          file_upload_limit: number
+          id: string
+          monthly_price: number
+          tier_name: string
+          updated_at: string
+          yearly_price: number
+        }
+        Insert: {
+          created_at?: string
+          features?: Json | null
+          file_upload_limit?: number
+          id?: string
+          monthly_price: number
+          tier_name: string
+          updated_at?: string
+          yearly_price: number
+        }
+        Update: {
+          created_at?: string
+          features?: Json | null
+          file_upload_limit?: number
+          id?: string
+          monthly_price?: number
+          tier_name?: string
+          updated_at?: string
+          yearly_price?: number
         }
         Relationships: []
       }

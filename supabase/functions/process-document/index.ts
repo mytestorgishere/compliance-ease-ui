@@ -60,8 +60,33 @@ serve(async (req) => {
       throw new Error('Failed to check user profile');
     }
 
+    // Check subscription and file upload limits
+    const { data: subscriberData } = await supabaseClient
+      .from("subscribers")
+      .select("file_upload_limit, file_uploads_used, subscribed, subscription_tier")
+      .eq("user_id", user.id)
+      .single();
+
     // Check if user can use the service
-    if (profile.trial_used && profile.subscription_status === 'free') {
+    if (!profile.trial_used && profile.subscription_status === 'free') {
+      // Free trial user - allow processing
+      console.log('Processing document for free trial user');
+    } else if (subscriberData?.subscribed) {
+      // Check file upload limit for subscribers
+      const uploadsUsed = subscriberData.file_uploads_used || 0;
+      const uploadLimit = subscriberData.file_upload_limit || 0;
+      
+      if (uploadsUsed >= uploadLimit) {
+        return new Response(JSON.stringify({ 
+          error: `File upload limit reached. You have used ${uploadsUsed}/${uploadLimit} uploads for your ${subscriberData.subscription_tier} plan.` 
+        }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 403,
+        });
+      }
+      console.log(`Processing document for subscriber: ${uploadsUsed + 1}/${uploadLimit} uploads used`);
+    } else {
+      // No active subscription and trial already used
       return new Response(JSON.stringify({ 
         error: 'Trial already used. Please upgrade to a paid subscription to continue using the service.' 
       }), {
@@ -172,6 +197,17 @@ Generate a detailed compliance analysis and recommendations.`
         .eq('user_id', user.id);
       
       console.log('Trial marked as used for user:', user.email);
+    }
+
+    // Increment file upload counter for subscribers
+    if (subscriberData?.subscribed) {
+      const currentUploads = subscriberData.file_uploads_used || 0;
+      await supabaseClient
+        .from('subscribers')
+        .update({ file_uploads_used: currentUploads + 1 })
+        .eq('user_id', user.id);
+      
+      console.log(`File upload counter incremented: ${currentUploads + 1}/${subscriberData.file_upload_limit}`);
     }
 
     return new Response(JSON.stringify({ 

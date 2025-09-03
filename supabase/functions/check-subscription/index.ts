@@ -105,6 +105,15 @@ serve(async (req) => {
     }
 
     // Update subscribers table
+    // Get file upload limit from subscription tiers table
+    const { data: tierData } = await supabaseClient
+      .from("subscription_tiers")
+      .select("file_upload_limit")
+      .eq("tier_name", subscriptionTier?.toLowerCase() || "")
+      .single();
+
+    const fileUploadLimit = tierData?.file_upload_limit || 0;
+
     await supabaseClient.from("subscribers").upsert({
       email: user.email,
       user_id: user.id,
@@ -112,6 +121,7 @@ serve(async (req) => {
       subscribed: hasActiveSub,
       subscription_tier: subscriptionTier,
       subscription_end: subscriptionEnd,
+      file_upload_limit: fileUploadLimit,
       updated_at: new Date().toISOString(),
     }, { onConflict: 'email' });
 
