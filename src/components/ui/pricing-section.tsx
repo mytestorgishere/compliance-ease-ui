@@ -10,7 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";  
 import { Textarea } from "@/components/ui/textarea";
 
 interface SubscriptionTier {
@@ -21,7 +21,6 @@ interface SubscriptionTier {
   file_upload_limit: number;
   features: string[];
 }
-
 
 export function PricingSection() {
   const { t } = useTranslation();
