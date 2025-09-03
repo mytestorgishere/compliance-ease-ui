@@ -48,14 +48,35 @@ serve(async (req) => {
     const user = userData.user;
     console.log('User authenticated:', user.email);
 
-    // Check user profile and trial status
-    const { data: profile, error: profileError } = await supabaseClient
+    // Check user profile and trial status, create if doesn't exist
+    let { data: profile, error: profileError } = await supabaseClient
       .from('profiles')
       .select('trial_used, subscription_status')
       .eq('user_id', user.id)
       .single();
 
-    if (profileError) {
+    if (profileError && profileError.code === 'PGRST116') {
+      // Profile doesn't exist, create it
+      console.log('Profile not found, creating new profile for user:', user.email);
+      const { data: newProfile, error: createError } = await supabaseClient
+        .from('profiles')
+        .insert({
+          user_id: user.id,
+          email: user.email,
+          trial_used: false,
+          subscription_status: 'free'
+        })
+        .select('trial_used, subscription_status')
+        .single();
+      
+      if (createError) {
+        console.error('Failed to create profile:', createError);
+        throw new Error('Failed to create user profile');
+      }
+      
+      profile = newProfile;
+      console.log('Profile created successfully for user:', user.email);
+    } else if (profileError) {
       console.error('Profile error:', profileError);
       throw new Error('Failed to check user profile');
     }
