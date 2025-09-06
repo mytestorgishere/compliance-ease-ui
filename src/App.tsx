@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import FreeTrial from "./pages/FreeTrial";
 import Demo from "./pages/Demo";
+import Subscription from "./pages/Subscription";
 import SubscriptionSuccess from "./pages/SubscriptionSuccess";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/signup" element={<Signup />} />
             <Route path="/free-trial" element={<FreeTrial />} />
             <Route path="/demo" element={<Demo />} />
+            <Route path="/subscription" element={<Subscription />} />
             <Route path="/subscription-success" element={<SubscriptionSuccess />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

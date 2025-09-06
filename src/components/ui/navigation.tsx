@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut, CreditCard } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useAuth } from "@/contexts/AuthContext";
@@ -54,6 +54,12 @@ export function Navigation() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
+                    <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                      <Link to="/subscription">
+                        <CreditCard className="h-4 w-4" />
+                        My Subscription
+                      </Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleSignOut} className="gap-2 cursor-pointer">
                       <LogOut className="h-4 w-4" />
                       {t('common.signOut')}
@@ -107,6 +113,12 @@ export function Navigation() {
                     <User className="h-4 w-4" />
                     <span>{profile?.first_name || user.email?.split('@')[0] || 'User'}</span>
                   </div>
+                  <Button asChild variant="outline" size="sm" className="gap-2">
+                    <Link to="/subscription">
+                      <CreditCard className="h-4 w-4" />
+                      My Subscription
+                    </Link>
+                  </Button>
                   <Button onClick={handleSignOut} variant="outline" size="sm" className="gap-2">
                     <LogOut className="h-4 w-4" />
                     {t('common.signOut')}
