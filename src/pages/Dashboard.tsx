@@ -368,9 +368,9 @@ export default function Dashboard() {
                       ))}
                       <div className="flex items-center gap-2 text-sm mt-2 pt-2 border-t border-border/30">
                         <CheckCircle className="h-3 w-3 text-success flex-shrink-0" />
-                        <span className="text-muted-foreground">
+                        {/* <span className="text-muted-foreground">
                           File size limit: {subscriptionData.file_size_limit_mb || 1}MB per document
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                   </div>
