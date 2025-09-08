@@ -16,7 +16,10 @@ import {
 export function Navigation() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, profile, signOut } = useAuth();
+  const { user, profile, subscription, signOut } = useAuth();
+
+  // Check if user has active subscription
+  const hasActiveSubscription = user && subscription?.subscribed;
 
   const handleSignOut = async () => {
     await signOut();
@@ -34,12 +37,16 @@ export function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-                {t('navigation.features')}
-              </a>
-              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                {t('navigation.pricing')}
-              </a>
+              {!hasActiveSubscription && (
+                <>
+                  <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+                    {t('navigation.features')}
+                  </a>
+                  <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+                    {t('navigation.pricing')}
+                  </a>
+                </>
+              )}
               {user ? (
                 <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
                   Dashboard
@@ -84,7 +91,9 @@ export function Navigation() {
                     <Link to="/login">{t('common.signIn')}</Link>
                   </Button>
                   <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
-                    <Link to="/free-trial">{t('common.getStarted')}</Link>
+                    <Link to={hasActiveSubscription ? "/dashboard" : "/free-trial"}>
+                      {hasActiveSubscription ? "Dashboard" : t('common.getStarted')}
+                    </Link>
                   </Button>
                 </>
               )}
@@ -106,12 +115,16 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-2">
-              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                {t('navigation.features')}
-              </a>
-              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                {t('navigation.pricing')}
-              </a>
+              {!hasActiveSubscription && (
+                <>
+                  <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors py-2">
+                    {t('navigation.features')}
+                  </a>
+                  <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors py-2">
+                    {t('navigation.pricing')}
+                  </a>
+                </>
+              )}
               {user ? (
                 <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors py-2">
                   Dashboard
@@ -154,7 +167,9 @@ export function Navigation() {
                     <Link to="/login">{t('common.signIn')}</Link>
                   </Button>
                   <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
-                    <Link to="/free-trial">{t('common.getStarted')}</Link>
+                    <Link to={hasActiveSubscription ? "/dashboard" : "/free-trial"}>
+                      {hasActiveSubscription ? "Dashboard" : t('common.getStarted')}
+                    </Link>
                   </Button>
                 </>
               )}

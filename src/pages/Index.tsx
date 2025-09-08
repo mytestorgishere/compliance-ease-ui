@@ -3,15 +3,27 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { FeaturesSection } from "@/components/ui/features-section";
 import { DashboardPreview } from "@/components/ui/dashboard-preview";
 import { PricingSection } from "@/components/ui/pricing-section";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
+  const { user, subscription } = useAuth();
+  
+  // Check if user has active subscription
+  const hasActiveSubscription = user && subscription?.subscribed;
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <FeaturesSection />
-      <DashboardPreview />
-      <PricingSection />
+      
+      {/* Only show marketing sections if user doesn't have active subscription */}
+      {!hasActiveSubscription && (
+        <>
+          <FeaturesSection />
+          <DashboardPreview />
+          <PricingSection />
+        </>
+      )}
       
       {/* Footer */}
       <footer className="bg-muted/30 py-12 border-t border-border">

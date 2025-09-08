@@ -15,10 +15,19 @@ interface UserProfile {
   updated_at: string;
 }
 
+interface SubscriptionData {
+  subscribed: boolean;
+  subscription_tier?: string;
+  subscription_end?: string;
+  file_upload_limit?: number;
+  file_uploads_used?: number;
+}
+
 interface AuthContextType {
   user: User | null;
   session: Session | null;
   profile: UserProfile | null;
+  subscription: SubscriptionData | null;
   loading: boolean;
   signUp: (email: string, password: string, metadata?: any) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
@@ -45,6 +54,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [subscription, setSubscription] = useState<SubscriptionData | null>(null);
   const [loading, setLoading] = useState(true);
 
   const fetchProfile = async (userId: string) => {
@@ -67,10 +77,32 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
+  const fetchSubscription = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('subscribers')
+        .select('subscribed, subscription_tier, subscription_end, file_upload_limit, file_uploads_used')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error('Error fetching subscription:', error);
+        return null;
+      }
+
+      return data;
+    } catch (error) {
+      console.error('Error in fetchSubscription:', error);
+      return null;
+    }
+  };
+
   const refreshProfile = async () => {
     if (user) {
       const profileData = await fetchProfile(user.id);
+      const subscriptionData = await fetchSubscription(user.id);
       setProfile(profileData);
+      setSubscription(subscriptionData);
     }
   };
 
@@ -83,14 +115,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setUser(session?.user ?? null);
         
         if (session?.user) {
-          // Fetch user profile
+          // Fetch user profile and subscription data
           setTimeout(async () => {
             const profileData = await fetchProfile(session.user.id);
+            const subscriptionData = await fetchSubscription(session.user.id);
             setProfile(profileData);
+            setSubscription(subscriptionData);
             setLoading(false);
           }, 0);
         } else {
           setProfile(null);
+          setSubscription(null);
           setLoading(false);
         }
       }
@@ -102,8 +137,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setUser(session?.user ?? null);
       
       if (session?.user) {
-        fetchProfile(session.user.id).then(profileData => {
+        Promise.all([
+          fetchProfile(session.user.id),
+          fetchSubscription(session.user.id)
+        ]).then(([profileData, subscriptionData]) => {
           setProfile(profileData);
+          setSubscription(subscriptionData);
           setLoading(false);
         });
       } else {
@@ -155,6 +194,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     user,
     session,
     profile,
+    subscription,
     loading,
     signUp,
     signIn,

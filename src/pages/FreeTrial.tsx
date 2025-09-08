@@ -201,14 +201,22 @@ export default function FreeTrial() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('freeTrial.title')}
+            {subscriptionData?.subscribed 
+              ? `Welcome back, ${subscriptionData.subscription_tier} subscriber!`
+              : t('freeTrial.title')
+            }
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-4">
-            {t('freeTrial.subtitle')}
+            {subscriptionData?.subscribed 
+              ? "Process your compliance documents with AI-powered analysis and reporting."
+              : t('freeTrial.subtitle')
+            }
           </p>
           <p className="text-white/70 max-w-3xl mx-auto">
-            Upload company data, operational logs, or regulatory documents to see how our AI automates 
-            compliance reporting for GDPR, CSRD, and ESG requirements.
+            {subscriptionData?.subscribed
+              ? `You have ${subscriptionData.file_upload_limit - (subscriptionData.file_uploads_used || 0)} uploads remaining this month.`
+              : "Upload company data, operational logs, or regulatory documents to see how our AI automates compliance reporting for GDPR, CSRD, and ESG requirements."
+            }
           </p>
           {!subscriptionData?.subscribed && profile?.trial_used && (
             <div className="mt-4 p-4 bg-warning/20 border border-warning/30 rounded-lg max-w-2xl mx-auto">
