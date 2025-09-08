@@ -49,15 +49,19 @@ serve(async (req) => {
       logStep("Creating new customer");
     }
 
-    // Define pricing (in cents)
-    const pricing = {
-      starter: { monthly: 19900, yearly: 199000 }, // €199/month, €1990/year
-      professional: { monthly: 45000, yearly: 450000 }, // €450/month, €4500/year
-      enterprise: { monthly: 100000, yearly: 1000000 }, // €1000/month, €10000/year
-    };
+    // Fetch pricing from database
+    const { data: tierData, error: tierError } = await supabaseClient
+      .from('subscription_tiers')
+      .select('monthly_price, yearly_price')
+      .eq('tier_name', tier.toLowerCase())
+      .single();
 
-    const amount = pricing[tier.toLowerCase()][yearly ? 'yearly' : 'monthly'];
-    logStep("Calculated pricing", { tier, yearly, amount });
+    if (tierError || !tierData) {
+      throw new Error(`Failed to fetch pricing for tier: ${tier}`);
+    }
+
+    const amount = yearly ? tierData.yearly_price : tierData.monthly_price;
+    logStep("Calculated pricing", { tier, yearly, amount, monthlyPrice: tierData.monthly_price, yearlyPrice: tierData.yearly_price });
 
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
