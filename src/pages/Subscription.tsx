@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +24,7 @@ interface SubscriptionData {
 }
 
 const Subscription = () => {
+  const { t } = useTranslation();
   const { user, profile } = useAuth();
   const { toast } = useToast();
   const [subscriptionData, setSubscriptionData] = useState<SubscriptionData | null>(null);
@@ -133,14 +135,14 @@ const Subscription = () => {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md text-center">
           <CardHeader>
-            <CardTitle>Authentication Required</CardTitle>
+            <CardTitle>{t('subscription.authRequired')}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground mb-4">
-              Please log in to view your subscription details.
+              {t('subscription.loginPrompt')}
             </p>
             <Button asChild>
-              <a href="/login">Go to Login</a>
+              <a href="/login">{t('subscription.goToLogin')}</a>
             </Button>
           </CardContent>
         </Card>
@@ -188,23 +190,23 @@ const Subscription = () => {
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       <span>
-                        Renews on {formatDate(subscriptionData.subscription_end)}
+                        {t('subscription.renewsOn')} {formatDate(subscriptionData.subscription_end)}
                       </span>
                     </div>
                   )}
                   
                   <div className="text-sm text-success font-medium">
-                    ✓ Subscription Active
+                    {t('subscription.subscriptionActive')}
                   </div>
                 </div>
               ) : (
                 <div className="space-y-3">
-                  <Badge variant="outline">Free Trial</Badge>
+                  <Badge variant="outline">{t('subscription.freeTrial')}</Badge>
                   <div className="text-sm text-muted-foreground">
-                    You're currently on a free trial. Upgrade to unlock all features.
+                    {t('subscription.freeTrialDescription')}
                   </div>
                   <Button asChild size="sm">
-                    <a href="/#pricing">View Plans</a>
+                    <a href="/#pricing">{t('subscription.viewPlans')}</a>
                   </Button>
                 </div>
               )}
@@ -254,7 +256,7 @@ const Subscription = () => {
               className="flex items-center gap-2"
             >
               <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-              {isRefreshing ? 'Refreshing...' : 'Refresh Status'}
+              {isRefreshing ? t('subscription.refreshing') : t('subscription.refreshStatus')}
             </Button>
 
             {subscriptionData?.subscribed && (
@@ -264,7 +266,7 @@ const Subscription = () => {
                 className="flex items-center gap-2"
               >
                 <ExternalLink className="h-4 w-4" />
-                {isManaging ? 'Opening...' : 'Manage Subscription'}
+                {isManaging ? t('subscription.opening') : t('subscription.manageSubscription')}
               </Button>
             )}
           </div>
@@ -272,7 +274,7 @@ const Subscription = () => {
           {/* Subscription Details */}
           <div className="bg-muted/30 p-4 rounded-lg">
             <h3 className="font-medium text-foreground mb-2">
-              {subscriptionData?.subscribed ? 'Your Plan Includes' : 'Free Trial Limits'}
+              {subscriptionData?.subscribed ? t('subscription.planIncludes') : t('subscription.freeTrialLimits')}
             </h3>
             {subscriptionData?.subscribed ? (
               <div className="space-y-2">
@@ -329,14 +331,14 @@ const Subscription = () => {
             {subscriptionData?.subscribed && (
               <div className="mt-4 pt-3 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-2">
-                  <strong>Subscription Management:</strong>
+                  <strong>{t('subscription.subscriptionManagement')}</strong>
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                  <li>• Update your payment method</li>
-                  <li>• Change your subscription plan</li>
-                  <li>• Cancel your subscription</li>
-                  <li>• Download invoices</li>
-                  <li>• View billing history</li>
+                  <li>• {t('subscription.managementFeatures.updatePayment')}</li>
+                  <li>• {t('subscription.managementFeatures.changePlan')}</li>
+                  <li>• {t('subscription.managementFeatures.cancelSubscription')}</li>
+                  <li>• {t('subscription.managementFeatures.downloadInvoices')}</li>
+                  <li>• {t('subscription.managementFeatures.viewHistory')}</li>
                 </ul>
               </div>
             )}
@@ -346,7 +348,7 @@ const Subscription = () => {
         {/* Back to Dashboard */}
         <div className="mt-8 pt-6 border-t">
           <Button variant="ghost" asChild>
-            <a href="/">← Back to Home</a>
+            <a href="/">{t('subscription.backToHome')}</a>
           </Button>
         </div>
       </div>

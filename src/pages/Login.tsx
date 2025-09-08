@@ -42,14 +42,14 @@ export default function Login() {
     
     if (error) {
       toast({
-        title: "Login Failed",
+        title: t('errors.loginFailed'),
         description: error.message,
         variant: "destructive",
       });
     } else {
       toast({
-        title: "Welcome back!",
-        description: "Successfully logged in.",
+        title: t('errors.welcomeBack'),
+        description: t('errors.loginSuccess'),
       });
       navigate('/');
     }
@@ -60,7 +60,7 @@ export default function Login() {
     const { error } = await signInWithProvider(provider);
     if (error) {
       toast({
-        title: "Login Failed",
+        title: t('errors.loginFailed'),
         description: error.message,
         variant: "destructive",
       });
@@ -145,7 +145,7 @@ export default function Login() {
                   <Separator className="w-full" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
+                  <span className="bg-card px-2 text-muted-foreground">{t('login.socialContinue')}</span>
                 </div>
               </div>
               

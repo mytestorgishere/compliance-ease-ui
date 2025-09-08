@@ -66,13 +66,13 @@ export default function Demo() {
       setIsSubmitted(true);
       toast({
         title: t('demo.success'),
-        description: "We'll send you a calendar invite within 24 hours.",
+        description: t('demo.callingCode'),
       });
     } catch (error: any) {
       console.error('Demo booking error:', error);
       toast({
-        title: "Booking Failed",
-        description: error.message || "Failed to book demo. Please try again.",
+        title: t('errors.bookingFailed'),
+        description: error.message || t('demo.error'),
         variant: "destructive",
       });
     } finally {
@@ -88,7 +88,7 @@ export default function Demo() {
             <div className="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-8 w-8 text-success" />
             </div>
-            <h2 className="text-2xl font-bold mb-4">Demo Scheduled!</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('demo.scheduledTitle')}</h2>
             <p className="text-muted-foreground mb-6">
               {t('demo.success')}
             </p>
@@ -129,9 +129,9 @@ export default function Demo() {
 
         <Card className="backdrop-blur bg-card/80 border border-border/50 shadow-strong">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Schedule Your Demo</CardTitle>
+            <CardTitle className="text-2xl text-center">{t('demo.cardTitle')}</CardTitle>
             <CardDescription className="text-center">
-              See how Compliance Ease transforms your regulatory documents into actionable compliance reports with risk assessments and automated recommendations.
+              {t('demo.cardDescription')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -251,9 +251,9 @@ export default function Demo() {
                         </FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select time" />
-                            </SelectTrigger>
+                          <SelectTrigger>
+                            <SelectValue placeholder={t('demo.selectTime')} />
+                          </SelectTrigger>
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="morning">{t('demo.timeSlots.morning')}</SelectItem>
@@ -294,7 +294,7 @@ export default function Demo() {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Scheduling...
+                      {t('demo.scheduling')}
                     </>
                   ) : (
                     t('demo.schedule')
@@ -305,23 +305,23 @@ export default function Demo() {
 
             {/* Benefits */}
             <div className="mt-8 p-4 bg-muted/50 rounded-lg">
-              <h4 className="font-semibold mb-3">What to expect in your demo:</h4>
+              <h4 className="font-semibold mb-3">{t('demo.expectTitle')}</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                  <span>Personalized walkthrough of Compliance Ease features</span>
+                  <span>{t('demo.expectItems.walkthrough')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                  <span>Live demonstration with your compliance use cases</span>
+                  <span>{t('demo.expectItems.demonstration')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                  <span>Q&A session with our compliance experts</span>
+                  <span>{t('demo.expectItems.qa')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                  <span>Custom pricing and implementation plan</span>
+                  <span>{t('demo.expectItems.pricing')}</span>
                 </li>
               </ul>
             </div>

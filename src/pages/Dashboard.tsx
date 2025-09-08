@@ -153,8 +153,8 @@ export default function Dashboard() {
 
     if (!allowedTypes.includes(file.type)) {
       toast({
-        title: "Invalid File Type",
-        description: "Please upload a PDF, DOC, DOCX, or TXT file.",
+        title: t('errors.invalidFile'),
+        description: t('errors.invalidFileDescription'),
         variant: "destructive",
       });
       return;
@@ -164,7 +164,7 @@ export default function Dashboard() {
     const validation = await validateFileSize(file, user?.email);
     if (!validation.isValid) {
       toast({
-        title: "File validation failed",
+        title: t('errors.fileValidationFailed'),
         description: validation.error,
         variant: "destructive",
       });
@@ -176,16 +176,16 @@ export default function Dashboard() {
     setGeneratedReport("");
     
     toast({
-      title: "File Uploaded",
-      description: `${file.name} is ready for processing.`,
+      title: t('errors.fileUploaded'),
+      description: t('errors.fileUploadedDescription', { fileName: file.name }),
     });
   };
 
   const generateReport = async () => {
     if (!uploadedFile) {
       toast({
-        title: "No File Selected",
-        description: "Please upload a document first.",
+        title: t('errors.noFileSelected'),
+        description: t('errors.noFileSelectedDescription'),
         variant: "destructive",
       });
       return;
@@ -194,8 +194,8 @@ export default function Dashboard() {
     // Check usage limits
     if (!subscriptionData.subscribed) {
       toast({
-        title: "Subscription Required",
-        description: "Please subscribe to generate compliance reports.",
+        title: t('errors.subscriptionRequired'),
+        description: t('errors.subscribeToGenerate'),
         variant: "destructive",
       });
       return;
@@ -203,8 +203,10 @@ export default function Dashboard() {
 
     if (subscriptionData.file_uploads_used >= subscriptionData.file_upload_limit) {
       toast({
-        title: "Upload Limit Reached",
-        description: `You've reached your monthly limit of ${subscriptionData.file_upload_limit} uploads.`,
+        title: t('freeTrial.uploadLimitReached'),
+        description: t('freeTrial.uploadLimitDescription', { 
+          limit: subscriptionData.file_upload_limit 
+        }),
         variant: "destructive",
       });
       return;
@@ -234,14 +236,14 @@ export default function Dashboard() {
       await fetchReports();
       
       toast({
-        title: "Report Generated",
-        description: "Your compliance report is ready for download.",
+        title: t('errors.reportGenerated'),
+        description: t('errors.reportGeneratedDescription'),
       });
     } catch (error: any) {
       console.error('Report generation error:', error);
       toast({
-        title: "Generation Failed",
-        description: error.message || "Failed to generate report. Please try again.",
+        title: t('errors.generationFailed'),
+        description: error.message || t('errors.generationFailedDescription'),
         variant: "destructive",
       });
     } finally {
@@ -252,8 +254,8 @@ export default function Dashboard() {
   const downloadReport = (reportContent: string, filename: string) => {
     if (!reportContent) {
       toast({
-        title: "No Report Available",
-        description: "Please generate a report first.",
+        title: t('errors.noReportAvailable'),
+        description: t('errors.noReportDescription'),
         variant: "destructive",
       });
       return;
@@ -270,8 +272,8 @@ export default function Dashboard() {
     URL.revokeObjectURL(url);
 
     toast({
-      title: "Download Complete",
-      description: "Report downloaded successfully.",
+      title: t('errors.downloadComplete'),
+      description: t('errors.downloadCompleteDescription'),
     });
   };
 
@@ -294,7 +296,7 @@ export default function Dashboard() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-gradient-hero flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
+        <div className="text-white text-xl">{t('common.loading')}</div>
       </div>
     );
   }
@@ -313,10 +315,10 @@ export default function Dashboard() {
           
           <div className="flex items-center gap-4">
             <div className="text-white text-sm">
-              Welcome, {user.email}
+              {t('dashboard.welcome', { email: user.email })}
             </div>
             <Button variant="outline" className="border-white/20 text-black hover:bg-white/10" asChild>
-              <Link to="/subscription">My Subscription</Link>
+              <Link to="/subscription">{t('dashboard.mySubscription')}</Link>
             </Button>
           </div>
         </div>
@@ -327,7 +329,7 @@ export default function Dashboard() {
         <Card className="backdrop-blur bg-card/80 border border-border/50 shadow-strong mb-8">
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
-              <span>Subscription Status</span>
+              <span>{t('dashboard.subscriptionStatus')}</span>
               {subscriptionData.subscribed && (
                 <Badge className="bg-success/20 text-success border-success/30">
                   {subscriptionData.subscription_tier} Plan
@@ -339,7 +341,7 @@ export default function Dashboard() {
             {subscriptionData.subscribed ? (
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">File Uploads Used</span>
+                  <span className="text-sm text-muted-foreground">{t('dashboard.fileUploadsUsed')}</span>
                   <span className="font-medium">
                     {subscriptionData.file_uploads_used} / {subscriptionData.file_upload_limit}
                   </span>
@@ -350,7 +352,7 @@ export default function Dashboard() {
                 />
                 {subscriptionData.subscription_end && (
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Next billing date</span>
+                    <span className="text-muted-foreground">{t('dashboard.nextBilling')}</span>
                     <span>{new Date(subscriptionData.subscription_end).toLocaleDateString()}</span>
                   </div>
                 )}
@@ -371,12 +373,12 @@ export default function Dashboard() {
                 )}
               </div>
             ) : (
-              <div className="text-center py-4">
-                <p className="text-muted-foreground mb-4">No active subscription found.</p>
-                <Button asChild>
-                  <Link to="/#pricing">Subscribe Now</Link>
-                </Button>
-              </div>
+                <div className="text-center py-4">
+                  <p className="text-muted-foreground mb-4">{t('dashboard.noActiveSubscription')}</p>
+                  <Button asChild>
+                    <Link to="/#pricing">{t('dashboard.subscribeNow')}</Link>
+                  </Button>
+                </div>
             )}
           </CardContent>
         </Card>
@@ -388,10 +390,10 @@ export default function Dashboard() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Upload className="h-5 w-5 text-primary" />
-                  Upload Document
+                  {t('dashboard.uploadDocument')}
                 </CardTitle>
                 <CardDescription>
-                  Upload your compliance document to generate an AI-powered analysis report.
+                  {t('dashboard.uploadDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -399,7 +401,7 @@ export default function Dashboard() {
                   <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <div className="space-y-2">
                     <p className="text-sm text-muted-foreground">
-                      {uploadedFile ? `Selected: ${uploadedFile.name}` : 'Choose a file to upload'}
+                      {uploadedFile ? `Selected: ${uploadedFile.name}` : t('dashboard.chooseFile')}
                     </p>
                     <input
                       type="file"
@@ -410,14 +412,14 @@ export default function Dashboard() {
                     />
                     <Button asChild variant="outline">
                       <label htmlFor="file-upload" className="cursor-pointer">
-                        {uploadedFile ? 'Change File' : 'Select File'}
+                        {uploadedFile ? t('dashboard.changeFile') : t('dashboard.selectFile')}
                       </label>
                     </Button>
                     <p className="text-xs text-muted-foreground">
-                      Supported formats: PDF, DOC, DOCX, TXT
+                      {t('dashboard.supportedFormats')}
                       {subscriptionData && (
                         <span className="block mt-1">
-                          Max file size: {subscriptionData.file_size_limit_mb || 1}MB
+                          {t('dashboard.maxFileSize', { size: subscriptionData.file_size_limit_mb || 1 })}
                         </span>
                       )}
                     </p>
@@ -433,12 +435,12 @@ export default function Dashboard() {
                   {isProcessing ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Processing Document...
+                      {t('dashboard.processingDocument')}
                     </>
                   ) : (
                     <>
                       <FileText className="h-4 w-4 mr-2" />
-                      Generate Compliance Report
+                      {t('dashboard.generateReport')}
                     </>
                   )}
                 </Button>
@@ -475,10 +477,10 @@ export default function Dashboard() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="h-5 w-5 text-primary" />
-                  Recent Reports
+                  {t('dashboard.recentReports')}
                 </CardTitle>
                 <CardDescription>
-                  Your generated compliance reports
+                  {t('dashboard.recentReportsDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent>

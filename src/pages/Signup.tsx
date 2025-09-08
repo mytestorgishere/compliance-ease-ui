@@ -47,8 +47,8 @@ export default function Signup() {
   const onSubmit = async (data: SignupFormData) => {
     if (data.password !== data.confirmPassword) {
       toast({
-        title: "Error",
-        description: "Passwords do not match",
+        title: t('errors.error'),
+        description: t('errors.passwordMismatch'),
         variant: "destructive",
       });
       return;
@@ -63,14 +63,14 @@ export default function Signup() {
     
     if (error) {
       toast({
-        title: "Signup Failed",
+        title: t('errors.signupFailed'),
         description: error.message,
         variant: "destructive",
       });
     } else {
       toast({
-        title: "Success!",
-        description: "Account created successfully! Please check your email to verify your account.",
+        title: t('errors.success'),
+        description: t('errors.accountCreated'),
       });
     }
     setIsLoading(false);
@@ -80,7 +80,7 @@ export default function Signup() {
     const { error } = await signInWithProvider(provider);
     if (error) {
       toast({
-        title: "Signup Failed",
+        title: t('errors.signupFailed'),
         description: error.message,
         variant: "destructive",
       });
@@ -220,7 +220,7 @@ export default function Signup() {
                   <Separator className="w-full" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
+                  <span className="bg-card px-2 text-muted-foreground">{t('signup.socialContinue')}</span>
                 </div>
               </div>
               
