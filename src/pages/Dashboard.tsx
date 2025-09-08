@@ -267,7 +267,7 @@ export default function Dashboard() {
             <div className="text-white text-sm">
               Welcome, {user.email}
             </div>
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10" asChild>
+            <Button variant="outline" className="border-white/20 text-black hover:bg-white/10" asChild>
               <Link to="/subscription">My Subscription</Link>
             </Button>
           </div>
