@@ -117,19 +117,17 @@ serve(async (req) => {
       
       const { data: tierData } = await supabaseClient
         .from("subscription_tiers")
-        .select("file_upload_limit, yearly_file_upload_limit")
+        .select("file_upload_limit")
         .eq("tier_name", subscriptionTier.toLowerCase())
         .single();
 
-      fileUploadLimit = isYearlySubscription 
-        ? (tierData?.yearly_file_upload_limit || 0)
-        : (tierData?.file_upload_limit || 0);
+      const monthlyLimit = tierData?.file_upload_limit || 0;
+      fileUploadLimit = isYearlySubscription ? monthlyLimit * 12 : monthlyLimit;
         
       logStep("File upload limit calculated", { 
         isYearly: isYearlySubscription, 
-        monthlyLimit: tierData?.file_upload_limit,
-        yearlyLimit: tierData?.yearly_file_upload_limit,
-        selectedLimit: fileUploadLimit 
+        monthlyLimit: monthlyLimit,
+        calculatedLimit: fileUploadLimit 
       });
     }
 

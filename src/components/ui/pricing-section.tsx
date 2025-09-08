@@ -19,7 +19,6 @@ interface SubscriptionTier {
   monthly_price: number;
   yearly_price: number;
   file_upload_limit: number;
-  yearly_file_upload_limit: number;
   features: string[];
 }
 
@@ -268,7 +267,7 @@ export function PricingSection() {
                    )}
                    <div className="mt-2">
                      <Badge variant="outline" className="text-xs">
-                       {formatFileUploadLimit(isYearly ? tier.yearly_file_upload_limit : tier.file_upload_limit)} file uploads
+                       {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
                      </Badge>
                    </div>
                 </div>

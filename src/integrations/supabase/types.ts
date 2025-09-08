@@ -182,7 +182,6 @@ export type Database = {
           monthly_price: number
           tier_name: string
           updated_at: string
-          yearly_file_upload_limit: number
           yearly_price: number
         }
         Insert: {
@@ -193,7 +192,6 @@ export type Database = {
           monthly_price: number
           tier_name: string
           updated_at?: string
-          yearly_file_upload_limit?: number
           yearly_price: number
         }
         Update: {
@@ -204,7 +202,6 @@ export type Database = {
           monthly_price?: number
           tier_name?: string
           updated_at?: string
-          yearly_file_upload_limit?: number
           yearly_price?: number
         }
         Relationships: []
