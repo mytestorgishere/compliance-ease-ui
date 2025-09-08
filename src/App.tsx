@@ -12,6 +12,7 @@ import Demo from "./pages/Demo";
 import Dashboard from "./pages/Dashboard";
 import Subscription from "./pages/Subscription";
 import SubscriptionSuccess from "./pages/SubscriptionSuccess";
+import AutomationDashboard from "./pages/AutomationDashboard";
 import ComplianceAssessment from "./pages/ComplianceAssessment";
 import ReportDetail from "./pages/ReportDetail";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/signup" element={<Signup />} />
             <Route path="/free-trial" element={<FreeTrial />} />
             <Route path="/demo" element={<Demo />} />
+            <Route path="/automation" element={<AutomationDashboard />} />
             <Route path="/compliance-assessment" element={<ComplianceAssessment />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/subscription" element={<Subscription />} />
