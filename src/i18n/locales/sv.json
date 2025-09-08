@@ -119,5 +119,20 @@
       "afternoon": "Eftermiddag (13:00-17:00)",
       "evening": "Kväll (18:00-20:00)"
     }
+  },
+  "dashboard": {
+    "welcome": "Välkommen",
+    "recentReports": "Senaste Rapporter",
+    "generateNew": "Generera Ny Rapport",
+    "viewReport": "Visa Rapport",
+    "downloadReport": "Ladda Ner Rapport",
+    "noReports": "Inga rapporter tillgängliga än",
+    "uploadDocument": "Ladda upp ett dokument för att komma igång"
+  },
+  "errors": {
+    "generic": "Något gick fel. Försök igen.",
+    "network": "Nätverksfel. Kontrollera din anslutning.",
+    "unauthorized": "Obehörig åtkomst",
+    "notFound": "Sidan hittades inte"
   }
 }
