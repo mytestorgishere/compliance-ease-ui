@@ -51,9 +51,9 @@ serve(async (req) => {
 
     // Define pricing (in cents)
     const pricing = {
-      starter: { monthly: 19900, yearly: 214920 }, // €199/month, 10% discount yearly
-      professional: { monthly: 39900, yearly: 430920 }, // €399/month, 10% discount yearly  
-      enterprise: { monthly: 79900, yearly: 861720 }, // €799/month, 10% discount yearly
+      starter: { monthly: 19900, yearly: 199000 }, // €199/month, €1990/year
+      professional: { monthly: 45000, yearly: 450000 }, // €450/month, €4500/year
+      enterprise: { monthly: 100000, yearly: 1000000 }, // €1000/month, €10000/year
     };
 
     const amount = pricing[tier.toLowerCase()][yearly ? 'yearly' : 'monthly'];
