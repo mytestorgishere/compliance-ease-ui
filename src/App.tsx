@@ -36,6 +36,7 @@ const App = () => (
             <Route path="/compliance-assessment" element={<ComplianceAssessment />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/subscription" element={<Subscription />} />
+            <Route path="/subscription-success" element={<SubscriptionSuccess />} />
             <Route path="/report/:id" element={<ReportDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
