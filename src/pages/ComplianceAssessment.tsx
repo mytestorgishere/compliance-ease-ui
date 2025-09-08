@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Upload, FileText, Shield, CheckCircle, AlertTriangle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { validateFileSize } from "@/utils/fileValidation";
 
 interface ComplianceFormData {
   country: string;
@@ -30,13 +31,14 @@ export default function ComplianceAssessment() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [complianceData, setComplianceData] = useState<ComplianceFormData | null>(null);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      if (file.size > 10 * 1024 * 1024) { // 10MB limit
+      const validation = await validateFileSize(file, user?.email);
+      if (!validation.isValid) {
         toast({
-          title: "File too large",
-          description: "Please select a file smaller than 10MB",
+          title: "File validation failed",
+          description: validation.error,
           variant: "destructive",
         });
         return;

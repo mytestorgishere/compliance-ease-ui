@@ -9,6 +9,7 @@ import { ComplianceDashboard } from "@/components/ui/compliance-dashboard";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
+import { validateFileSize } from "@/utils/fileValidation";
 
 export default function FreeTrial() {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export default function FreeTrial() {
     checkSubscription();
   }, [user, navigate]);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       // Check file type
@@ -73,21 +74,11 @@ export default function FreeTrial() {
       }
 
       // Check file size based on subscription tier
-      const getMaxFileSize = () => {
-        const tier = subscriptionData?.subscription_tier?.toLowerCase();
-        if (tier === 'starter') return 1 * 1024 * 1024; // 1MB
-        if (tier === 'professional') return 2 * 1024 * 1024; // 2MB  
-        if (tier === 'enterprise') return 3 * 1024 * 1024; // 3MB
-        return 1 * 1024 * 1024; // Default 1MB for free trial
-      };
-
-      const maxSize = getMaxFileSize();
-      const tierName = subscriptionData?.subscription_tier || 'Free Trial';
-      
-      if (file.size > maxSize) {
+      const validation = await validateFileSize(file, user?.email);
+      if (!validation.isValid) {
         toast({
-          title: "File too large",
-          description: `${tierName} plan allows files up to ${maxSize / (1024 * 1024)}MB. Your file is ${(file.size / (1024 * 1024)).toFixed(1)}MB.`,
+          title: "File validation failed",
+          description: validation.error,
           variant: "destructive",
         });
         return;

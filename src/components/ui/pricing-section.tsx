@@ -19,6 +19,7 @@ interface SubscriptionTier {
   monthly_price: number;
   yearly_price: number;
   file_upload_limit: number;
+  file_size_limit_mb: number;
   features: string[];
 }
 
@@ -45,7 +46,7 @@ export function PricingSection() {
       try {
         const { data, error } = await supabase
           .from('subscription_tiers')
-          .select('*')
+          .select('id, tier_name, monthly_price, yearly_price, file_upload_limit, file_size_limit_mb, features')
           .order('monthly_price', { ascending: true });
 
         if (error) throw error;
@@ -265,11 +266,14 @@ export function PricingSection() {
                        Billed annually (€{yearlyPrice.toFixed(0)}) - Save €{((monthlyPrice * 12) - yearlyPrice).toFixed(0)}/year
                      </p>
                    )}
-                   <div className="mt-2">
-                     <Badge variant="outline" className="text-xs">
-                       {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
-                     </Badge>
-                   </div>
+                    <div className="mt-2 space-y-1">
+                      <Badge variant="outline" className="text-xs">
+                        {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
+                      </Badge>
+                      <Badge variant="outline" className="text-xs">
+                        {tier.file_size_limit_mb}MB per file
+                      </Badge>
+                    </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">

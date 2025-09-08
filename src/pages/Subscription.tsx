@@ -268,23 +268,78 @@ const Subscription = () => {
             )}
           </div>
 
-          {subscriptionData?.subscribed && (
-            <div className="bg-muted/30 p-4 rounded-lg">
-              <h3 className="font-medium text-foreground mb-2">
-                Subscription Management
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Use the "Manage Subscription" button to:
-              </p>
+          {/* Subscription Details */}
+          <div className="bg-muted/30 p-4 rounded-lg">
+            <h3 className="font-medium text-foreground mb-2">
+              {subscriptionData?.subscribed ? 'Your Plan Includes' : 'Free Trial Limits'}
+            </h3>
+            {subscriptionData?.subscribed ? (
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  <strong>{subscriptionData.subscription_tier} Plan Features:</strong>
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                  {subscriptionData.subscription_tier === 'Starter' && (
+                    <>
+                      <li>• Basic GDPR compliance monitoring</li>
+                      <li>• Monthly compliance reports</li>
+                      <li>• Email support</li>
+                      <li>• Up to 100 data subjects</li>
+                      <li>• Standard templates</li>
+                      <li>• File size limit: 1MB per document</li>
+                    </>
+                  )}
+                  {subscriptionData.subscription_tier === 'Professional' && (
+                    <>
+                      <li>• Full GDPR, CSRD & ESG compliance</li>
+                      <li>• Real-time monitoring & alerts</li>
+                      <li>• Custom report generation</li>
+                      <li>• Priority support</li>
+                      <li>• Up to 10,000 data subjects</li>
+                      <li>• Advanced analytics</li>
+                      <li>• File size limit: 2MB per document</li>
+                    </>
+                  )}
+                  {subscriptionData.subscription_tier === 'Enterprise' && (
+                    <>
+                      <li>• Everything in Professional</li>
+                      <li>• Multi-jurisdiction support</li>
+                      <li>• Dedicated compliance manager</li>
+                      <li>• Custom integrations</li>
+                      <li>• Unlimited data subjects</li>
+                      <li>• White-label options</li>
+                      <li>• 24/7 phone support</li>
+                      <li>• Compliance consulting</li>
+                      <li>• File size limit: 3MB per document</li>
+                    </>
+                  )}
+                </ul>
+              </div>
+            ) : (
               <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                <li>• Update your payment method</li>
-                <li>• Change your subscription plan</li>
-                <li>• Cancel your subscription</li>
-                <li>• Download invoices</li>
-                <li>• View billing history</li>
+                <li>• Basic compliance scanning</li>
+                <li>• Limited monthly reports</li>
+                <li>• Email support</li>
+                <li>• File size limit: 1MB per document</li>
+                <li>• <span className="text-primary">Upgrade for more features</span></li>
               </ul>
-            </div>
-          )}
+            )}
+            
+            {subscriptionData?.subscribed && (
+              <div className="mt-4 pt-3 border-t border-border">
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Subscription Management:</strong>
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                  <li>• Update your payment method</li>
+                  <li>• Change your subscription plan</li>
+                  <li>• Cancel your subscription</li>
+                  <li>• Download invoices</li>
+                  <li>• View billing history</li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Back to Dashboard */}
