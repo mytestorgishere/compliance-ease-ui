@@ -40,9 +40,15 @@ export function Navigation() {
               <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
                 {t('navigation.pricing')}
               </a>
-              <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-                {t('navigation.dashboard')}
-              </a>
+              {user ? (
+                <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Dashboard
+                </Link>
+              ) : (
+                <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Demo
+                </Link>
+              )}
               <LanguageSelector />
               
               {user ? (
@@ -53,13 +59,19 @@ export function Navigation() {
                       {profile?.first_name || user.email?.split('@')[0] || 'User'}
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem asChild className="gap-2 cursor-pointer">
-                      <Link to="/subscription">
-                        <CreditCard className="h-4 w-4" />
-                        My Subscription
-                      </Link>
-                    </DropdownMenuItem>
+                   <DropdownMenuContent align="end">
+                     <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                       <Link to="/dashboard">
+                         <User className="h-4 w-4" />
+                         Dashboard
+                       </Link>
+                     </DropdownMenuItem>
+                     <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                       <Link to="/subscription">
+                         <CreditCard className="h-4 w-4" />
+                         My Subscription
+                       </Link>
+                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleSignOut} className="gap-2 cursor-pointer">
                       <LogOut className="h-4 w-4" />
                       {t('common.signOut')}
@@ -100,9 +112,15 @@ export function Navigation() {
               <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors py-2">
                 {t('navigation.pricing')}
               </a>
-              <a href="#dashboard" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                {t('navigation.dashboard')}
-              </a>
+              {user ? (
+                <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors py-2">
+                  Dashboard
+                </Link>
+              ) : (
+                <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors py-2">
+                  Demo
+                </Link>
+              )}
               <div className="py-2">
                 <LanguageSelector />
               </div>
@@ -113,6 +131,12 @@ export function Navigation() {
                     <User className="h-4 w-4" />
                     <span>{profile?.first_name || user.email?.split('@')[0] || 'User'}</span>
                   </div>
+                  <Button asChild variant="outline" size="sm" className="gap-2">
+                    <Link to="/dashboard">
+                      <User className="h-4 w-4" />
+                      Dashboard
+                    </Link>
+                  </Button>
                   <Button asChild variant="outline" size="sm" className="gap-2">
                     <Link to="/subscription">
                       <CreditCard className="h-4 w-4" />
