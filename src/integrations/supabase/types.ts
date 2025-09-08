@@ -262,7 +262,7 @@ export type Database = {
           subscription_status: string | null
           trial_used: boolean | null
           updated_at: string
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           company?: string | null
@@ -274,7 +274,7 @@ export type Database = {
           subscription_status?: string | null
           trial_used?: boolean | null
           updated_at?: string
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           company?: string | null
@@ -286,7 +286,7 @@ export type Database = {
           subscription_status?: string | null
           trial_used?: boolean | null
           updated_at?: string
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: []
       }
