@@ -85,10 +85,10 @@ export function PricingSection() {
 
   const getTierDescription = (tierName: string) => {
     switch (tierName.toLowerCase()) {
-      case 'starter': return "Perfect for small businesses starting their compliance journey";
-      case 'professional': return "Comprehensive compliance solution for growing businesses";
-      case 'enterprise': return "Enterprise-grade compliance for large organizations";
-      default: return "Compliance solution for your business";
+      case 'starter': return t('pricing.starter.description');
+      case 'professional': return t('pricing.professional.description');
+      case 'enterprise': return t('pricing.enterprise.description');
+      default: return t('pricing.starter.description');
     }
   };
 
@@ -223,7 +223,7 @@ export function PricingSection() {
       <section id="pricing" className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="animate-pulse">Loading subscription plans...</div>
+            <div className="animate-pulse">{t('pricing.loadingPlans')}</div>
           </div>
         </div>
       </section>
@@ -278,7 +278,7 @@ export function PricingSection() {
               >
                 {isPopular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary">
-                    Most Popular
+                    {t('pricing.mostPopular')}
                   </Badge>
                 )}
 
@@ -298,17 +298,20 @@ export function PricingSection() {
                    </div>
                    {isYearly && (
                      <p className="text-xs text-success mt-1">
-                       Billed annually (€{yearlyPrice.toFixed(0)}) - Save €{((monthlyPrice * 12) - yearlyPrice).toFixed(0)}/year
+                       {t('pricing.billedAnnually', { 
+                         price: yearlyPrice.toFixed(0), 
+                         savings: ((monthlyPrice * 12) - yearlyPrice).toFixed(0) 
+                       })}
                      </p>
                    )}
-                    <div className="mt-2 space-y-1">
-                      <Badge variant="outline" className="text-xs">
-                        {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
-                      </Badge>
-                      <Badge variant="outline" className="text-xs">
-                        {tier.file_size_limit_mb}MB per file
-                      </Badge>
-                    </div>
+                     <div className="mt-2 space-y-1">
+                       <Badge variant="outline" className="text-xs">
+                         {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
+                       </Badge>
+                       <Badge variant="outline" className="text-xs">
+                         {tier.file_size_limit_mb}MB per file
+                       </Badge>
+                     </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -329,7 +332,7 @@ export function PricingSection() {
                   variant={isPopular ? "default" : "outline"}
                   onClick={() => handleSubscribe(tier.tier_name)}
                 >
-                  {user ? 'Subscribe Now' : 'Sign Up to Subscribe'}
+                  {user ? t('pricing.subscribeNow') : t('pricing.signUpToSubscribe')}
                 </Button>
               </Card>
             );
@@ -348,9 +351,9 @@ export function PricingSection() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>Contact Sales</DialogTitle>
+                <DialogTitle>{t('pricing.contactSalesTitle')}</DialogTitle>
                 <DialogDescription>
-                  Get in touch with our sales team for custom pricing and enterprise solutions.
+                  {t('pricing.contactSalesDescription')}
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
@@ -413,21 +416,21 @@ export function PricingSection() {
                   />
                 </div>
               </div>
-              <div className="flex gap-3">
-                <Button variant="outline" onClick={() => setShowContactForm(false)} className="flex-1">
-                  Cancel
-                </Button>
-                <Button onClick={handleContactSales} disabled={isSubmittingContact} className="flex-1">
-                  {isSubmittingContact ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    'Send Request'
-                  )}
-                </Button>
-              </div>
+                <div className="flex gap-3">
+                  <Button variant="outline" onClick={() => setShowContactForm(false)} className="flex-1">
+                    {t('pricing.cancel')}
+                  </Button>
+                  <Button onClick={handleContactSales} disabled={isSubmittingContact} className="flex-1">
+                    {isSubmittingContact ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        {t('pricing.sending')}
+                      </>
+                    ) : (
+                      t('pricing.sendRequest')
+                    )}
+                  </Button>
+                </div>
             </DialogContent>
           </Dialog>
         </div>

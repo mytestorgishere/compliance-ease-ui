@@ -24,25 +24,25 @@ export function HeroSection() {
             {hasActiveSubscription ? (
               <>
                 <Crown className="w-3 h-3 mr-1 text-primary" />
-                {subscription?.subscription_tier} Plan Active
+                {t('hero.planActive', { tier: subscription?.subscription_tier })}
               </>
             ) : (
               <>
                 <Zap className="w-3 h-3 mr-1" />
-                AI-Powered Compliance Automation
+                {t('hero.aiPowered')}
               </>
             )}
           </Badge>
 
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
-            {hasActiveSubscription ? "Welcome back to Compliance Ease" : t('hero.title')}
+            {hasActiveSubscription ? t('hero.welcomeBack') : t('hero.title')}
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
             {hasActiveSubscription 
-              ? "Your compliance is running smoothly. Upload documents and generate reports with your active subscription."
+              ? t('hero.welcomeBackSubtitle')
               : t('hero.subtitle')
             }
           </p>
@@ -53,12 +53,12 @@ export function HeroSection() {
               <>
                 <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-4">
                   <Link to="/dashboard">
-                    Go to Dashboard
+                    {t('hero.goToDashboard')}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
-                  <Link to="/subscription">Manage Subscription</Link>
+                  <Link to="/subscription">{t('hero.manageSubscription')}</Link>
                 </Button>
               </>
             ) : (
@@ -80,15 +80,15 @@ export function HeroSection() {
           <div className="flex flex-wrap justify-center items-center gap-8 text-muted-foreground">
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-success" />
-              <span className="text-sm">GDPR Compliant</span>
+              <span className="text-sm">{t('hero.trustIndicators.gdprCompliant')}</span>
             </div>
             <div className="flex items-center gap-2">
               <Globe className="h-5 w-5 text-success" />
-              <span className="text-sm">EU Certified</span>
+              <span className="text-sm">{t('hero.trustIndicators.euCertified')}</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="h-5 w-5 text-success" />
-              <span className="text-sm">99.9% Uptime</span>
+              <span className="text-sm">{t('hero.trustIndicators.uptime')}</span>
             </div>
           </div>
         </div>

@@ -49,11 +49,11 @@ export function Navigation() {
               )}
               {user ? (
                 <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Dashboard
+                  {t('navigation.dashboard')}
                 </Link>
               ) : (
                 <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Demo
+                  {t('navigation.demo')}
                 </Link>
               )}
               <LanguageSelector />
@@ -67,18 +67,18 @@ export function Navigation() {
                     </Button>
                   </DropdownMenuTrigger>
                    <DropdownMenuContent align="end">
-                     <DropdownMenuItem asChild className="gap-2 cursor-pointer">
-                       <Link to="/dashboard">
-                         <User className="h-4 w-4" />
-                         Dashboard
-                       </Link>
-                     </DropdownMenuItem>
-                     <DropdownMenuItem asChild className="gap-2 cursor-pointer">
-                       <Link to="/subscription">
-                         <CreditCard className="h-4 w-4" />
-                         My Subscription
-                       </Link>
-                     </DropdownMenuItem>
+                      <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                        <Link to="/dashboard">
+                          <User className="h-4 w-4" />
+                          {t('navigation.dashboard')}
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                        <Link to="/subscription">
+                          <CreditCard className="h-4 w-4" />
+                          {t('navigation.mySubscription')}
+                        </Link>
+                      </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleSignOut} className="gap-2 cursor-pointer">
                       <LogOut className="h-4 w-4" />
                       {t('common.signOut')}
@@ -90,11 +90,11 @@ export function Navigation() {
                   <Button asChild variant="outline" size="sm">
                     <Link to="/login">{t('common.signIn')}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
-                    <Link to={hasActiveSubscription ? "/dashboard" : "/free-trial"}>
-                      {hasActiveSubscription ? "Dashboard" : t('common.getStarted')}
-                    </Link>
-                  </Button>
+                   <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
+                     <Link to={hasActiveSubscription ? "/dashboard" : "/free-trial"}>
+                       {hasActiveSubscription ? t('navigation.dashboard') : t('common.getStarted')}
+                     </Link>
+                   </Button>
                 </>
               )}
             </div>
@@ -127,11 +127,11 @@ export function Navigation() {
               )}
               {user ? (
                 <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                  Dashboard
+                  {t('navigation.dashboard')}
                 </Link>
               ) : (
                 <Link to="/demo" className="text-muted-foreground hover:text-foreground transition-colors py-2">
-                  Demo
+                  {t('navigation.demo')}
                 </Link>
               )}
               <div className="py-2">
@@ -147,13 +147,13 @@ export function Navigation() {
                   <Button asChild variant="outline" size="sm" className="gap-2">
                     <Link to="/dashboard">
                       <User className="h-4 w-4" />
-                      Dashboard
+                      {t('navigation.dashboard')}
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="sm" className="gap-2">
                     <Link to="/subscription">
                       <CreditCard className="h-4 w-4" />
-                      My Subscription
+                      {t('navigation.mySubscription')}
                     </Link>
                   </Button>
                   <Button onClick={handleSignOut} variant="outline" size="sm" className="gap-2">
@@ -168,7 +168,7 @@ export function Navigation() {
                   </Button>
                   <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90">
                     <Link to={hasActiveSubscription ? "/dashboard" : "/free-trial"}>
-                      {hasActiveSubscription ? "Dashboard" : t('common.getStarted')}
+                      {hasActiveSubscription ? t('navigation.dashboard') : t('common.getStarted')}
                     </Link>
                   </Button>
                 </>

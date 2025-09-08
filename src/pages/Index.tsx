@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Navigation } from "@/components/ui/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeaturesSection } from "@/components/ui/features-section";
@@ -6,6 +7,7 @@ import { PricingSection } from "@/components/ui/pricing-section";
 import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
+  const { t } = useTranslation();
   const { user, subscription } = useAuth();
   
   // Check if user has active subscription
@@ -30,7 +32,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-muted-foreground">
-              © 2024 Compliance Ease. Built for EU compliance excellence.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>

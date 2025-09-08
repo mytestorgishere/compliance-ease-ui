@@ -152,12 +152,12 @@ const Subscription = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-8 px-4 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Subscription Management
-          </h1>
-          <p className="text-muted-foreground">
-            Manage your Compliance Ease subscription and billing settings.
-          </p>
+            <h1 className="text-3xl font-bold text-foreground mb-2">
+              {t('subscription.title')}
+            </h1>
+            <p className="text-muted-foreground">
+              {t('subscription.subtitle')}
+            </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -166,7 +166,7 @@ const Subscription = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <CreditCard className="h-5 w-5" />
-                Current Subscription
+                {t('subscription.current')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -216,24 +216,24 @@ const Subscription = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Settings className="h-5 w-5" />
-                Account Information
+                {t('subscription.account')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <div className="text-sm font-medium text-foreground">Email</div>
+                <div className="text-sm font-medium text-foreground">{t('subscription.email')}</div>
                 <div className="text-sm text-muted-foreground">{user.email}</div>
               </div>
               
               {profile?.company && (
                 <div>
-                  <div className="text-sm font-medium text-foreground">Company</div>
+                  <div className="text-sm font-medium text-foreground">{t('subscription.company')}</div>
                   <div className="text-sm text-muted-foreground">{profile.company}</div>
                 </div>
               )}
               
               <div>
-                <div className="text-sm font-medium text-foreground">Member Since</div>
+                <div className="text-sm font-medium text-foreground">{t('subscription.memberSince')}</div>
                 <div className="text-sm text-muted-foreground">
                   {profile?.created_at ? formatDate(profile.created_at) : 'N/A'}
                 </div>
