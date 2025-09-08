@@ -92,6 +92,41 @@ export function PricingSection() {
     }
   };
 
+  const getTierFeatures = (tierName: string, fileSizeLimit: number) => {
+    const baseFeatures = {
+      starter: [
+        "Basic GDPR compliance monitoring",
+        "Monthly compliance reports", 
+        "Email support",
+        "Up to 100 data subjects",
+        "Standard templates",
+        `${fileSizeLimit}MB maximum file size upload`
+      ],
+      professional: [
+        "Full GDPR, CSRD & ESG compliance",
+        "Real-time monitoring & alerts",
+        "Custom report generation",
+        "Priority support", 
+        "Up to 10,000 data subjects",
+        "Advanced analytics",
+        `${fileSizeLimit}MB file size upload`
+      ],
+      enterprise: [
+        "Everything in Professional",
+        "Multi-jurisdiction support",
+        "Dedicated compliance manager",
+        "Custom integrations",
+        "Unlimited data subjects",
+        "White-label options",
+        "24/7 phone support", 
+        "Compliance consulting",
+        `${fileSizeLimit}MB file maximum upload`
+      ]
+    };
+    
+    return baseFeatures[tierName.toLowerCase() as keyof typeof baseFeatures] || [];
+  };
+
   const formatFileUploadLimit = (limit: number) => {
     if (limit >= 100000) return `${(limit / 1000).toLocaleString()}K`;
     if (limit >= 1000) return `${(limit / 1000).toLocaleString()}K`;
@@ -277,7 +312,7 @@ export function PricingSection() {
                 </div>
 
                 <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, featureIndex) => (
+                  {getTierFeatures(tier.tier_name, tier.file_size_limit_mb).map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <Check className="h-5 w-5 text-success mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-muted-foreground">{feature}</span>
