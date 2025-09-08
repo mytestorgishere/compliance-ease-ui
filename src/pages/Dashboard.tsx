@@ -475,9 +475,9 @@ export default function Dashboard() {
                           created_at: new Date().toISOString(),
                           status: 'completed'
                         };
-                        // Store the report data temporarily and open in new window
+                        // Store the report data temporarily and navigate to report detail
                         sessionStorage.setItem('temp-report', JSON.stringify(tempReport));
-                        window.open('/report/temp', '_blank');
+                        navigate('/report/temp');
                       }}
                       onDownload={() => downloadReport(generatedReport, `compliance-report-${uploadedFile?.name || 'document'}.txt`)}
                     />

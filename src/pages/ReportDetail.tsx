@@ -17,7 +17,7 @@ const ReportDetail = () => {
 
   useEffect(() => {
     // Handle temporary report data for demo reports
-    if (window.location.pathname === '/report/temp') {
+    if (id === 'temp') {
       const tempReportData = sessionStorage.getItem('temp-report');
       if (tempReportData) {
         try {
@@ -33,6 +33,15 @@ const ReportDetail = () => {
           });
           navigate('/dashboard');
         }
+        setLoading(false);
+        return;
+      } else {
+        toast({
+          title: "Error",
+          description: "No report data found. Please try again.",
+          variant: "destructive",
+        });
+        navigate('/dashboard');
         setLoading(false);
         return;
       }
