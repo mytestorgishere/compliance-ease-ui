@@ -9,6 +9,26 @@ const corsHeaders = {
 
 const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
 
+// Enhanced security validation function
+const validateFileType = (content: string, filename: string): boolean => {
+  // Extract file extension
+  const ext = filename.toLowerCase().split('.').pop();
+  if (!ext || !['pdf', 'docx', 'doc', 'txt'].includes(ext)) {
+    return false;
+  }
+
+  // Basic content validation - check for suspicious patterns
+  const suspiciousPatterns = [
+    /<script/i,
+    /javascript:/i,
+    /on\w+\s*=/i, // event handlers like onclick=
+    /\.\.\//,     // path traversal
+    /\0/,         // null bytes
+  ];
+
+  return !suspiciousPatterns.some(pattern => pattern.test(content));
+};
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -120,6 +140,16 @@ serve(async (req) => {
     
     if (!document || !filename) {
       throw new Error('Document and filename are required');
+    }
+
+    // Enhanced security validation
+    if (!validateFileType(document, filename)) {
+      return new Response(JSON.stringify({ 
+        error: 'Invalid file type or potentially malicious content detected. Please upload only PDF, DOCX, DOC, or TXT files.' 
+      }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 400,
+      });
     }
 
     console.log('Processing document:', filename, 'Type:', reportType, 'Compliance data:', complianceData);
