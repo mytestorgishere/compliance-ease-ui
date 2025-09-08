@@ -105,14 +105,33 @@ serve(async (req) => {
     }
 
     // Update subscribers table
-    // Get file upload limit from subscription tiers table
-    const { data: tierData } = await supabaseClient
-      .from("subscription_tiers")
-      .select("file_upload_limit")
-      .eq("tier_name", subscriptionTier?.toLowerCase() || "")
-      .single();
+    // Get file upload limit from subscription tiers table and determine if yearly
+    let fileUploadLimit = 0;
+    let isYearlySubscription = false;
+    
+    if (hasActiveSub && subscriptionTier) {
+      const subscription = subscriptions.data[0];
+      const priceId = subscription.items.data[0].price.id;
+      const price = await stripe.prices.retrieve(priceId);
+      isYearlySubscription = price.recurring?.interval === 'year';
+      
+      const { data: tierData } = await supabaseClient
+        .from("subscription_tiers")
+        .select("file_upload_limit, yearly_file_upload_limit")
+        .eq("tier_name", subscriptionTier.toLowerCase())
+        .single();
 
-    const fileUploadLimit = tierData?.file_upload_limit || 0;
+      fileUploadLimit = isYearlySubscription 
+        ? (tierData?.yearly_file_upload_limit || 0)
+        : (tierData?.file_upload_limit || 0);
+        
+      logStep("File upload limit calculated", { 
+        isYearly: isYearlySubscription, 
+        monthlyLimit: tierData?.file_upload_limit,
+        yearlyLimit: tierData?.yearly_file_upload_limit,
+        selectedLimit: fileUploadLimit 
+      });
+    }
 
     await supabaseClient.from("subscribers").upsert({
       email: user.email,
