@@ -14,6 +14,243 @@ export type Database = {
   }
   public: {
     Tables: {
+      automation_rules: {
+        Row: {
+          config: Json
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean
+          name: string
+          rule_type: string
+          schedule_cron: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          config?: Json
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          rule_type: string
+          schedule_cron?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          config?: Json
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          rule_type?: string
+          schedule_cron?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      automation_runs: {
+        Row: {
+          automation_rule_id: string
+          completed_at: string | null
+          created_at: string
+          documents_processed: number | null
+          error_message: string | null
+          id: string
+          results: Json | null
+          started_at: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          automation_rule_id: string
+          completed_at?: string | null
+          created_at?: string
+          documents_processed?: number | null
+          error_message?: string | null
+          id?: string
+          results?: Json | null
+          started_at?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          automation_rule_id?: string
+          completed_at?: string | null
+          created_at?: string
+          documents_processed?: number | null
+          error_message?: string | null
+          id?: string
+          results?: Json | null
+          started_at?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "automation_runs_automation_rule_id_fkey"
+            columns: ["automation_rule_id"]
+            isOneToOne: false
+            referencedRelation: "automation_rules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      batch_documents: {
+        Row: {
+          batch_id: string
+          created_at: string
+          error_message: string | null
+          file_size: number | null
+          filename: string
+          id: string
+          processed_at: string | null
+          report_id: string | null
+          status: string
+        }
+        Insert: {
+          batch_id: string
+          created_at?: string
+          error_message?: string | null
+          file_size?: number | null
+          filename: string
+          id?: string
+          processed_at?: string | null
+          report_id?: string | null
+          status?: string
+        }
+        Update: {
+          batch_id?: string
+          created_at?: string
+          error_message?: string | null
+          file_size?: number | null
+          filename?: string
+          id?: string
+          processed_at?: string | null
+          report_id?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "batch_documents_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "document_batches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "batch_documents_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "reports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      compliance_alerts: {
+        Row: {
+          alert_type: string
+          automation_rule_id: string | null
+          created_at: string
+          data: Json | null
+          id: string
+          is_read: boolean
+          is_resolved: boolean
+          message: string
+          resolved_at: string | null
+          severity: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          alert_type: string
+          automation_rule_id?: string | null
+          created_at?: string
+          data?: Json | null
+          id?: string
+          is_read?: boolean
+          is_resolved?: boolean
+          message: string
+          resolved_at?: string | null
+          severity: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          alert_type?: string
+          automation_rule_id?: string | null
+          created_at?: string
+          data?: Json | null
+          id?: string
+          is_read?: boolean
+          is_resolved?: boolean
+          message?: string
+          resolved_at?: string | null
+          severity?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "compliance_alerts_automation_rule_id_fkey"
+            columns: ["automation_rule_id"]
+            isOneToOne: false
+            referencedRelation: "automation_rules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      document_batches: {
+        Row: {
+          automation_run_id: string | null
+          batch_name: string
+          created_at: string
+          failed_documents: number
+          id: string
+          processed_documents: number
+          status: string
+          total_documents: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          automation_run_id?: string | null
+          batch_name: string
+          created_at?: string
+          failed_documents?: number
+          id?: string
+          processed_documents?: number
+          status?: string
+          total_documents?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          automation_run_id?: string | null
+          batch_name?: string
+          created_at?: string
+          failed_documents?: number
+          id?: string
+          processed_documents?: number
+          status?: string
+          total_documents?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_batches_automation_run_id_fkey"
+            columns: ["automation_run_id"]
+            isOneToOne: false
+            referencedRelation: "automation_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           company: string | null
@@ -203,6 +440,45 @@ export type Database = {
           tier_name?: string
           updated_at?: string
           yearly_price?: number
+        }
+        Relationships: []
+      }
+      webhook_integrations: {
+        Row: {
+          created_at: string
+          event_types: string[]
+          id: string
+          is_active: boolean
+          last_triggered_at: string | null
+          name: string
+          secret_key: string | null
+          updated_at: string
+          user_id: string
+          webhook_url: string
+        }
+        Insert: {
+          created_at?: string
+          event_types?: string[]
+          id?: string
+          is_active?: boolean
+          last_triggered_at?: string | null
+          name: string
+          secret_key?: string | null
+          updated_at?: string
+          user_id: string
+          webhook_url: string
+        }
+        Update: {
+          created_at?: string
+          event_types?: string[]
+          id?: string
+          is_active?: boolean
+          last_triggered_at?: string | null
+          name?: string
+          secret_key?: string | null
+          updated_at?: string
+          user_id?: string
+          webhook_url?: string
         }
         Relationships: []
       }
