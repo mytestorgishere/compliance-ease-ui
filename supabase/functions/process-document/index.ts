@@ -116,13 +116,13 @@ serve(async (req) => {
       });
     }
 
-    const { document, filename, reportType = 'compliance' } = await req.json();
+    const { document, filename, reportType = 'compliance', complianceData } = await req.json();
     
     if (!document || !filename) {
       throw new Error('Document and filename are required');
     }
 
-    console.log('Processing document:', filename, 'Type:', reportType);
+    console.log('Processing document:', filename, 'Type:', reportType, 'Compliance data:', complianceData);
 
     // Create report record
     const { data: reportData, error: reportError } = await supabaseClient
@@ -144,7 +144,67 @@ serve(async (req) => {
     console.log('Report created:', reportData.id);
 
     // Prepare prompt based on report type and document content
-    const systemPrompt = `You are an expert compliance consultant specializing in EU regulations including GDPR, CSRD, ESG reporting, and sustainability compliance. 
+    let systemPrompt = `You are an expert compliance consultant specializing in EU regulations including GDPR, CSRD, ESG reporting, and sustainability compliance.`;
+
+    // Enhanced prompt for GDPR with country-specific requirements
+    if (reportType === 'gdpr-compliance' && complianceData) {
+      const countryNames = {
+        'DE': 'Germany', 'FR': 'France', 'IT': 'Italy', 'ES': 'Spain', 'NL': 'Netherlands',
+        'AT': 'Austria', 'BE': 'Belgium', 'DK': 'Denmark', 'FI': 'Finland', 'SE': 'Sweden',
+        'PL': 'Poland', 'CZ': 'Czech Republic', 'HU': 'Hungary', 'SK': 'Slovakia',
+        'SI': 'Slovenia', 'HR': 'Croatia', 'BG': 'Bulgaria', 'RO': 'Romania', 'GR': 'Greece',
+        'PT': 'Portugal', 'IE': 'Ireland', 'LU': 'Luxembourg', 'MT': 'Malta', 'CY': 'Cyprus',
+        'LV': 'Latvia', 'LT': 'Lithuania', 'EE': 'Estonia'
+      };
+      
+      const countryName = countryNames[complianceData.country as keyof typeof countryNames] || complianceData.country;
+      
+      systemPrompt = `You are a GDPR compliance specialist with expertise in ${countryName}'s specific data protection requirements.
+
+**BUSINESS CONTEXT:**
+- Country: ${countryName}
+- Business Type: ${complianceData.businessType}
+- Company Size: ${complianceData.companySize}
+- Data Processing: ${complianceData.dataProcessingType}
+- Industry: ${complianceData.industry}
+- Current Measures: ${complianceData.existingCompliance}
+- Specific Concerns: ${complianceData.specificConcerns}
+
+**ANALYSIS REQUIREMENTS:**
+Generate a comprehensive GDPR compliance report with country-specific requirements for ${countryName}:
+
+1. **Executive Summary** - Overall GDPR compliance status for this business type in ${countryName}
+2. **Compliance Score** - Percentage (0-100%) with specific reasoning for this country/business
+3. **Country-Specific Requirements** - ${countryName}'s specific GDPR implementation nuances
+4. **Critical Gaps Analysis** - What's missing for ${complianceData.businessType} in ${countryName}
+5. **Data Processing Assessment** - Analysis of ${complianceData.dataProcessingType} compliance
+6. **Legal Basis Evaluation** - Appropriate legal bases for this business type
+7. **DPO Requirements** - Whether a DPO is required for this company size/type in ${countryName}
+8. **Data Subject Rights** - How to implement rights for ${countryName} residents
+9. **Cross-Border Transfers** - Requirements if applicable to this business
+10. **Breach Notification** - ${countryName}-specific notification requirements
+11. **Supervisory Authority** - Specific regulator for ${countryName} and their focus areas
+12. **Industry-Specific Rules** - Special requirements for ${complianceData.businessType}
+
+**ACTIONABLE FIXES REQUIRED:**
+For each gap identified, provide:
+- ✅ IMMEDIATE ACTIONS (0-30 days)
+- 🔄 SHORT-TERM FIXES (1-3 months)  
+- 📋 LONG-TERM IMPROVEMENTS (3-12 months)
+- 💰 Estimated implementation effort/cost
+- ⚖️ Legal risk level if not addressed
+- 📊 Success metrics to track
+
+**DOCUMENT ANALYSIS:**
+Analyze the provided document against:
+- GDPR Articles 1-99 applicability
+- ${countryName}'s national GDPR implementation
+- Industry best practices for ${complianceData.businessType}
+- Company size considerations for ${complianceData.companySize}
+
+Format as structured text with specific, actionable recommendations tailored to this exact business scenario.`;
+    } else {
+      systemPrompt = `You are an expert compliance consultant specializing in EU regulations including GDPR, CSRD, ESG reporting, and sustainability compliance. 
 
 Your task is to analyze the provided document and generate a comprehensive compliance report that helps companies meet their regulatory obligations.
 
@@ -164,6 +224,7 @@ Based on the document content, you should:
 Focus on practical, actionable advice that businesses can implement. Include relevant deadlines, documentation requirements, and best practices.
 
 The report should be comprehensive, professional, and directly applicable to the company's situation as described in the document.`;
+    }
 
     // Call OpenAI API
     console.log('Calling OpenAI API with model gpt-4o-mini...');

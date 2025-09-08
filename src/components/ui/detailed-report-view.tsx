@@ -254,6 +254,43 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
 
   const ComplianceIcon = getComplianceIcon(parsedData.complianceScore);
 
+  // Parse actionable fixes from the report content
+  const parseActionableFixes = (content: string) => {
+    const fixes = {
+      immediate: [] as string[],
+      shortTerm: [] as string[],
+      longTerm: [] as string[]
+    };
+
+    // Look for immediate actions
+    const immediateMatches = content.match(/✅ IMMEDIATE ACTIONS[\s\S]*?(?=🔄|📋|💰|⚖️|📊|$)/);
+    if (immediateMatches) {
+      fixes.immediate = immediateMatches[0].split('\n')
+        .filter(line => line.trim() && line.includes('-'))
+        .map(line => line.trim().replace(/^-\s*/, ''));
+    }
+
+    // Look for short-term fixes
+    const shortTermMatches = content.match(/🔄 SHORT-TERM FIXES[\s\S]*?(?=📋|✅|💰|⚖️|📊|$)/);
+    if (shortTermMatches) {
+      fixes.shortTerm = shortTermMatches[0].split('\n')
+        .filter(line => line.trim() && line.includes('-'))
+        .map(line => line.trim().replace(/^-\s*/, ''));
+    }
+
+    // Look for long-term improvements
+    const longTermMatches = content.match(/📋 LONG-TERM IMPROVEMENTS[\s\S]*?(?=✅|🔄|💰|⚖️|📊|$)/);
+    if (longTermMatches) {
+      fixes.longTerm = longTermMatches[0].split('\n')
+        .filter(line => line.trim() && line.includes('-'))
+        .map(line => line.trim().replace(/^-\s*/, ''));
+    }
+
+    return fixes;
+  };
+
+  const actionableFixes = parseActionableFixes(report.processed_content);
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -342,6 +379,10 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
           <TabsTrigger value="overview" className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4" />
             Overview
+          </TabsTrigger>
+          <TabsTrigger value="actions" className="flex items-center gap-2">
+            <Zap className="h-4 w-4" />
+            Action Items
           </TabsTrigger>
           <TabsTrigger value="regulations" className="flex items-center gap-2">
             <Shield className="h-4 w-4" />
@@ -534,6 +575,136 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
               </ResponsiveContainer>
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="actions" className="space-y-6">
+          {/* Actionable Fixes */}
+          <div className="grid gap-6">
+            {/* Immediate Actions */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-destructive rounded-full animate-pulse"></div>
+                  ✅ Immediate Actions (0-30 days)
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Critical fixes that need immediate attention to avoid compliance risks
+                </p>
+              </CardHeader>
+              <CardContent>
+                {actionableFixes.immediate.length > 0 ? (
+                  <div className="space-y-3">
+                    {actionableFixes.immediate.map((action, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-destructive/5 border border-destructive/20 rounded-lg">
+                        <AlertTriangle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <p className="text-sm">{action}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <Badge variant="destructive" className="text-xs">High Priority</Badge>
+                            <span className="text-xs text-muted-foreground">• Legal risk if delayed</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground text-center py-4">No immediate actions identified</p>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Short-term Fixes */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-warning rounded-full"></div>
+                  🔄 Short-term Fixes (1-3 months)
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Important improvements to strengthen your compliance posture
+                </p>
+              </CardHeader>
+              <CardContent>
+                {actionableFixes.shortTerm.length > 0 ? (
+                  <div className="space-y-3">
+                    {actionableFixes.shortTerm.map((action, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-warning/5 border border-warning/20 rounded-lg">
+                        <Clock className="h-5 w-5 text-warning mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <p className="text-sm">{action}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <Badge variant="outline" className="text-xs border-warning text-warning">Medium Priority</Badge>
+                            <span className="text-xs text-muted-foreground">• Moderate effort required</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground text-center py-4">No short-term fixes identified</p>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Long-term Improvements */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  📋 Long-term Improvements (3-12 months)
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Strategic enhancements for comprehensive compliance excellence
+                </p>
+              </CardHeader>
+              <CardContent>
+                {actionableFixes.longTerm.length > 0 ? (
+                  <div className="space-y-3">
+                    {actionableFixes.longTerm.map((action, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                        <Target className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <p className="text-sm">{action}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <Badge variant="outline" className="text-xs border-blue-500 text-blue-600">Strategic</Badge>  
+                            <span className="text-xs text-muted-foreground">• Long-term investment</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground text-center py-4">No long-term improvements identified</p>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Action Summary */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5" />
+                  Action Items Summary
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center p-4 bg-destructive/5 rounded-lg">
+                    <div className="text-2xl font-bold text-destructive">{actionableFixes.immediate.length}</div>
+                    <div className="text-sm text-muted-foreground">Immediate</div>
+                  </div>
+                  <div className="text-center p-4 bg-warning/5 rounded-lg">
+                    <div className="text-2xl font-bold text-warning">{actionableFixes.shortTerm.length}</div>
+                    <div className="text-sm text-muted-foreground">Short-term</div>
+                  </div>
+                  <div className="text-center p-4 bg-blue-50 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600">{actionableFixes.longTerm.length}</div>
+                    <div className="text-sm text-muted-foreground">Long-term</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </TabsContent>
 
         <TabsContent value="regulations" className="space-y-6">
