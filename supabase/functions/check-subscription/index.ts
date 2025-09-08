@@ -131,6 +131,30 @@ serve(async (req) => {
       });
     }
 
+    // Check for existing subscription data to detect plan changes
+    const { data: existingSubscriber } = await supabaseClient
+      .from("subscribers")
+      .select("subscription_tier, file_uploads_used")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    // Reset file uploads if subscription tier changed or it's a new subscription
+    let fileUploadsUsed = 0;
+    if (existingSubscriber && existingSubscriber.subscription_tier === subscriptionTier) {
+      // Same tier, keep existing usage
+      fileUploadsUsed = existingSubscriber.file_uploads_used || 0;
+      logStep("Keeping existing file upload usage", { 
+        tier: subscriptionTier, 
+        usage: fileUploadsUsed 
+      });
+    } else {
+      // New tier or new subscription, reset usage
+      logStep("Resetting file upload usage due to subscription change", { 
+        oldTier: existingSubscriber?.subscription_tier, 
+        newTier: subscriptionTier 
+      });
+    }
+
     await supabaseClient.from("subscribers").upsert({
       email: user.email,
       user_id: user.id,
@@ -139,6 +163,7 @@ serve(async (req) => {
       subscription_tier: subscriptionTier,
       subscription_end: subscriptionEnd,
       file_upload_limit: fileUploadLimit,
+      file_uploads_used: fileUploadsUsed,
       updated_at: new Date().toISOString(),
     }, { onConflict: 'email' });
 
