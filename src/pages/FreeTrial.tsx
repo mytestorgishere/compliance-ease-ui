@@ -62,19 +62,41 @@ export default function FreeTrial() {
         'text/plain'
       ];
       
-      if (allowedTypes.includes(file.type)) {
-        setUploadedFile(file);
-        toast({
-          title: "File uploaded successfully!",
-          description: `${file.name} is ready for processing.`,
-        });
-      } else {
+      if (!allowedTypes.includes(file.type)) {
         toast({
           title: "Invalid file type",
           description: "Please upload a PDF, DOC, DOCX, or TXT file.",
           variant: "destructive",
         });
+        return;
       }
+
+      // Check file size based on subscription tier
+      const getMaxFileSize = () => {
+        const tier = subscriptionData?.subscription_tier?.toLowerCase();
+        if (tier === 'starter') return 1 * 1024 * 1024; // 1MB
+        if (tier === 'professional') return 2 * 1024 * 1024; // 2MB  
+        if (tier === 'enterprise') return 3 * 1024 * 1024; // 3MB
+        return 1 * 1024 * 1024; // Default 1MB for free trial
+      };
+
+      const maxSize = getMaxFileSize();
+      const tierName = subscriptionData?.subscription_tier || 'Free Trial';
+      
+      if (file.size > maxSize) {
+        toast({
+          title: "File too large",
+          description: `${tierName} plan allows files up to ${maxSize / (1024 * 1024)}MB. Your file is ${(file.size / (1024 * 1024)).toFixed(1)}MB.`,
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      setUploadedFile(file);
+      toast({
+        title: "File uploaded successfully!",
+        description: `${file.name} is ready for processing.`,
+      });
     }
   };
 
@@ -262,6 +284,13 @@ export default function FreeTrial() {
               </Button>
               <p className="text-xs text-muted-foreground mt-2 text-center">
                 {t('freeTrial.supportedFormats')}
+                {subscriptionData?.subscription_tier && (
+                  <span className="block mt-1">
+                    Max file size: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
+                                    subscriptionData.subscription_tier === 'professional' ? '2MB' : 
+                                    subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'}
+                  </span>
+                )}
               </p>
               {uploadedFile && (
                 <div className="mt-4 flex items-center text-sm text-success">

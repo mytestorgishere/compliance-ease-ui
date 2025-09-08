@@ -19,6 +19,14 @@ interface SubscriptionData {
   file_uploads_used?: number;
 }
 
+interface TierFeatures {
+  tier_name: string;
+  features: any; // Json type from Supabase
+  file_upload_limit: number;
+  monthly_price: number;
+  yearly_price: number;
+}
+
 interface Report {
   id: string;
   original_filename: string;
@@ -42,6 +50,7 @@ export default function Dashboard() {
   const [subscriptionData, setSubscriptionData] = useState<SubscriptionData>({ subscribed: false });
   const [reports, setReports] = useState<Report[]>([]);
   const [loadingReports, setLoadingReports] = useState(true);
+  const [tierFeatures, setTierFeatures] = useState<TierFeatures | null>(null);
 
   // Redirect if not authenticated
   useEffect(() => {
@@ -55,6 +64,7 @@ export default function Dashboard() {
     if (user) {
       fetchSubscriptionData();
       fetchReports();
+      fetchTierFeatures();
     }
   }, [user]);
 
@@ -103,6 +113,30 @@ export default function Dashboard() {
     }
   };
 
+  const fetchTierFeatures = async () => {
+    if (!subscriptionData.subscription_tier) return;
+    
+    try {
+      const { data, error } = await supabase
+        .from('subscription_tiers')
+        .select('*')
+        .eq('tier_name', subscriptionData.subscription_tier.toLowerCase())
+        .single();
+
+      if (error) throw error;
+      setTierFeatures(data);
+    } catch (error) {
+      console.error('Error fetching tier features:', error);
+    }
+  };
+
+  // Fetch tier features when subscription data changes
+  useEffect(() => {
+    if (subscriptionData.subscription_tier) {
+      fetchTierFeatures();
+    }
+  }, [subscriptionData.subscription_tier]);
+
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -118,6 +152,27 @@ export default function Dashboard() {
       toast({
         title: "Invalid File Type",
         description: "Please upload a PDF, DOC, DOCX, or TXT file.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Check file size based on subscription tier
+    const getMaxFileSize = () => {
+      const tier = subscriptionData?.subscription_tier?.toLowerCase();
+      if (tier === 'starter') return 1 * 1024 * 1024; // 1MB
+      if (tier === 'professional') return 2 * 1024 * 1024; // 2MB  
+      if (tier === 'enterprise') return 3 * 1024 * 1024; // 3MB
+      return 1 * 1024 * 1024; // Default 1MB for non-subscribers
+    };
+
+    const maxSize = getMaxFileSize();
+    const tierName = subscriptionData?.subscription_tier || 'Free Trial';
+    
+    if (file.size > maxSize) {
+      toast({
+        title: "File too large",
+        description: `${tierName} plan allows files up to ${maxSize / (1024 * 1024)}MB. Your file is ${(file.size / (1024 * 1024)).toFixed(1)}MB.`,
         variant: "destructive",
       });
       return;
@@ -306,6 +361,29 @@ export default function Dashboard() {
                     <span>{new Date(subscriptionData.subscription_end).toLocaleDateString()}</span>
                   </div>
                 )}
+                
+                {/* Current Plan Features */}
+                {tierFeatures && (
+                  <div className="mt-6 p-4 bg-muted/20 rounded-lg border border-border/30">
+                    <h4 className="font-medium mb-3 text-foreground">Your {tierFeatures.tier_name} Plan Includes:</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {Array.isArray(tierFeatures.features) && tierFeatures.features.map((feature: string, index: number) => (
+                        <div key={index} className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="h-3 w-3 text-success flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                      <div className="flex items-center gap-2 text-sm mt-2 pt-2 border-t border-border/30">
+                        <CheckCircle className="h-3 w-3 text-success flex-shrink-0" />
+                        <span className="text-muted-foreground">
+                          File size limit: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
+                                          subscriptionData.subscription_tier === 'professional' ? '2MB' : 
+                                          subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'} per document
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="text-center py-4">
@@ -352,6 +430,13 @@ export default function Dashboard() {
                     </Button>
                     <p className="text-xs text-muted-foreground">
                       Supported formats: PDF, DOC, DOCX, TXT
+                      {subscriptionData.subscription_tier && (
+                        <span className="block mt-1">
+                          Max file size: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
+                                          subscriptionData.subscription_tier === 'professional' ? '2MB' : 
+                                          subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'}
+                        </span>
+                      )}
                     </p>
                   </div>
                 </div>
