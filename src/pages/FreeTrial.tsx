@@ -276,11 +276,9 @@ export default function FreeTrial() {
               </Button>
               <p className="text-xs text-muted-foreground mt-2 text-center">
                 {t('freeTrial.supportedFormats')}
-                {subscriptionData?.subscription_tier && (
+                {subscriptionData && (
                   <span className="block mt-1">
-                    Max file size: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
-                                    subscriptionData.subscription_tier === 'professional' ? '2MB' : 
-                                    subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'}
+                    Max file size: {subscriptionData.file_size_limit_mb || 1}MB
                   </span>
                 )}
               </p>

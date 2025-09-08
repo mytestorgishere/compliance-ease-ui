@@ -19,6 +19,7 @@ interface SubscriptionData {
   subscription_end?: string;
   file_upload_limit?: number;
   file_uploads_used?: number;
+  file_size_limit_mb?: number;
 }
 
 interface TierFeatures {
@@ -368,9 +369,7 @@ export default function Dashboard() {
                       <div className="flex items-center gap-2 text-sm mt-2 pt-2 border-t border-border/30">
                         <CheckCircle className="h-3 w-3 text-success flex-shrink-0" />
                         <span className="text-muted-foreground">
-                          File size limit: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
-                                          subscriptionData.subscription_tier === 'professional' ? '2MB' : 
-                                          subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'} per document
+                          File size limit: {subscriptionData.file_size_limit_mb || 1}MB per document
                         </span>
                       </div>
                     </div>
@@ -422,11 +421,9 @@ export default function Dashboard() {
                     </Button>
                     <p className="text-xs text-muted-foreground">
                       Supported formats: PDF, DOC, DOCX, TXT
-                      {subscriptionData.subscription_tier && (
+                      {subscriptionData && (
                         <span className="block mt-1">
-                          Max file size: {subscriptionData.subscription_tier === 'starter' ? '1MB' : 
-                                          subscriptionData.subscription_tier === 'professional' ? '2MB' : 
-                                          subscriptionData.subscription_tier === 'enterprise' ? '3MB' : '1MB'}
+                          Max file size: {subscriptionData.file_size_limit_mb || 1}MB
                         </span>
                       )}
                     </p>

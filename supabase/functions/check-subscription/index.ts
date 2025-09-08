@@ -107,6 +107,7 @@ serve(async (req) => {
     // Update subscribers table
     // Get file upload limit from subscription tiers table and determine if yearly
     let fileUploadLimit = 0;
+    let fileSizeLimitMB = 1; // Default to 1MB for free users
     let isYearlySubscription = false;
     
     if (hasActiveSub && subscriptionTier) {
@@ -117,17 +118,19 @@ serve(async (req) => {
       
       const { data: tierData } = await supabaseClient
         .from("subscription_tiers")
-        .select("file_upload_limit")
+        .select("file_upload_limit, file_size_limit_mb")
         .eq("tier_name", subscriptionTier.toLowerCase())
         .single();
 
       const monthlyLimit = tierData?.file_upload_limit || 0;
       fileUploadLimit = isYearlySubscription ? monthlyLimit * 12 : monthlyLimit;
+      fileSizeLimitMB = tierData?.file_size_limit_mb || 1;
         
       logStep("File upload limit calculated", { 
         isYearly: isYearlySubscription, 
         monthlyLimit: monthlyLimit,
-        calculatedLimit: fileUploadLimit 
+        calculatedLimit: fileUploadLimit,
+        fileSizeLimit: fileSizeLimitMB
       });
     }
 
@@ -177,7 +180,8 @@ serve(async (req) => {
     return new Response(JSON.stringify({
       subscribed: hasActiveSub,
       subscription_tier: subscriptionTier,
-      subscription_end: subscriptionEnd
+      subscription_end: subscriptionEnd,
+      file_size_limit_mb: fileSizeLimitMB
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
