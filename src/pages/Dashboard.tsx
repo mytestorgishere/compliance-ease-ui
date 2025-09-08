@@ -526,14 +526,14 @@ export default function Dashboard() {
                         </div>
                          {report.status === 'completed' && report.processed_content && (
                            <div className="flex gap-1">
-                             <Button
-                               onClick={() => window.open(`/report/${report.id}`, '_blank')}
-                               variant="ghost"
-                               size="sm"
-                               title="View Details"
-                             >
-                               <Eye className="h-3 w-3" />
-                             </Button>
+                              <Button
+                                onClick={() => navigate(`/report/${report.id}`)}
+                                variant="ghost"
+                                size="sm"
+                                title="View Details"
+                              >
+                                <Eye className="h-3 w-3" />
+                              </Button>
                              <Button
                                onClick={() => downloadReport(report.processed_content!, `compliance-report-${report.original_filename}.txt`)}
                                variant="ghost"

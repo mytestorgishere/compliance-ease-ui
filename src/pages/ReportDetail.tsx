@@ -64,13 +64,23 @@ const ReportDetail = () => {
         .select('*')
         .eq('id', id)
         .eq('user_id', user.id)
-        .single();
+        .maybeSingle();
 
       if (error) {
         console.error('Error fetching report:', error);
         toast({
           title: "Error",
           description: "Failed to load report. Please try again.",
+          variant: "destructive",
+        });
+        navigate('/dashboard');
+        return;
+      }
+
+      if (!data) {
+        toast({
+          title: "Report Not Found",
+          description: "The requested report could not be found.",
           variant: "destructive",
         });
         navigate('/dashboard');
