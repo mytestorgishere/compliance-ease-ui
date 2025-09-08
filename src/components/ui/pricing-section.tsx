@@ -252,19 +252,19 @@ export function PricingSection() {
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 capitalize">{tier.tier_name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{getTierDescription(tier.tier_name)}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-3xl font-bold text-foreground">
-                      €{isYearly ? yearlyPrice : monthlyPrice}
-                    </span>
-                    <span className="text-muted-foreground ml-1">
-                      /{isYearly ? 'year' : 'month'}
-                    </span>
-                  </div>
-                  {isYearly && (
-                    <p className="text-xs text-success mt-1">
-                      Save €{(monthlyPrice * 12) - yearlyPrice}/year
-                    </p>
-                  )}
+                   <div className="flex items-baseline justify-center">
+                     <span className="text-3xl font-bold text-foreground">
+                       €{isYearly ? Math.round(yearlyPrice).toLocaleString() : Math.round(monthlyPrice).toLocaleString()}
+                     </span>
+                     <span className="text-muted-foreground ml-1">
+                       /{isYearly ? 'year' : 'month'}
+                     </span>
+                   </div>
+                   {isYearly && (
+                     <p className="text-xs text-success mt-1">
+                       Save €{Math.round((monthlyPrice * 12) - yearlyPrice).toLocaleString()}/year
+                     </p>
+                   )}
                   <div className="mt-2">
                     <Badge variant="outline" className="text-xs">
                       {formatFileUploadLimit(tier.file_upload_limit)} file uploads
