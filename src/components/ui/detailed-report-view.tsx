@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -64,6 +64,7 @@ interface DetailedReportViewProps {
 
 export function DetailedReportView({ report, onDownload }: DetailedReportViewProps) {
   const [activeTab, setActiveTab] = useState("overview");
+  const [recommendations, setRecommendations] = useState<any[]>([]);
 
   // Parse the report content to extract structured data
   const parseReportContent = (content: string) => {
@@ -204,6 +205,22 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
   };
 
   const parsedData = parseReportContent(report.processed_content);
+
+  // Initialize recommendations state
+  useEffect(() => {
+    setRecommendations(parsedData.recommendations);
+  }, [report.processed_content]);
+
+  // Function to handle tracking recommendation status
+  const handleTrackRecommendation = (recId: number) => {
+    setRecommendations(prev => 
+      prev.map(rec => 
+        rec.id === recId 
+          ? { ...rec, status: rec.status === 'pending' ? 'in-progress' : rec.status === 'in-progress' ? 'completed' : 'pending' }
+          : rec
+      )
+    );
+  };
 
   // Data for charts
   const complianceData = [
@@ -993,7 +1010,7 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {parsedData.recommendations.map((rec) => (
+                  {recommendations.map((rec) => (
                     <TableRow key={rec.id}>
                       <TableCell>
                         <Badge variant={
@@ -1010,12 +1027,21 @@ export function DetailedReportView({ report, onDownload }: DetailedReportViewPro
                         <p className="text-sm">{rec.text}</p>
                       </TableCell>
                       <TableCell>
-                        <Badge variant="secondary">{rec.status}</Badge>
+                        <Badge variant={
+                          rec.status === 'completed' ? 'default' : 
+                          rec.status === 'in-progress' ? 'secondary' : 'outline'
+                        }>
+                          {rec.status}
+                        </Badge>
                       </TableCell>
                       <TableCell>
-                        <Button size="sm" variant="outline">
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => handleTrackRecommendation(rec.id)}
+                        >
                           <Zap className="h-3 w-3 mr-1" />
-                          Track
+                          {rec.status === 'pending' ? 'Start' : rec.status === 'in-progress' ? 'Complete' : 'Reset'}
                         </Button>
                       </TableCell>
                     </TableRow>
