@@ -414,6 +414,7 @@ export type Database = {
         Row: {
           created_at: string
           features: Json | null
+          file_size_limit_mb: number
           file_upload_limit: number
           id: string
           monthly_price: number
@@ -424,6 +425,7 @@ export type Database = {
         Insert: {
           created_at?: string
           features?: Json | null
+          file_size_limit_mb?: number
           file_upload_limit?: number
           id?: string
           monthly_price: number
@@ -434,6 +436,7 @@ export type Database = {
         Update: {
           created_at?: string
           features?: Json | null
+          file_size_limit_mb?: number
           file_upload_limit?: number
           id?: string
           monthly_price?: number
