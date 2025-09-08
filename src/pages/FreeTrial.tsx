@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Upload, Download, FileText, CheckCircle, AlertCircle } from "lucide-react";
+import { Upload, Download, FileText, CheckCircle, AlertCircle, Eye } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -352,15 +352,39 @@ export default function FreeTrial() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button
-                onClick={downloadReport}
-                disabled={!reportReady}
-                variant="outline"
-                className="w-full"
-              >
-                <Download className="h-4 w-4 mr-2" />
-                {t('common.download')} PDF
-              </Button>
+              <div className="space-y-3">
+                {reportReady && (
+                  <Button
+                    onClick={() => {
+                      // Create a temporary report object for the detail view
+                      const tempReport = {
+                        id: 'temp-' + Date.now(),
+                        original_filename: uploadedFile?.name || 'document.pdf',
+                        processed_content: generatedReport || '',
+                        created_at: new Date().toISOString(),
+                        status: 'completed'
+                      };
+                      // Store the report data temporarily and open in new window
+                      sessionStorage.setItem('temp-report', JSON.stringify(tempReport));
+                      window.open('/report/temp', '_blank');
+                    }}
+                    disabled={!reportReady}
+                    className="w-full"
+                  >
+                    <Eye className="h-4 w-4 mr-2" />
+                    View Detailed Analysis
+                  </Button>
+                )}
+                <Button
+                  onClick={downloadReport}
+                  disabled={!reportReady}
+                  variant="outline"
+                  className="w-full"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  {t('common.download')} PDF
+                </Button>
+              </div>
               {reportReady && (
                 <div className="mt-4 text-center">
                   <p className="text-xs text-muted-foreground mb-2">

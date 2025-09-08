@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Upload, FileText, Download, AlertCircle, CheckCircle, Clock } from "lucide-react";
+import { Upload, FileText, Eye, Download, AlertCircle, CheckCircle, Clock } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -528,15 +528,26 @@ export default function Dashboard() {
                             </span>
                           </div>
                         </div>
-                        {report.status === 'completed' && report.processed_content && (
-                          <Button
-                            onClick={() => downloadReport(report.processed_content!, `compliance-report-${report.original_filename}.txt`)}
-                            variant="ghost"
-                            size="sm"
-                          >
-                            <Download className="h-3 w-3" />
-                          </Button>
-                        )}
+                         {report.status === 'completed' && report.processed_content && (
+                           <div className="flex gap-1">
+                             <Button
+                               onClick={() => window.open(`/report/${report.id}`, '_blank')}
+                               variant="ghost"
+                               size="sm"
+                               title="View Details"
+                             >
+                               <Eye className="h-3 w-3" />
+                             </Button>
+                             <Button
+                               onClick={() => downloadReport(report.processed_content!, `compliance-report-${report.original_filename}.txt`)}
+                               variant="ghost"
+                               size="sm"
+                               title="Download Report"
+                             >
+                               <Download className="h-3 w-3" />
+                             </Button>
+                           </div>
+                         )}
                       </div>
                     ))}
                   </div>
