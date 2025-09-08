@@ -112,7 +112,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email notification to admin
     const emailResponse = await resend.emails.send({
       from: "Compliance Ease <notifications@resend.dev>",
-      to: ["pramodayajayalath@gmail.com"],
+      to: ["pramodayaaws@gmail.com"],
       subject: subject,
       html: emailHtml,
     });
@@ -169,7 +169,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="text-align: center; margin: 30px 0;">
             <p style="color: #666;">Have questions? Reply to this email or contact us at:</p>
-            <p style="color: #007bff; font-weight: bold;">pramodayajayalath@gmail.com</p>
+            <p style="color: #007bff; font-weight: bold;">pramodayaaws@gmail.com</p>
           </div>
 
           <p>Best regards,<br/>
