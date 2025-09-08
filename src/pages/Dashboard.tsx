@@ -9,6 +9,7 @@ import { Upload, FileText, Eye, Download, AlertCircle, CheckCircle, Clock } from
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { ComplianceDashboard } from "@/components/ui/compliance-dashboard";
 import complyLogo from "@/assets/comply-logo.png";
 
 interface SubscriptionData {
@@ -461,21 +462,25 @@ export default function Dashboard() {
                 </Button>
 
                 {reportReady && generatedReport && (
-                  <div className="mt-4 p-4 bg-success/10 border border-success/20 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-success" />
-                        <span className="font-medium text-success">Report Ready</span>
-                      </div>
-                      <Button
-                        onClick={() => downloadReport(generatedReport, `compliance-report-${uploadedFile?.name || 'document'}.txt`)}
-                        variant="outline"
-                        size="sm"
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        Download
-                      </Button>
-                    </div>
+                  <div className="mt-6 animate-scale-in">
+                    <ComplianceDashboard
+                      reportContent={generatedReport}
+                      filename={uploadedFile?.name || 'document.pdf'}
+                      onViewDetails={() => {
+                        // Create a temporary report object for the detail view
+                        const tempReport = {
+                          id: 'temp-' + Date.now(),
+                          original_filename: uploadedFile?.name || 'document.pdf',
+                          processed_content: generatedReport,
+                          created_at: new Date().toISOString(),
+                          status: 'completed'
+                        };
+                        // Store the report data temporarily and open in new window
+                        sessionStorage.setItem('temp-report', JSON.stringify(tempReport));
+                        window.open('/report/temp', '_blank');
+                      }}
+                      onDownload={() => downloadReport(generatedReport, `compliance-report-${uploadedFile?.name || 'document'}.txt`)}
+                    />
                   </div>
                 )}
               </CardContent>

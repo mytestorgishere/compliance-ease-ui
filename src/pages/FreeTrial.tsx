@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Upload, Download, FileText, CheckCircle, AlertCircle, Eye } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
+import { ComplianceDashboard } from "@/components/ui/compliance-dashboard";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
@@ -385,19 +386,28 @@ export default function FreeTrial() {
                   {t('common.download')} PDF
                 </Button>
               </div>
-              {reportReady && (
-                <div className="mt-4 text-center">
-                  <p className="text-xs text-muted-foreground mb-2">
-                    Report includes:
-                  </p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Compliance score</li>
-                    <li>• Risk assessment</li>
-                    <li>• Recommendations</li>
-                    <li>• Action items</li>
-                  </ul>
-                </div>
-              )}
+            {reportReady && generatedReport && (
+              <div className="mt-8 animate-scale-in">
+                <ComplianceDashboard
+                  reportContent={generatedReport}
+                  filename={uploadedFile?.name || 'document.pdf'}
+                  onViewDetails={() => {
+                    // Create a temporary report object for the detail view
+                    const tempReport = {
+                      id: 'temp-' + Date.now(),
+                      original_filename: uploadedFile?.name || 'document.pdf',
+                      processed_content: generatedReport,
+                      created_at: new Date().toISOString(),
+                      status: 'completed'
+                    };
+                    // Store the report data temporarily and open in new window
+                    sessionStorage.setItem('temp-report', JSON.stringify(tempReport));
+                    window.open('/report/temp', '_blank');
+                  }}
+                  onDownload={() => downloadReport()}
+                />
+              </div>
+            )}
             </CardContent>
           </Card>
         </div>
