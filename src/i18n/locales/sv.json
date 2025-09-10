@@ -121,7 +121,7 @@
     }
   },
   "dashboard": {
-    "welcome": "Välkommen",
+    "welcome": "Välkommen, {{email}}",
     "recentReports": "Senaste Rapporter",
     "generateNew": "Generera Ny Rapport",
     "viewReport": "Visa Rapport",

@@ -315,7 +315,7 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-4">
             <div className="text-white text-sm">
-              {t('dashboard.welcome')}, {user.email}
+              {t('dashboard.welcome', { email: user.email })}
             </div>
             <Button variant="outline" className="border-white/20 text-black hover:bg-white/10" asChild>
               <Link to="/subscription">{t('dashboard.mySubscription')}</Link>
