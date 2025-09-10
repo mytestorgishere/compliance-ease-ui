@@ -44,7 +44,7 @@ export default function Dashboard() {
   const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
-  
+
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [reportReady, setReportReady] = useState(false);
@@ -98,7 +98,7 @@ export default function Dashboard() {
 
   const fetchReports = async () => {
     if (!user) return;
-    
+
     setLoadingReports(true);
     try {
       const { data, error } = await supabase
@@ -118,7 +118,7 @@ export default function Dashboard() {
 
   const fetchTierFeatures = async () => {
     if (!subscriptionData.subscription_tier) return;
-    
+
     try {
       const { data, error } = await supabase
         .from('subscription_tiers')
@@ -174,7 +174,7 @@ export default function Dashboard() {
     setUploadedFile(file);
     setReportReady(false);
     setGeneratedReport("");
-    
+
     toast({
       title: t('errors.fileUploaded'),
       description: t('errors.fileUploadedDescription', { fileName: file.name }),
@@ -204,8 +204,8 @@ export default function Dashboard() {
     if (subscriptionData.file_uploads_used >= subscriptionData.file_upload_limit) {
       toast({
         title: t('freeTrial.uploadLimitReached'),
-        description: t('freeTrial.uploadLimitDescription', { 
-          limit: subscriptionData.file_upload_limit 
+        description: t('freeTrial.uploadLimitDescription', {
+          limit: subscriptionData.file_upload_limit
         }),
         variant: "destructive",
       });
@@ -216,7 +216,7 @@ export default function Dashboard() {
 
     try {
       const fileContent = await uploadedFile.text();
-      
+
       const { data, error } = await supabase.functions.invoke('process-document', {
         body: {
           document: fileContent,
@@ -230,11 +230,11 @@ export default function Dashboard() {
       setGeneratedReport(data.report);
       setReportId(data.reportId);
       setReportReady(true);
-      
+
       // Refresh subscription data to show updated usage
       await fetchSubscriptionData();
       await fetchReports();
-      
+
       toast({
         title: t('errors.reportGenerated'),
         description: t('errors.reportGeneratedDescription'),
@@ -312,10 +312,10 @@ export default function Dashboard() {
             <img src={complyLogo} alt="Logo" className="h-8 w-8" />
             <span className="text-xl font-bold">Compliance Ease</span>
           </Link>
-          
+
           <div className="flex items-center gap-4">
             <div className="text-white text-sm">
-              {t('dashboard.welcome', { email: user.email })}
+              {t('dashboard.welcome')}, {user.email}
             </div>
             <Button variant="outline" className="border-white/20 text-black hover:bg-white/10" asChild>
               <Link to="/subscription">{t('dashboard.mySubscription')}</Link>
@@ -346,8 +346,8 @@ export default function Dashboard() {
                     {subscriptionData.file_uploads_used} / {subscriptionData.file_upload_limit}
                   </span>
                 </div>
-                <Progress 
-                  value={(subscriptionData.file_uploads_used / subscriptionData.file_upload_limit) * 100} 
+                <Progress
+                  value={(subscriptionData.file_uploads_used / subscriptionData.file_upload_limit) * 100}
                   className="h-2"
                 />
                 {subscriptionData.subscription_end && (
@@ -356,7 +356,7 @@ export default function Dashboard() {
                     <span>{new Date(subscriptionData.subscription_end).toLocaleDateString()}</span>
                   </div>
                 )}
-                
+
                 {/* Current Plan Features */}
                 {tierFeatures && (
                   <div className="mt-6 p-4 bg-muted/20 rounded-lg border border-border/30">
@@ -373,12 +373,12 @@ export default function Dashboard() {
                 )}
               </div>
             ) : (
-                <div className="text-center py-4">
-                  <p className="text-muted-foreground mb-4">{t('dashboard.noActiveSubscription')}</p>
-                  <Button asChild>
-                    <Link to="/#pricing">{t('dashboard.subscribeNow')}</Link>
-                  </Button>
-                </div>
+              <div className="text-center py-4">
+                <p className="text-muted-foreground mb-4">{t('dashboard.noActiveSubscription')}</p>
+                <Button asChild>
+                  <Link to="/#pricing">{t('dashboard.subscribeNow')}</Link>
+                </Button>
+              </div>
             )}
           </CardContent>
         </Card>
@@ -517,26 +517,26 @@ export default function Dashboard() {
                             </span>
                           </div>
                         </div>
-                         {report.status === 'completed' && report.processed_content && (
-                           <div className="flex gap-1">
-                              <Button
-                                onClick={() => navigate(`/report/${report.id}`)}
-                                variant="ghost"
-                                size="sm"
-                                title="View Details"
-                              >
-                                <Eye className="h-3 w-3" />
-                              </Button>
-                             <Button
-                               onClick={() => downloadReport(report.processed_content!, `compliance-report-${report.original_filename}.txt`)}
-                               variant="ghost"
-                               size="sm"
-                               title="Download Report"
-                             >
-                               <Download className="h-3 w-3" />
-                             </Button>
-                           </div>
-                         )}
+                        {report.status === 'completed' && report.processed_content && (
+                          <div className="flex gap-1">
+                            <Button
+                              onClick={() => navigate(`/report/${report.id}`)}
+                              variant="ghost"
+                              size="sm"
+                              title="View Details"
+                            >
+                              <Eye className="h-3 w-3" />
+                            </Button>
+                            <Button
+                              onClick={() => downloadReport(report.processed_content!, `compliance-report-${report.original_filename}.txt`)}
+                              variant="ghost"
+                              size="sm"
+                              title="Download Report"
+                            >
+                              <Download className="h-3 w-3" />
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
