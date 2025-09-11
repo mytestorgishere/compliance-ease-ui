@@ -68,7 +68,7 @@
     "manageSubscription": "Abonnement verwalten",
     "trustIndicators": {
       "gdprCompliant": "DSGVO-konform",
-      "euCertified": "EU-zertifiziert",
+     "euCertified": "EU Standard",
       "uptime": "99,9% Verfügbarkeit"
     }
   },
