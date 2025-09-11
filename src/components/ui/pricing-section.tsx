@@ -10,7 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";  
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 interface SubscriptionTier {
@@ -53,7 +53,7 @@ export function PricingSection() {
 
         const transformedTiers = data?.map(tier => ({
           ...tier,
-          features: Array.isArray(tier.features) 
+          features: Array.isArray(tier.features)
             ? tier.features.filter((f: any) => typeof f === 'string') as string[]
             : []
         })) || [];
@@ -96,7 +96,7 @@ export function PricingSection() {
     const baseFeatures = {
       starter: [
         "Basic GDPR compliance monitoring",
-        "Monthly compliance reports", 
+        "Monthly compliance reports",
         "Email support",
         "Up to 100 data subjects",
         "Standard templates",
@@ -106,7 +106,7 @@ export function PricingSection() {
         "Full GDPR, CSRD & ESG compliance",
         "Real-time monitoring & alerts",
         "Custom report generation",
-        "Priority support", 
+        "Priority support",
         "Up to 10,000 data subjects",
         "Advanced analytics",
         `${fileSizeLimit}MB file size upload`
@@ -118,12 +118,12 @@ export function PricingSection() {
         "Custom integrations",
         "Unlimited data subjects",
         "White-label options",
-        "24/7 phone support", 
+        "24/7 phone support",
         "Compliance consulting",
         `${fileSizeLimit}MB file maximum upload`
       ]
     };
-    
+
     return baseFeatures[tierName.toLowerCase() as keyof typeof baseFeatures] || [];
   };
 
@@ -145,7 +145,7 @@ export function PricingSection() {
 
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { 
+        body: {
           tier: tier,
           yearly: isYearly
         }
@@ -217,7 +217,7 @@ export function PricingSection() {
       setIsSubmittingContact(false);
     }
   };
-  
+
   if (loading) {
     return (
       <section id="pricing" className="py-20 bg-muted/30">
@@ -229,7 +229,7 @@ export function PricingSection() {
       </section>
     );
   }
-  
+
   return (
     <section id="pricing" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -240,7 +240,7 @@ export function PricingSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             {t('pricing.subtitle')}
           </p>
-          
+
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <Label htmlFor="billing-toggle" className={`text-sm font-medium ${!isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
@@ -268,13 +268,12 @@ export function PricingSection() {
             const isPopular = tier.tier_name.toLowerCase() === 'professional';
             const monthlyPrice = tier.monthly_price / 100; // Convert from cents
             const yearlyPrice = tier.yearly_price / 100; // Convert from cents
-            
+
             return (
-              <Card 
-                key={tier.id} 
-                className={`relative p-8 bg-gradient-card border-border shadow-soft hover:shadow-medium transition-all duration-300 ${
-                  isPopular ? 'ring-2 ring-primary' : ''
-                }`}
+              <Card
+                key={tier.id}
+                className={`relative p-8 bg-gradient-card border-border shadow-soft hover:shadow-medium transition-all duration-300 ${isPopular ? 'ring-2 ring-primary' : ''
+                  }`}
               >
                 {isPopular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary">
@@ -288,30 +287,30 @@ export function PricingSection() {
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2 capitalize">{tier.tier_name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{getTierDescription(tier.tier_name)}</p>
-                   <div className="flex items-baseline justify-center">
-                     <span className="text-3xl font-bold text-foreground">
-                       €{isYearly ? (yearlyPrice / 12).toFixed(0) : monthlyPrice.toFixed(0)}
-                     </span>
-                     <span className="text-muted-foreground ml-1">
-                       /month
-                     </span>
-                   </div>
-                   {isYearly && (
-                     <p className="text-xs text-success mt-1">
-                       {t('pricing.billedAnnually', { 
-                         price: yearlyPrice.toFixed(0), 
-                         savings: ((monthlyPrice * 12) - yearlyPrice).toFixed(0) 
-                       })}
-                     </p>
-                   )}
-                     <div className="mt-2 space-y-1">
-                       <Badge variant="outline" className="text-xs">
-                         {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
-                       </Badge>
-                       <Badge variant="outline" className="text-xs">
-                         {tier.file_size_limit_mb}MB per file
-                       </Badge>
-                     </div>
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-3xl font-bold text-foreground">
+                      €{isYearly ? (yearlyPrice / 12).toFixed(0) : monthlyPrice.toFixed(0)}
+                    </span>
+                    <span className="text-muted-foreground ml-1">
+                      /month
+                    </span>
+                  </div>
+                  {isYearly && (
+                    <p className="text-xs text-success mt-1">
+                      {t('pricing.billedAnnually', {
+                        price: yearlyPrice.toFixed(0),
+                        savings: ((monthlyPrice * 12) - yearlyPrice).toFixed(0)
+                      })}
+                    </p>
+                  )}
+                  <div className="mt-2 space-y-1">
+                    <Badge variant="outline" className="text-xs">
+                      {formatFileUploadLimit(isYearly ? tier.file_upload_limit * 12 : tier.file_upload_limit)} file uploads
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      {tier.file_size_limit_mb}MB per file
+                    </Badge>
+                  </div>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -323,12 +322,11 @@ export function PricingSection() {
                   ))}
                 </ul>
 
-                <Button 
-                  className={`w-full ${
-                    isPopular 
-                      ? 'bg-gradient-primary hover:opacity-90' 
+                <Button
+                  className={`w-full ${isPopular
+                      ? 'bg-gradient-primary hover:opacity-90'
                       : 'bg-background hover:bg-muted border border-border'
-                  }`}
+                    }`}
                   variant={isPopular ? "default" : "outline"}
                   onClick={() => handleSubscribe(tier.tier_name)}
                 >
@@ -363,7 +361,7 @@ export function PricingSection() {
                     <Input
                       id="firstName"
                       value={contactForm.firstName}
-                      onChange={(e) => setContactForm({...contactForm, firstName: e.target.value})}
+                      onChange={(e) => setContactForm({ ...contactForm, firstName: e.target.value })}
                       placeholder="John"
                     />
                   </div>
@@ -372,7 +370,7 @@ export function PricingSection() {
                     <Input
                       id="lastName"
                       value={contactForm.lastName}
-                      onChange={(e) => setContactForm({...contactForm, lastName: e.target.value})}
+                      onChange={(e) => setContactForm({ ...contactForm, lastName: e.target.value })}
                       placeholder="Doe"
                     />
                   </div>
@@ -383,7 +381,7 @@ export function PricingSection() {
                     id="email"
                     type="email"
                     value={contactForm.email}
-                    onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                    onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                     placeholder="john@company.com"
                   />
                 </div>
@@ -392,7 +390,7 @@ export function PricingSection() {
                   <Input
                     id="company"
                     value={contactForm.company}
-                    onChange={(e) => setContactForm({...contactForm, company: e.target.value})}
+                    onChange={(e) => setContactForm({ ...contactForm, company: e.target.value })}
                     placeholder="Acme Inc."
                   />
                 </div>
@@ -401,7 +399,7 @@ export function PricingSection() {
                   <Input
                     id="phone"
                     value={contactForm.phone}
-                    onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
+                    onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -410,27 +408,27 @@ export function PricingSection() {
                   <Textarea
                     id="requirements"
                     value={contactForm.requirements}
-                    onChange={(e) => setContactForm({...contactForm, requirements: e.target.value})}
+                    onChange={(e) => setContactForm({ ...contactForm, requirements: e.target.value })}
                     placeholder="Tell us about your compliance needs..."
                     className="min-h-[80px]"
                   />
                 </div>
               </div>
-                <div className="flex gap-3">
-                  <Button variant="outline" onClick={() => setShowContactForm(false)} className="flex-1">
-                    {t('pricing.cancel')}
-                  </Button>
-                  <Button onClick={handleContactSales} disabled={isSubmittingContact} className="flex-1">
-                    {isSubmittingContact ? (
-                      <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        {t('pricing.sending')}
-                      </>
-                    ) : (
-                      t('pricing.sendRequest')
-                    )}
-                  </Button>
-                </div>
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setShowContactForm(false)} className="flex-1">
+                  {t('pricing.cancel')}
+                </Button>
+                <Button onClick={handleContactSales} disabled={isSubmittingContact} className="flex-1">
+                  {isSubmittingContact ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      {t('pricing.sending')}
+                    </>
+                  ) : (
+                    t('pricing.sendRequest')
+                  )}
+                </Button>
+              </div>
             </DialogContent>
           </Dialog>
         </div>

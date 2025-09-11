@@ -235,7 +235,7 @@
     "sendRequest": "Send forespørgsel",
     "sending": "Sender...",
     "cancel": "Annuller",
-    "billedAnnually": "Faktureres årligt (€{price}) - Spar €{savings}/år",
+    "billedAnnually": "Faktureres årligt (€{{price}}) - Spar €{{savings}}/år",
     "fileUploads": "{count} filuploads",
     "perFile": "{size}MB pr. fil",
     "loadingPlans": "Indlæser abonnementsplaner...",

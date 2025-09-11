@@ -235,7 +235,7 @@
     "sendRequest": "Verzoek verzenden",
     "sending": "Verzenden...",
     "cancel": "Annuleren",
-    "billedAnnually": "Jaarlijks gefactureerd (€{price}) - Bespaar €{savings}/jaar",
+    "billedAnnually": "Jaarlijks gefactureerd (€{{price}}) - Bespaar €{{savings}}/jaar",
     "fileUploads": "{count} bestandsuploads",
     "perFile": "{size}MB per bestand",
     "loadingPlans": "Abonnementsplannen laden...",
