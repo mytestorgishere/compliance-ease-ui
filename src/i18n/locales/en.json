@@ -63,7 +63,7 @@
     "aiPowered": "AI-Powered Compliance Automation",
     "welcomeBack": "Welcome back to Compliance Ease",
     "welcomeBackSubtitle": "Your compliance is running smoothly. Upload documents and generate reports with your active subscription.",
-    "planActive": "{tier} Plan Active",
+    "planActive": "{{tier}} Plan Active",
     "goToDashboard": "Go to Dashboard",
     "manageSubscription": "Manage Subscription",
     "trustIndicators": {

@@ -63,7 +63,7 @@
     "aiPowered": "Automazione della conformità basata su IA",
     "welcomeBack": "Bentornato su Compliance Ease",
     "welcomeBackSubtitle": "La tua conformità procede senza intoppi. Carica documenti e genera rapporti con il tuo abbonamento attivo.",
-    "planActive": "Piano {tier} attivo",
+    "planActive": "Piano {{tier}} attivo",
     "goToDashboard": "Vai alla dashboard",
     "manageSubscription": "Gestisci abbonamento",
     "trustIndicators": {

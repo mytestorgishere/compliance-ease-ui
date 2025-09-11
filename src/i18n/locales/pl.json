@@ -63,7 +63,7 @@
     "aiPowered": "Automatyzacja zgodności oparta na sztucznej inteligencji",
     "welcomeBack": "Witamy ponownie w Compliance Ease",
     "welcomeBackSubtitle": "Twoja zgodność przebiega sprawnie. Prześlij dokumenty i generuj raporty dzięki aktywnej subskrypcji.",
-    "planActive": "Plan {tier} aktywny",
+    "planActive": "Plan {{tier}} aktywny",
     "goToDashboard": "Przejdź do panelu",
     "manageSubscription": "Zarządzaj subskrypcją",
     "trustIndicators": {

@@ -63,7 +63,7 @@
     "aiPowered": "KI-gestützte Compliance-Automatisierung",
     "welcomeBack": "Willkommen zurück bei Compliance Ease",
     "welcomeBackSubtitle": "Ihre Compliance läuft reibungslos. Laden Sie Dokumente hoch und erstellen Sie Berichte mit Ihrem aktiven Abonnement.",
-    "planActive": "{tier}-Plan aktiv",
+    "planActive": "{{tier}} Plan aktiv",
     "goToDashboard": "Zum Dashboard",
     "manageSubscription": "Abonnement verwalten",
     "trustIndicators": {

@@ -63,7 +63,7 @@
     "aiPowered": "AI-drevet samsvarsautomatisering",
     "welcomeBack": "Velkommen tilbake til Compliance Ease",
     "welcomeBackSubtitle": "Ditt samsvar fungerer problemfritt. Last opp dokumenter og generer rapporter med ditt aktive abonnement.",
-    "planActive": "{tier} Plan aktiv",
+    "planActive": "{{tier}} Plan aktiv",
     "goToDashboard": "Gå til dashbord",
     "manageSubscription": "Administrer abonnement",
     "trustIndicators": {

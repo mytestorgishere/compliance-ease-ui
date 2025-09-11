@@ -63,7 +63,7 @@
     "aiPowered": "AI-driven efterlevnadsautomatisering",
     "welcomeBack": "Välkommen tillbaka till Compliance Ease",
     "welcomeBackSubtitle": "Din efterlevnad fungerar smidigt. Ladda upp dokument och generera rapporter med din aktiva prenumeration.",
-    "planActive": "{tier}-plan aktiv",
+    "planActive": "{{tier}}-plan aktiv",
     "goToDashboard": "Gå till instrumentpanelen",
     "manageSubscription": "Hantera prenumeration",
     "trustIndicators": {

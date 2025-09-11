@@ -63,7 +63,7 @@
     "aiPowered": "AI-gestuurde compliance automatisering",
     "welcomeBack": "Welkom terug bij Compliance Ease",
     "welcomeBackSubtitle": "Je compliance verloopt soepel. Upload documenten en genereer rapporten met je actieve abonnement.",
-    "planActive": "{tier} Plan actief",
+    "planActive": "{{tier}} Plan actief",
     "goToDashboard": "Ga naar dashboard",
     "manageSubscription": "Abonnement beheren",
     "trustIndicators": {
