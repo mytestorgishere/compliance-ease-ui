@@ -32,15 +32,20 @@ const validateFileType = (content: string, filename: string): boolean => {
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
+    console.log('🔄 CORS preflight request received');
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    console.log('Processing document request...');
+    console.log('🚀 Processing document request started...');
+    console.log('📝 Request method:', req.method);
+    console.log('🌐 Request URL:', req.url);
     
     if (!openAIApiKey) {
+      console.error('❌ OpenAI API key not configured in environment');
       throw new Error('OpenAI API key not configured');
     }
+    console.log('✅ OpenAI API key found in environment');
 
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
@@ -53,6 +58,7 @@ serve(async (req) => {
     // Get the authorization header
     const authHeader = req.headers.get('Authorization')!;
     const token = authHeader.replace('Bearer ', '');
+    console.log('🔐 Authorization header found, extracting token...');
     
     // Authenticate user with anon key client
     const anonClient = createClient(
@@ -60,13 +66,15 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_ANON_KEY') ?? ''
     );
     
+    console.log('🔑 Authenticating user with Supabase...');
     const { data: userData, error: userError } = await anonClient.auth.getUser(token);
     if (userError || !userData.user) {
+      console.error('❌ User authentication failed:', userError?.message);
       throw new Error('User not authenticated');
     }
 
     const user = userData.user;
-    console.log('User authenticated:', user.email);
+    console.log('✅ User authenticated successfully:', user.email);
 
     // Check user profile and trial status, create if doesn't exist
     let { data: profile, error: profileError } = await supabaseClient
@@ -138,12 +146,21 @@ serve(async (req) => {
 
     const { document, filename, reportType = 'compliance', complianceData } = await req.json();
     
+    console.log('📄 Document upload data received:');
+    console.log('   📝 Filename:', filename);
+    console.log('   📊 Report Type:', reportType);
+    console.log('   📋 Document length:', document ? document.length : 'undefined');
+    console.log('   🔧 Compliance data:', complianceData ? 'provided' : 'not provided');
+    
     if (!document || !filename) {
+      console.error('❌ Missing required data - document or filename is empty');
       throw new Error('Document and filename are required');
     }
 
     // Enhanced security validation
+    console.log('🛡️ Validating file type and security...');
     if (!validateFileType(document, filename)) {
+      console.error('❌ File validation failed for:', filename);
       return new Response(JSON.stringify({ 
         error: 'Invalid file type or potentially malicious content detected. Please upload only PDF, DOCX, DOC, or TXT files.' 
       }), {
@@ -151,8 +168,9 @@ serve(async (req) => {
         status: 400,
       });
     }
+    console.log('✅ File validation passed');
 
-    console.log('Processing document:', filename, 'Type:', reportType, 'Compliance data:', complianceData);
+    console.log('📊 Processing document:', filename, 'Type:', reportType, 'Compliance data:', complianceData);
 
     // Create report record
     const { data: reportData, error: reportError } = await supabaseClient
@@ -257,7 +275,11 @@ The report should be comprehensive, professional, and directly applicable to the
     }
 
     // Call OpenAI API
-    console.log('Calling OpenAI API with model gpt-4o-mini...');
+    console.log('🤖 Preparing OpenAI API call...');
+    console.log('   🎯 Model: gpt-4o-mini');
+    console.log('   📏 System prompt length:', systemPrompt.length);
+    console.log('   💬 Document content length:', document.length);
+    
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -283,18 +305,27 @@ Generate a detailed compliance analysis and recommendations.`
       }),
     });
 
+    console.log('📡 OpenAI API response received');
+    console.log('   📊 Status:', response.status);
+    console.log('   ✅ Status OK:', response.ok);
+
     if (!response.ok) {
       const errorData = await response.text();
-      console.error('OpenAI API error:', response.status, errorData);
+      console.error('❌ OpenAI API error details:');
+      console.error('   🔴 Status:', response.status);
+      console.error('   📝 Error data:', errorData);
       throw new Error(`OpenAI API error: ${response.status}`);
     }
 
+    console.log('🔄 Parsing OpenAI response...');
     const data = await response.json();
     const generatedReport = data.choices[0].message.content;
-
-    console.log('Report generated successfully');
+    console.log('✅ Report generated successfully');
+    console.log('   📏 Report length:', generatedReport ? generatedReport.length : 'undefined');
+    console.log('   🎯 Usage tokens:', data.usage ? `${data.usage.total_tokens} tokens` : 'not provided');
 
     // Update report with processed content
+    console.log('💾 Updating report in database...');
     await supabaseClient
       .from('reports')
       .update({
@@ -302,28 +333,32 @@ Generate a detailed compliance analysis and recommendations.`
         status: 'completed'
       })
       .eq('id', reportData.id);
+    console.log('✅ Report updated in database');
 
     // Mark trial as used for free users
     if (profile.subscription_status === 'free' && !profile.trial_used) {
+      console.log('🔄 Marking trial as used for free user...');
       await supabaseClient
         .from('profiles')
         .update({ trial_used: true })
         .eq('user_id', user.id);
       
-      console.log('Trial marked as used for user:', user.email);
+      console.log('✅ Trial marked as used for user:', user.email);
     }
 
     // Increment file upload counter for subscribers
     if (subscriberData?.subscribed) {
       const currentUploads = subscriberData.file_uploads_used || 0;
+      console.log('📊 Incrementing file upload counter for subscriber...');
       await supabaseClient
         .from('subscribers')
         .update({ file_uploads_used: currentUploads + 1 })
         .eq('user_id', user.id);
       
-      console.log(`File upload counter incremented: ${currentUploads + 1}/${subscriberData.file_upload_limit}`);
+      console.log('✅ File upload counter incremented:', `${currentUploads + 1}/${subscriberData.file_upload_limit}`);
     }
 
+    console.log('🎉 Document processing completed successfully!');
     return new Response(JSON.stringify({ 
       report: generatedReport,
       reportId: reportData.id,
@@ -334,7 +369,11 @@ Generate a detailed compliance analysis and recommendations.`
     });
 
   } catch (error) {
-    console.error('Error in process-document function:', error);
+    console.error('💥 Error in process-document function:');
+    console.error('   🔴 Error message:', error.message);
+    console.error('   📋 Error details:', error);
+    console.error('   🕒 Timestamp:', new Date().toISOString());
+    
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
