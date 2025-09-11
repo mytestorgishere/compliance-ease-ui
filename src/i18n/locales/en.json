@@ -114,7 +114,6 @@
     "uploadsRemaining": "You have {count} uploads remaining this month.",
     "generalDescription": "Upload company data, operational logs, or regulatory documents to see how our AI automates compliance reporting for GDPR, CSRD, and ESG requirements.",
     "trialAlreadyUsed": "Trial Already Used",
-    "trialUsedDescription": "You've used your free trial. Upgrade to continue processing documents.",
     "processingDescription": "AI analyzes your document for compliance gaps and generates recommendations.",
     "downloadDescription": "Get your comprehensive compliance report with actionable insights.",
     "viewDetailedAnalysis": "View Detailed Analysis",
@@ -157,7 +156,7 @@
       "description": "Automated data protection impact assessments, consent management, and privacy reporting."
     },
     "csrd": {
-      "title": "CSRD Reporting", 
+      "title": "CSRD Reporting",
       "description": "Streamlined Corporate Sustainability Reporting Directive compliance with automated data collection."
     },
     "esg": {
@@ -169,7 +168,7 @@
       "description": "Machine learning algorithms that adapt to regulatory changes and optimize reporting processes."
     },
     "risk": {
-      "title": "Risk Assessment", 
+      "title": "Risk Assessment",
       "description": "Proactive compliance risk identification with automated alerts and remediation suggestions."
     },
     "multi": {
@@ -189,7 +188,7 @@
       "description": "Perfect for small businesses starting their compliance journey",
       "features": [
         "Basic GDPR compliance monitoring",
-        "Monthly compliance reports", 
+        "Monthly compliance reports",
         "Email support",
         "Up to 100 data subjects",
         "Standard templates"
@@ -359,7 +358,7 @@
     "noReportDescription": "Please generate a report first."
   },
   "dashboard": {
-    "welcome": "Welcome, {email}",
+    "welcome": "Welcome, {{email}}",
     "overview": "Overview",
     "reports": "Reports",
     "settings": "Settings",

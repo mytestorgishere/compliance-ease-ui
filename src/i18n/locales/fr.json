@@ -7,10 +7,10 @@
     "bookDemo": "Réserver une démo",
     "freeTrial": "Essai gratuit",
     "upload": "Télécharger",
-    "download": "Télécharger",
-    "submit": "Soumettre",
+    "download": "Télécharger le fichier",
+    "submit": "Envoyer",
     "cancel": "Annuler",
-    "email": "Email",
+    "email": "E-mail",
     "password": "Mot de passe",
     "confirmPassword": "Confirmer le mot de passe",
     "firstName": "Prénom",
@@ -21,7 +21,7 @@
     "loading": "Chargement...",
     "error": "Erreur",
     "success": "Succès",
-    "save": "Sauvegarder",
+    "save": "Enregistrer",
     "edit": "Modifier",
     "delete": "Supprimer",
     "close": "Fermer",
@@ -40,7 +40,7 @@
   },
   "navigation": {
     "features": "Fonctionnalités",
-    "pricing": "Tarifs",
+    "pricing": "Tarification",
     "dashboard": "Tableau de bord",
     "language": "Langue",
     "home": "Accueil",
@@ -50,77 +50,130 @@
     "account": "Compte",
     "settings": "Paramètres",
     "logout": "Se déconnecter",
-    "menu": "Menu"
+    "menu": "Menu",
+    "demo": "Démo",
+    "mySubscription": "Mon abonnement"
   },
   "hero": {
-    "title": "Automatisation de la conformité UE alimentée par l'IA",
-    "subtitle": "Automatisez les rapports de conformité RGPD, CSRD et ESG avec une IA intelligente. Restez conforme, réduisez les coûts et concentrez-vous sur la croissance.",
-    "cta": "Commencer l'essai gratuit",
+    "title": "Automatisation de la conformité européenne alimentée par l'IA",
+    "subtitle": "Automatisez les rapports de conformité GDPR, CSRD et ESG avec une IA intelligente. Restez conforme, réduisez les coûts et concentrez-vous sur la croissance.",
+    "cta": "Démarrer l'essai gratuit",
     "bookDemo": "Réserver une démo",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "aiPowered": "Automatisation de la conformité alimentée par l'IA",
+    "welcomeBack": "Bienvenue de retour sur Compliance Ease",
+    "welcomeBackSubtitle": "Votre conformité fonctionne parfaitement. Téléchargez des documents et générez des rapports avec votre abonnement actif.",
+    "planActive": "Plan {tier} actif",
+    "goToDashboard": "Accéder au tableau de bord",
+    "manageSubscription": "Gérer l'abonnement",
+    "trustIndicators": {
+      "gdprCompliant": "Conforme au RGPD",
+      "euCertified": "Certifié UE",
+      "uptime": "Disponibilité de 99,9 %"
+    }
   },
   "login": {
     "title": "Bon retour",
     "subtitle": "Connectez-vous à votre compte Compliance Ease",
     "forgotPassword": "Mot de passe oublié ?",
-    "noAccount": "Pas encore de compte ?",
-    "signUpLink": "S'inscrire ici",
-    "invalidCredentials": "Email ou mot de passe invalide",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUpLink": "Inscrivez-vous ici",
+    "invalidCredentials": "E-mail ou mot de passe invalide",
     "loginSuccess": "Connexion réussie",
-    "loginError": "Échec de la connexion"
+    "loginError": "Échec de la connexion",
+    "socialContinue": "Ou continuer avec"
   },
   "signup": {
     "title": "Créer un compte",
-    "subtitle": "Commencez votre parcours d'automatisation de la conformité",
+    "subtitle": "Démarrez votre parcours d'automatisation de la conformité",
     "hasAccount": "Vous avez déjà un compte ?",
-    "signInLink": "Se connecter ici",
-    "terms": "En créant un compte, vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité",
+    "signInLink": "Connectez-vous ici",
+    "terms": "En créant un compte, vous acceptez nos conditions d'utilisation et notre politique de confidentialité",
     "signupSuccess": "Compte créé avec succès",
     "signupError": "Échec de la création du compte",
-    "passwordMismatch": "Les mots de passe ne correspondent pas"
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "socialContinue": "Ou continuer avec"
   },
   "freeTrial": {
-    "title": "Commencez votre essai gratuit",
-    "subtitle": "Téléchargez un document et voyez Compliance Ease en action",
-    "description": "Téléchargez des données d'entreprise, des journaux opérationnels ou des documents réglementaires pour voir comment notre IA automatise les rapports de conformité pour RGPD, CSRD et ESG.",
+    "title": "Démarrez votre essai gratuit",
+    "subtitle": "Téléchargez un document et découvrez Compliance Ease en action",
+    "description": "Téléchargez des données d'entreprise, des journaux d'opérations ou des documents réglementaires pour voir comment notre IA automatise les rapports de conformité pour les exigences GDPR, CSRD et ESG.",
     "uploadTitle": "Téléchargez votre document",
-    "uploadDescription": "Téléchargez n'importe quel document de conformité (évaluation RGPD, rapport de durabilité, etc.)",
-    "supportedFormats": "Formats supportés : PDF, DOC, DOCX, TXT",
+    "uploadDescription": "Téléchargez n'importe quel document de conformité (évaluation GDPR, rapport de durabilité, etc.)",
+    "supportedFormats": "Formats pris en charge : PDF, DOC, DOCX, TXT",
     "generateReport": "Générer un rapport IA",
     "downloadReport": "Télécharger le rapport généré",
-    "sampleReport": "Exemple_Rapport_Conformite.pdf",
+    "sampleReport": "Exemple_Rapport_Conformité.pdf",
     "processing": "Traitement de votre document...",
     "success": "Rapport généré avec succès !",
     "trialUsed": "Essai déjà utilisé",
     "trialUsedDescription": "Vous avez déjà utilisé votre essai gratuit. Veuillez passer à un abonnement payant pour continuer.",
-    "upgradeNow": "Mettre à niveau maintenant"
+    "upgradeNow": "Passer à un abonnement",
+    "welcomeBack": "Bon retour, abonné {tier} !",
+    "subscriberDescription": "Traitez vos documents de conformité avec une analyse et un rapportage alimentés par l'IA.",
+    "uploadsRemaining": "Il vous reste {count} téléchargements ce mois-ci.",
+    "generalDescription": "Téléchargez des données d'entreprise, des journaux d'opérations ou des documents réglementaires pour voir comment notre IA automatise les rapports de conformité pour les exigences GDPR, CSRD et ESG.",
+    "trialAlreadyUsed": "Essai déjà utilisé",
+    "processingDescription": "L'IA analyse votre document pour identifier les écarts de conformité et génère des recommandations.",
+    "downloadDescription": "Obtenez votre rapport de conformité complet avec des insights exploitables.",
+    "viewDetailedAnalysis": "Voir l'analyse détaillée",
+    "downloadPdf": "Télécharger le PDF",
+    "aiAnalyzing": "L'IA analyse votre document...",
+    "reportReady": "Rapport prêt",
+    "welcomeSubscriber": "🎉 Bienvenue, abonné {tier} !",
+    "monthlyUploads": "Téléchargements mensuels",
+    "usedThisMonth": "Utilisés ce mois-ci",
+    "remaining": "Restants",
+    "subscriberContinue": "Continuez à traiter vos documents de conformité avec une analyse et un rapportage IA illimités.",
+    "fullExperience": "Vous voulez l'expérience complète de Compliance Ease ?",
+    "authenticationRequired": "Authentification requise",
+    "signInPrompt": "Veuillez vous connecter pour utiliser l'essai gratuit.",
+    "invalidFileType": "Type de fichier invalide",
+    "invalidFileDescription": "Veuillez télécharger un fichier PDF, DOC, DOCX ou TXT.",
+    "fileValidationFailed": "Échec de la validation du fichier",
+    "fileUploadedSuccess": "Fichier téléchargé avec succès !",
+    "fileReadyDescription": "{fileName} est prêt pour le traitement.",
+    "noFileUploaded": "Aucun fichier téléchargé",
+    "uploadFirstPrompt": "Veuillez d'abord télécharger un document.",
+    "trialAlreadyUsedTitle": "Essai déjà utilisé",
+    "trialAlreadyUsedDescription": "Vous avez déjà utilisé votre essai gratuit. Veuillez passer à un abonnement payant pour continuer.",
+    "uploadLimitReached": "Limite de téléchargement atteinte",
+    "uploadLimitDescription": "Vous avez atteint la limite de {limit} téléchargements de fichiers de votre plan {tier}. Veuillez mettre à niveau votre plan.",
+    "processingFailed": "Échec du traitement",
+    "processingFailedDescription": "Échec du traitement du document. Veuillez réessayer.",
+    "noReportAvailable": "Aucun rapport disponible",
+    "generateReportFirst": "Veuillez d'abord générer un rapport.",
+    "reportDownloaded": "Rapport téléchargé",
+    "checkDownloads": "Vérifiez votre dossier de téléchargements pour le rapport de conformité.",
+    "freeTrialUsed": "Essai gratuit utilisé",
+    "freeTrialUsedDescription": "C'était votre essai gratuit. Passez à un abonnement pour des rapports illimités !"
   },
   "features": {
-    "title": "Tout ce dont vous avez besoin pour la conformité UE",
-    "subtitle": "Notre plateforme complète couvre toutes les principales réglementations UE avec une automatisation intelligente et des flux de travail conçus par des experts.",
+    "title": "Tout ce dont vous avez besoin pour la conformité européenne",
+    "subtitle": "Notre plateforme complète couvre toutes les principales réglementations européennes avec une automatisation intelligente et des flux de travail conçus par des experts.",
     "gdpr": {
       "title": "Conformité RGPD",
-      "description": "Évaluations d'impact sur la protection des données automatisées, gestion du consentement et rapports de confidentialité."
+      "description": "Évaluations automatisées de l'impact sur la protection des données, gestion des consentements et rapports sur la confidentialité."
     },
     "csrd": {
-      "title": "Rapport CSRD", 
-      "description": "Conformité rationalisée de la Directive de rapport de durabilité d'entreprise avec collecte de données automatisée."
+      "title": "Rapportage CSRD",
+      "description": "Conformité simplifiée à la directive sur le rapportage de durabilité des entreprises avec une collecte de données automatisée."
     },
     "esg": {
       "title": "Métriques ESG",
-      "description": "Rapports complets Environnementaux, Sociaux et de Gouvernance avec tableaux de bord en temps réel."
+      "description": "Rapportage complet sur l'environnement, le social et la gouvernance avec des tableaux de bord en temps réel."
     },
     "ai": {
       "title": "Automatisation alimentée par l'IA",
-      "description": "Algorithmes d'apprentissage automatique qui s'adaptent aux changements réglementaires et optimisent les processus de rapport."
+      "description": "Algorithmes d'apprentissage automatique qui s'adaptent aux changements réglementaires et optimisent les processus de rapportage."
     },
     "risk": {
-      "title": "Évaluation des risques", 
-      "description": "Identification proactive des risques de conformité avec alertes automatisées et suggestions de remédiation."
+      "title": "Évaluation des risques",
+      "description": "Identification proactive des risques de conformité avec des alertes automatisées et des suggestions de remédiation."
     },
     "multi": {
       "title": "Support multi-juridictionnel",
-      "description": "Naviguez dans les réglementations UE complexes de différents États membres avec des règles de conformité localisées."
+      "description": "Naviguez dans les réglementations européennes complexes à travers différents États membres avec des règles de conformité localisées."
     }
   },
   "pricing": {
@@ -128,17 +181,17 @@
     "subtitle": "Tarification simple et transparente pour les entreprises de toutes tailles",
     "monthly": "Mensuel",
     "yearly": "Annuel",
-    "save": "Économiser 10%",
+    "save": "Économisez 10 %",
     "saveAmount": "Économisez {{amount}}/an",
     "starter": {
-      "name": "Starter",
-      "description": "Parfait pour les petites entreprises commençant leur parcours de conformité",
+      "name": "Démarrage",
+      "description": "Parfait pour les petites entreprises qui débutent leur parcours de conformité",
       "features": [
-        "Surveillance de conformité RGPD de base",
+        "Surveillance de base de la conformité RGPD",
         "Rapports de conformité mensuels",
-        "Support par email",
-        "Jusqu'à 100 personnes concernées",
-        "Modèles standard"
+        "Support par e-mail",
+        "Jusqu'à 100 sujets de données",
+        "Modèles standards"
       ]
     },
     "professional": {
@@ -149,8 +202,8 @@
         "Surveillance et alertes en temps réel",
         "Génération de rapports personnalisés",
         "Support prioritaire",
-        "Jusqu'à 10 000 personnes concernées",
-        "Analytiques avancées",
+        "Jusqu'à 10 000 sujets de données",
+        "Analytique avancée",
         "Accès API"
       ]
     },
@@ -158,41 +211,64 @@
       "name": "Entreprise",
       "description": "Conformité de niveau entreprise pour les grandes organisations",
       "features": [
-        "Tout dans Professionnel",
+        "Tout ce qui est inclus dans Professionnel",
         "Support multi-juridictionnel",
         "Gestionnaire de conformité dédié",
         "Intégrations personnalisées",
-        "Personnes concernées illimitées",
+        "Sujets de données illimités",
         "Options de marque blanche",
         "Support téléphonique 24/7",
-        "Conseil en conformité"
+        "Consultation en conformité"
       ]
     },
     "mostPopular": "Le plus populaire",
     "subscribeNow": "S'abonner maintenant",
-    "signUpToSubscribe": "S'inscrire pour s'abonner",
+    "signUpToSubscribe": "Inscrivez-vous pour vous abonner",
     "contactSales": "Contacter les ventes",
-    "customSolution": "Besoin d'une solution personnalisée ? Nous proposons des forfaits sur mesure pour les grandes entreprises.",
+    "customSolution": "Besoin d'une solution personnalisée ? Nous proposons des forfaits adaptés aux grandes entreprises.",
     "authRequired": "Authentification requise",
     "authRequiredDescription": "Veuillez vous connecter pour vous abonner à un plan.",
     "subscriptionError": "Erreur d'abonnement",
-    "subscriptionErrorDescription": "Échec du démarrage du processus d'abonnement. Veuillez réessayer."
+    "subscriptionErrorDescription": "Échec du démarrage du processus d'abonnement. Veuillez réessayer.",
+    "contactSalesTitle": "Contacter les ventes",
+    "contactSalesDescription": "Contactez notre équipe commerciale pour une tarification personnalisée et des solutions d'entreprise.",
+    "sendRequest": "Envoyer la demande",
+    "sending": "Envoi en cours...",
+    "cancel": "Annuler",
+    "billedAnnually": "Facturé annuellement (€{price}) - Économisez €{savings}/an",
+    "fileUploads": "{count} téléchargements de fichiers",
+    "perFile": "{size} Mo par fichier",
+    "loadingPlans": "Chargement des plans d'abonnement...",
+    "errorLoadingPlans": "Échec du chargement des plans d'abonnement. Veuillez réessayer."
   },
   "demo": {
     "title": "Réserver une démo",
-    "subtitle": "Voyez comment Compliance Ease peut transformer votre flux de travail de conformité",
+    "subtitle": "Découvrez comment Compliance Ease peut transformer votre flux de conformité",
     "preferredDate": "Date préférée",
     "preferredTime": "Heure préférée",
     "requirements": "Exigences spécifiques",
-    "requirementsPlaceholder": "Parlez-nous de vos défis de conformité...",
-    "schedule": "Planifier la démo",
+    "requirementsPlaceholder": "Parlez-nous de vos défis en matière de conformité...",
+    "schedule": "Planifier une démo",
     "success": "Démo planifiée avec succès ! Nous vous contacterons dans les 24 heures.",
     "error": "Échec de la planification de la démo. Veuillez réessayer.",
     "timeSlots": {
-      "morning": "Matin (9:00-12:00)",
-      "afternoon": "Après-midi (13:00-17:00)",
-      "evening": "Soir (18:00-20:00)"
-    }
+      "morning": "Matin (9h00-12h00)",
+      "afternoon": "Après-midi (13h00-17h00)",
+      "evening": "Soir (18h00-20h00)"
+    },
+    "scheduledTitle": "Démo planifiée !",
+    "cardTitle": "Planifiez votre démo",
+    "cardDescription": "Découvrez comment Compliance Ease transforme vos documents réglementaires en rapports de conformité exploitables avec des évaluations de risques et des recommandations automatisées.",
+    "expectTitle": "À quoi s'attendre lors de votre démo :",
+    "expectItems": {
+      "walkthrough": "Visite personnalisée des fonctionnalités de Compliance Ease",
+      "demonstration": "Démonstration en direct avec vos cas d'utilisation de conformité",
+      "qa": "Session de questions-réponses avec nos experts en conformité",
+      "pricing": "Plan de tarification et d'implémentation personnalisé"
+    },
+    "scheduling": "Planification en cours...",
+    "selectTime": "Sélectionner l'heure",
+    "callingCode": "Nous vous enverrons une invitation de calendrier dans les 24 heures."
   },
   "subscription": {
     "success": {
@@ -200,12 +276,42 @@
       "description": "Merci de vous être abonné à Compliance Ease. Votre abonnement est maintenant actif.",
       "verifying": "Vérification de votre abonnement...",
       "startUsing": "Commencer à utiliser Compliance Ease",
-      "returnHome": "Retour à l'accueil"
-    }
+      "returnHome": "Retourner à l'accueil"
+    },
+    "title": "Gestion de l'abonnement",
+    "subtitle": "Gérez votre abonnement Compliance Ease et vos paramètres de facturation.",
+    "current": "Abonnement actuel",
+    "account": "Informations du compte",
+    "email": "E-mail",
+    "company": "Entreprise",
+    "memberSince": "Membre depuis",
+    "refreshStatus": "Actualiser le statut",
+    "refreshing": "Actualisation en cours...",
+    "manageSubscription": "Gérer l'abonnement",
+    "opening": "Ouverture...",
+    "planIncludes": "Votre plan comprend",
+    "freeTrialLimits": "Limites de l'essai gratuit",
+    "subscriptionManagement": "Gestion de l'abonnement :",
+    "managementFeatures": {
+      "updatePayment": "Mettre à jour votre méthode de paiement",
+      "changePlan": "Modifier votre plan d'abonnement",
+      "cancelSubscription": "Annuler votre abonnement",
+      "downloadInvoices": "Télécharger les factures",
+      "viewHistory": "Voir l'historique de facturation"
+    },
+    "backToHome": "← Retour à l'accueil",
+    "authRequired": "Authentification requise",
+    "loginPrompt": "Veuillez vous connecter pour voir les détails de votre abonnement.",
+    "goToLogin": "Aller à la connexion",
+    "freeTrial": "Essai gratuit",
+    "freeTrialDescription": "Vous êtes actuellement en essai gratuit. Passez à un abonnement pour débloquer toutes les fonctionnalités.",
+    "viewPlans": "Voir les plans",
+    "renewsOn": "Se renouvelle le",
+    "subscriptionActive": "✓ Abonnement actif"
   },
   "footer": {
-    "copyright": "© 2024 Compliance Ease. Conçu pour l'excellence de la conformité UE.",
-    "builtFor": "Conçu pour l'excellence de la conformité UE"
+    "copyright": "© 2024 Compliance Ease. Conçu pour l'excellence en conformité européenne.",
+    "builtFor": "Conçu pour l'excellence en conformité européenne"
   },
   "errors": {
     "notFound": "Page non trouvée",
@@ -213,21 +319,85 @@
     "serverError": "Erreur serveur",
     "serverErrorDescription": "Quelque chose s'est mal passé de notre côté.",
     "networkError": "Erreur réseau",
-    "networkErrorDescription": "Veuillez vérifier votre connexion internet."
+    "networkErrorDescription": "Veuillez vérifier votre connexion Internet.",
+    "loginFailed": "Échec de la connexion",
+    "signupFailed": "Échec de l'inscription",
+    "bookingFailed": "Échec de la réservation",
+    "subscriptionError": "Erreur d'abonnement",
+    "subscriptionFailed": "Échec du démarrage du processus d'abonnement. Veuillez réessayer.",
+    "contactFailed": "Échec de l'envoi",
+    "contactFailedDescription": "Échec de l'envoi de la demande de contact. Veuillez réessayer.",
+    "error": "Erreur",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "success": "Succès !",
+    "accountCreated": "Compte créé avec succès ! Veuillez vérifier votre e-mail pour valider votre compte.",
+    "welcomeBack": "Bon retour !",
+    "loginSuccess": "Connexion réussie.",
+    "contactSent": "Demande de contact envoyée",
+    "contactSentDescription": "Notre équipe commerciale vous contactera dans les 24 heures.",
+    "missingInfo": "Informations manquantes",
+    "missingInfoDescription": "Veuillez remplir au moins votre nom et votre e-mail.",
+    "authenticationRequired": "Authentification requise",
+    "loginToSubscribe": "Veuillez vous connecter pour vous abonner à un plan.",
+    "subscriptionRequired": "Abonnement requis",
+    "subscribeToGenerate": "Veuillez vous abonner pour générer des rapports de conformité.",
+    "invalidFile": "Type de fichier invalide",
+    "invalidFileDescription": "Veuillez télécharger un fichier PDF, DOC, DOCX ou TXT.",
+    "fileValidationFailed": "Échec de la validation du fichier",
+    "fileUploaded": "Fichier téléchargé",
+    "fileUploadedDescription": "{fileName} est prêt pour le traitement.",
+    "noFileSelected": "Aucun fichier sélectionné",
+    "noFileSelectedDescription": "Veuillez d'abord télécharger un document.",
+    "reportGenerated": "Rapport généré",
+    "reportGeneratedDescription": "Votre rapport de conformité est prêt à être téléchargé.",
+    "generationFailed": "Échec de la génération",
+    "generationFailedDescription": "Échec de la génération du rapport. Veuillez réessayer.",
+    "downloadComplete": "Téléchargement terminé",
+    "downloadCompleteDescription": "Rapport téléchargé avec succès.",
+    "noReportAvailable": "Aucun rapport disponible",
+    "noReportDescription": "Veuillez d'abord générer un rapport."
   },
   "dashboard": {
-    "welcome": "Bienvenue chez Compliance Ease",
+    "welcome": "Bienvenue, {{email}}",
     "overview": "Aperçu",
     "reports": "Rapports",
     "settings": "Paramètres",
     "profile": "Profil",
     "subscription": "Abonnement",
-    "billing": "Facturation"
+    "billing": "Facturation",
+    "mySubscription": "Mon abonnement",
+    "subscriptionStatus": "Statut de l'abonnement",
+    "fileUploadsUsed": "Téléchargements de fichiers utilisés",
+    "nextBilling": "Prochaine date de facturation",
+    "uploadDocument": "Télécharger un document",
+    "uploadDescription": "Téléchargez votre document de conformité pour générer un rapport d'analyse alimenté par l'IA.",
+    "selectFile": "Sélectionner un fichier",
+    "changeFile": "Changer de fichier",
+    "chooseFile": "Choisissez un fichier à télécharger",
+    "supportedFormats": "Formats pris en charge : PDF, DOC, DOCX, TXT",
+    "maxFileSize": "Taille maximale du fichier : {size} Mo",
+    "generateReport": "Générer un rapport de conformité",
+    "processingDocument": "Traitement du document...",
+    "recentReports": "Rapports récents",
+    "recentReportsDescription": "Vos rapports de conformité générés",
+    "loading": "Chargement...",
+    "noReports": "Aucun rapport trouvé",
+    "noReportsDescription": "Téléchargez un document pour générer votre premier rapport de conformité.",
+    "viewDetails": "Voir les détails",
+    "download": "Télécharger",
+    "noActiveSubscription": "Aucun abonnement actif trouvé.",
+    "subscribeNow": "S'abonner maintenant",
+    "fileReady": "Fichier prêt pour le traitement"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups ! Page non trouvée",
+    "returnHome": "Retourner à l'accueil"
   },
   "notifications": {
-    "processing": "Traitement...",
+    "processing": "Traitement en cours...",
     "completed": "Terminé",
-    "failed": "Échec",
+    "failed": "Échoué",
     "tryAgain": "Réessayer"
   }
 }
