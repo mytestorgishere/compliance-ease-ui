@@ -345,7 +345,7 @@
     "invalidFileDescription": "Prześlij plik w formacie PDF, DOC, DOCX lub TXT.",
     "fileValidationFailed": "Weryfikacja pliku nie powiodła się",
     "fileUploaded": "Plik przesłany",
-    "fileUploadedDescription": "{fileName} jest gotowy do przetworzenia.",
+    "fileUploadedDescription": "{{fileName}} jest gotowy do przetworzenia.",
     "noFileSelected": "Nie wybrano pliku",
     "noFileSelectedDescription": "Najpierw prześlij dokument.",
     "reportGenerated": "Raport wygenerowany",

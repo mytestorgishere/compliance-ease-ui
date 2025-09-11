@@ -345,7 +345,7 @@
     "invalidFileDescription": "Veuillez télécharger un fichier PDF, DOC, DOCX ou TXT.",
     "fileValidationFailed": "Échec de la validation du fichier",
     "fileUploaded": "Fichier téléchargé",
-    "fileUploadedDescription": "{fileName} est prêt pour le traitement.",
+    "fileUploadedDescription": "{{fileName}} est prêt pour le traitement.",
     "noFileSelected": "Aucun fichier sélectionné",
     "noFileSelectedDescription": "Veuillez d'abord télécharger un document.",
     "reportGenerated": "Rapport généré",

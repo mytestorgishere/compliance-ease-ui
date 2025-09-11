@@ -345,7 +345,7 @@
     "invalidFileDescription": "Upload een PDF-, DOC-, DOCX- of TXT-bestand.",
     "fileValidationFailed": "Bestandsvalidatie mislukt",
     "fileUploaded": "Bestand geüpload",
-    "fileUploadedDescription": "{fileName} is klaar voor verwerking.",
+    "fileUploadedDescription": "{{fileName}} is klaar voor verwerking.",
     "noFileSelected": "Geen bestand geselecteerd",
     "noFileSelectedDescription": "Upload eerst een document.",
     "reportGenerated": "Rapport gegenereerd",

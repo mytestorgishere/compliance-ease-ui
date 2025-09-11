@@ -345,7 +345,7 @@
     "invalidFileDescription": "Por favor sube un archivo PDF, DOC, DOCX o TXT.",
     "fileValidationFailed": "Error en la validación del archivo",
     "fileUploaded": "Archivo Subido",
-    "fileUploadedDescription": "{fileName} está listo para procesar.",
+    "fileUploadedDescription": "{{fileName}} está listo para procesar.",
     "noFileSelected": "Ningún Archivo Seleccionado",
     "noFileSelectedDescription": "Por favor sube un documento primero.",
     "reportGenerated": "Informe Generado",

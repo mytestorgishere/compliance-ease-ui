@@ -345,7 +345,7 @@
     "invalidFileDescription": "Last opp en PDF-, DOC-, DOCX- eller TXT-fil.",
     "fileValidationFailed": "Filvalidering mislyktes",
     "fileUploaded": "Fil lastet opp",
-    "fileUploadedDescription": "{fileName} er klar for behandling.",
+    "fileUploadedDescription": "{{fileName}} er klar for behandling.",
     "noFileSelected": "Ingen fil valgt",
     "noFileSelectedDescription": "Last opp et dokument først.",
     "reportGenerated": "Rapport generert",

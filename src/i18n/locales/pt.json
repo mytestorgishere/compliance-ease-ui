@@ -345,7 +345,7 @@
     "invalidFileDescription": "Por favor, carregue um ficheiro PDF, DOC, DOCX ou TXT.",
     "fileValidationFailed": "Validação do ficheiro falhou",
     "fileUploaded": "Ficheiro Carregado",
-    "fileUploadedDescription": "{fileName} está pronto para processamento.",
+    "fileUploadedDescription": "{{fileName}} está pronto para processamento.",
     "noFileSelected": "Nenhum Ficheiro Selecionado",
     "noFileSelectedDescription": "Por favor, carregue um documento primeiro.",
     "reportGenerated": "Relatório Gerado",

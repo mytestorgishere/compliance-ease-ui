@@ -345,7 +345,7 @@
     "invalidFileDescription": "Please upload a PDF, DOC, DOCX, or TXT file.",
     "fileValidationFailed": "File validation failed",
     "fileUploaded": "File Uploaded",
-    "fileUploadedDescription": "{fileName} is ready for processing.",
+    "fileUploadedDescription": "{{fileName}} is ready for processing.",
     "noFileSelected": "No File Selected",
     "noFileSelectedDescription": "Please upload a document first.",
     "reportGenerated": "Report Generated",

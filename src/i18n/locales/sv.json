@@ -345,7 +345,7 @@
     "invalidFileDescription": "Vänligen ladda upp en PDF-, DOC-, DOCX- eller TXT-fil.",
     "fileValidationFailed": "Filvalidering misslyckades",
     "fileUploaded": "Fil uppladdad",
-    "fileUploadedDescription": "{fileName} är redo för bearbetning.",
+    "fileUploadedDescription": "{{fileName}} är redo för bearbetning.",
     "noFileSelected": "Ingen fil vald",
     "noFileSelectedDescription": "Vänligen ladda upp ett dokument först.",
     "reportGenerated": "Rapport genererad",

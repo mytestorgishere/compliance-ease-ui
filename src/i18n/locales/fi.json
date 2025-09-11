@@ -120,7 +120,7 @@
     "downloadPdf": "Download PDF",
     "aiAnalyzing": "AI is analyzing your document...",
     "reportReady": "Report Ready",
-    "welcomeSubscriber": "🎉 Welcome, {tier} subscriber!",
+    "welcomeSubscriber": "🎉 Welcome, {{tier}} subscriber!",
     "monthlyUploads": "Monthly Uploads",
     "usedThisMonth": "Used This Month",
     "remaining": "Remaining",

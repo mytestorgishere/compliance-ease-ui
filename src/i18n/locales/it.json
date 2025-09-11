@@ -345,7 +345,7 @@
     "invalidFileDescription": "Carica un file PDF, DOC, DOCX o TXT.",
     "fileValidationFailed": "Validazione del file fallita",
     "fileUploaded": "File caricato",
-    "fileUploadedDescription": "{fileName} è pronto per l'elaborazione.",
+    "fileUploadedDescription": "{{fileName}} è pronto per l'elaborazione.",
     "noFileSelected": "Nessun file selezionato",
     "noFileSelectedDescription": "Carica prima un documento.",
     "reportGenerated": "Rapporto generato",

@@ -345,7 +345,7 @@
     "invalidFileDescription": "Bitte laden Sie eine PDF-, DOC-, DOCX- oder TXT-Datei hoch.",
     "fileValidationFailed": "Dateivalidierung fehlgeschlagen",
     "fileUploaded": "Datei hochgeladen",
-    "fileUploadedDescription": "{fileName} ist bereit zur Verarbeitung.",
+    "fileUploadedDescription": "{{fileName}} ist bereit zur Verarbeitung.",
     "noFileSelected": "Keine Datei ausgewählt",
     "noFileSelectedDescription": "Bitte laden Sie zuerst ein Dokument hoch.",
     "reportGenerated": "Bericht erstellt",
