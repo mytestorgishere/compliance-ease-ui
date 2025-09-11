@@ -235,7 +235,7 @@
     "sendRequest": "Anfrage senden",
     "sending": "Wird gesendet...",
     "cancel": "Abbrechen",
-    "billedAnnually": "Jährlich abgerechnet (€{price}) - Sparen Sie €{savings}/Jahr",
+    "billedAnnually": "Jährlich abgerechnet (€{{price}}) - Sparen Sie €{{savings}}/Jahr",
     "fileUploads": "{count} Datei-Uploads",
     "perFile": "{size}MB pro Datei",
     "loadingPlans": "Lade Abonnement-Pläne...",

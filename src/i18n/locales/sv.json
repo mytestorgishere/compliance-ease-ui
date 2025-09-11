@@ -235,7 +235,7 @@
     "sendRequest": "Skicka förfrågan",
     "sending": "Skickar...",
     "cancel": "Avbryt",
-    "billedAnnually": "Faktureras årligen (€{price}) - Spara €{savings}/år",
+    "billedAnnually": "Faktureras årligen (€{{price}}) - Spara €{{savings}}/år",
     "fileUploads": "{count} filuppladdningar",
     "perFile": "{size}MB per fil",
     "loadingPlans": "Laddar prenumerationsplaner...",

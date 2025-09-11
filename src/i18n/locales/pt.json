@@ -235,7 +235,7 @@
     "sendRequest": "Enviar Pedido",
     "sending": "A enviar...",
     "cancel": "Cancelar",
-    "billedAnnually": "Faturado anualmente (€{price}) - Poupe €{savings}/ano",
+    "billedAnnually": "Faturado anualmente (€{{price}}) - Poupe €{{savings}}/ano",
     "fileUploads": "{count} carregamentos de ficheiros",
     "perFile": "{size}MB por ficheiro",
     "loadingPlans": "A carregar planos de subscrição...",
