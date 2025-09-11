@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Proefperiode al gebruikt",
     "trialAlreadyUsedDescription": "Je hebt je gratis proefperiode al gebruikt. Upgrade naar een betaald abonnement om verder te gaan.",
     "uploadLimitReached": "Uploadlimiet bereikt",
-    "uploadLimitDescription": "Je hebt de limiet van {limit} bestandsuploads van je {{tier}} plan bereikt. Upgrade je plan.",
+    "uploadLimitDescription": "Je hebt de limiet van {{limit}} bestandsuploads van je {{tier}} plan bereikt. Upgrade je plan.",
     "processingFailed": "Verwerking mislukt",
     "processingFailedDescription": "Verwerking van het document mislukt. Probeer opnieuw.",
     "noReportAvailable": "Geen rapport beschikbaar",

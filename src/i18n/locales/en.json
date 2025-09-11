@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Trial Already Used",
     "trialAlreadyUsedDescription": "You've already used your free trial. Please upgrade to a paid subscription to continue.",
     "uploadLimitReached": "Upload Limit Reached",
-    "uploadLimitDescription": "You've reached your {{tier}} plan limit of {limit} file uploads. Please upgrade your plan.",
+    "uploadLimitDescription": "You've reached your {{tier}} plan limit of {{limit}} file uploads. Please upgrade your plan.",
     "processingFailed": "Processing Failed",
     "processingFailedDescription": "Failed to process document. Please try again.",
     "noReportAvailable": "No report available",

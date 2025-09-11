@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Período Experimental Já Utilizado",
     "trialAlreadyUsedDescription": "Já utilizou o seu período experimental gratuito. Por favor, atualize para uma subscrição paga para continuar.",
     "uploadLimitReached": "Limite de Carregamento Atingido",
-    "uploadLimitDescription": "Atingiu o limite de {limit} carregamentos de ficheiros do seu plano {{tier}}. Por favor, atualize o seu plano.",
+    "uploadLimitDescription": "Atingiu o limite de {{limit}} carregamentos de ficheiros do seu plano {{tier}}. Por favor, atualize o seu plano.",
     "processingFailed": "Processamento Falhou",
     "processingFailedDescription": "Falha no processamento do documento. Por favor, tente novamente.",
     "noReportAvailable": "Nenhum relatório disponível",

@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Prøveperiode allerede brugt",
     "trialAlreadyUsedDescription": "Du har allerede brugt din gratis prøveperiode. Opgrader venligst til et betalt abonnement for at fortsætte.",
     "uploadLimitReached": "Uploadgrænse nået",
-    "uploadLimitDescription": "Du har nået din {{tier}}-plans grænse på {limit} filuploads. Opgrader venligst din plan.",
+    "uploadLimitDescription": "Du har nået din {{tier}}-plans grænse på {{limit}} filuploads. Opgrader venligst din plan.",
     "processingFailed": "Behandling mislykkedes",
     "processingFailedDescription": "Kunne ikke behandle dokument. Prøv igen.",
     "noReportAvailable": "Ingen rapport tilgængelig",

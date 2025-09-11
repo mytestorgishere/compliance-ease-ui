@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Testversion bereits genutzt",
     "trialAlreadyUsedDescription": "Sie haben Ihre kostenlose Testversion bereits genutzt. Bitte upgraden Sie auf ein kostenpflichtiges Abonnement, um fortzufahren.",
     "uploadLimitReached": "Upload-Limit erreicht",
-    "uploadLimitDescription": "Sie haben das {{tier}}-Plan-Limit von {limit} Datei-Uploads erreicht. Bitte upgraden Sie Ihren Plan.",
+    "uploadLimitDescription": "Sie haben das {{tier}}-Plan-Limit von {{limit}} Datei-Uploads erreicht. Bitte upgraden Sie Ihren Plan.",
     "processingFailed": "Verarbeitung fehlgeschlagen",
     "processingFailedDescription": "Dokument konnte nicht verarbeitet werden. Bitte versuchen Sie es erneut.",
     "noReportAvailable": "Kein Bericht verfügbar",

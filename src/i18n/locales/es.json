@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Prueba Ya Utilizada",
     "trialAlreadyUsedDescription": "Ya has utilizado tu prueba gratuita. Por favor actualiza a una suscripción de pago para continuar.",
     "uploadLimitReached": "Límite de Subidas Alcanzado",
-    "uploadLimitDescription": "Has alcanzado el límite de tu plan {{tier}} de {limit} subidas de archivos. Por favor actualiza tu plan.",
+    "uploadLimitDescription": "Has alcanzado el límite de tu plan {{tier}} de {{limit}} subidas de archivos. Por favor actualiza tu plan.",
     "processingFailed": "Error en el Procesamiento",
     "processingFailedDescription": "Error al procesar el documento. Por favor inténtalo de nuevo.",
     "noReportAvailable": "No hay informe disponible",

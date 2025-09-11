@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Okres próbny już wykorzystany",
     "trialAlreadyUsedDescription": "Wykorzystałeś już swój bezpłatny okres próbny. Przejdź na płatną subskrypcję, aby kontynuować.",
     "uploadLimitReached": "Osiągnięto limit przesyłania",
-    "uploadLimitDescription": "Osiągnąłeś limit {limit} przesyłanych plików w planie {{tier}}. Uaktualnij swój plan.",
+    "uploadLimitDescription": "Osiągnąłeś limit {{limit}} przesyłanych plików w planie {{tier}}. Uaktualnij swój plan.",
     "processingFailed": "Przetwarzanie nie powiodło się",
     "processingFailedDescription": "Nie udało się przetworzyć dokumentu. Spróbuj ponownie.",
     "noReportAvailable": "Brak dostępnego raportu",

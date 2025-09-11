@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Essai déjà utilisé",
     "trialAlreadyUsedDescription": "Vous avez déjà utilisé votre essai gratuit. Veuillez passer à un abonnement payant pour continuer.",
     "uploadLimitReached": "Limite de téléchargement atteinte",
-    "uploadLimitDescription": "Vous avez atteint la limite de {limit} téléchargements de fichiers de votre plan {{tier}}. Veuillez mettre à niveau votre plan.",
+    "uploadLimitDescription": "Vous avez atteint la limite de {{limit}} téléchargements de fichiers de votre plan {{tier}}. Veuillez mettre à niveau votre plan.",
     "processingFailed": "Échec du traitement",
     "processingFailedDescription": "Échec du traitement du document. Veuillez réessayer.",
     "noReportAvailable": "Aucun rapport disponible",

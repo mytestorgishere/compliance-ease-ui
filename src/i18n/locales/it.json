@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Prova già utilizzata",
     "trialAlreadyUsedDescription": "Hai già utilizzato la tua prova gratuita. Passa a un abbonamento a pagamento per continuare.",
     "uploadLimitReached": "Limite di caricamento raggiunto",
-    "uploadLimitDescription": "Hai raggiunto il limite di {limit} caricamenti di file del tuo piano {{tier}}. Aggiorna il tuo piano.",
+    "uploadLimitDescription": "Hai raggiunto il limite di {{limit}} caricamenti di file del tuo piano {{tier}}. Aggiorna il tuo piano.",
     "processingFailed": "Elaborazione fallita",
     "processingFailedDescription": "Elaborazione del documento fallita. Riprova.",
     "noReportAvailable": "Nessun rapporto disponibile",

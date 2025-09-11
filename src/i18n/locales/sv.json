@@ -138,7 +138,7 @@
     "trialAlreadyUsedTitle": "Provperiod redan använd",
     "trialAlreadyUsedDescription": "Du har redan använt din gratis provperiod. Vänligen uppgradera till en betald prenumeration för att fortsätta.",
     "uploadLimitReached": "Uppladdningsgräns nådd",
-    "uploadLimitDescription": "Du har nått gränsen för {{tier}}-planen på {limit} filuppladdningar. Vänligen uppgradera din plan.",
+    "uploadLimitDescription": "Du har nått gränsen för {{tier}}-planen på {{limit}} filuppladdningar. Vänligen uppgradera din plan.",
     "processingFailed": "Bearbetning misslyckades",
     "processingFailedDescription": "Misslyckades med att bearbeta dokumentet. Vänligen försök igen.",
     "noReportAvailable": "Ingen rapport tillgänglig",
