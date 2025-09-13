@@ -17,13 +17,21 @@ const validateFileType = (content: string, filename: string): boolean => {
     return false;
   }
 
-  // Basic content validation - check for suspicious patterns
+  // For binary files (PDF, DOCX, DOC), skip content validation as they contain binary data
+  if (['pdf', 'docx', 'doc'].includes(ext)) {
+    // Basic PDF validation - check if it starts with PDF header
+    if (ext === 'pdf' && !content.startsWith('%PDF-')) {
+      return false;
+    }
+    return true;
+  }
+
+  // For text files, check for suspicious patterns
   const suspiciousPatterns = [
     /<script/i,
     /javascript:/i,
     /on\w+\s*=/i, // event handlers like onclick=
     /\.\.\//,     // path traversal
-    /\0/,         // null bytes
   ];
 
   return !suspiciousPatterns.some(pattern => pattern.test(content));
