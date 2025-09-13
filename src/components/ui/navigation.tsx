@@ -6,13 +6,13 @@ import { Menu, X, User, LogOut, CreditCard, Bug } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useAuth } from "@/contexts/AuthContext";
-import { BugReportDialog } from "@/components/ui/bug-report-dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { BugReportDialog } from "@/components/ui/bug-report-dialog";
 
 export function Navigation() {
   const { t } = useTranslation();
