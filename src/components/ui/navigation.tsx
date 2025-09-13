@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut, CreditCard } from "lucide-react";
+import { Menu, X, User, LogOut, CreditCard, Bug } from "lucide-react";
 import complyLogo from "@/assets/comply-logo.png";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useAuth } from "@/contexts/AuthContext";
+import { BugReportDialog } from "@/components/ui/bug-report-dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -73,12 +74,18 @@ export function Navigation() {
                           {t('navigation.dashboard')}
                         </Link>
                       </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="gap-2 cursor-pointer">
-                        <Link to="/subscription">
-                          <CreditCard className="h-4 w-4" />
-                          {t('navigation.mySubscription')}
-                        </Link>
-                      </DropdownMenuItem>
+                       <DropdownMenuItem asChild className="gap-2 cursor-pointer">
+                         <Link to="/subscription">
+                           <CreditCard className="h-4 w-4" />
+                           {t('navigation.mySubscription')}
+                         </Link>
+                       </DropdownMenuItem>
+                       <BugReportDialog>
+                         <DropdownMenuItem onSelect={(e) => e.preventDefault()} className="gap-2 cursor-pointer">
+                           <Bug className="h-4 w-4" />
+                           Report Bug
+                         </DropdownMenuItem>
+                       </BugReportDialog>
                     <DropdownMenuItem onClick={handleSignOut} className="gap-2 cursor-pointer">
                       <LogOut className="h-4 w-4" />
                       {t('common.signOut')}
@@ -156,6 +163,12 @@ export function Navigation() {
                       {t('navigation.mySubscription')}
                     </Link>
                   </Button>
+                  <BugReportDialog>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <Bug className="h-4 w-4" />
+                      Report Bug
+                    </Button>
+                  </BugReportDialog>
                   <Button onClick={handleSignOut} variant="outline" size="sm" className="gap-2">
                     <LogOut className="h-4 w-4" />
                     {t('common.signOut')}

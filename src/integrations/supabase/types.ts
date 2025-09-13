@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_settings: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          setting_name: string
+          setting_value: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          setting_name: string
+          setting_value: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          setting_name?: string
+          setting_value?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       automation_rules: {
         Row: {
           config: Json
@@ -150,6 +177,48 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      bug_reports: {
+        Row: {
+          browser_info: Json | null
+          created_at: string
+          description: string
+          email: string
+          id: string
+          priority: string
+          status: string
+          subject: string
+          updated_at: string
+          url: string | null
+          user_id: string
+        }
+        Insert: {
+          browser_info?: Json | null
+          created_at?: string
+          description: string
+          email: string
+          id?: string
+          priority?: string
+          status?: string
+          subject: string
+          updated_at?: string
+          url?: string | null
+          user_id: string
+        }
+        Update: {
+          browser_info?: Json | null
+          created_at?: string
+          description?: string
+          email?: string
+          id?: string
+          priority?: string
+          status?: string
+          subject?: string
+          updated_at?: string
+          url?: string | null
+          user_id?: string
+        }
+        Relationships: []
       }
       compliance_alerts: {
         Row: {
